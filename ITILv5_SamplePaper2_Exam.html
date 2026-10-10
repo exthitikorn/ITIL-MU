@@ -1,0 +1,1863 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITIL 5 Foundation - Sample Paper 2 Mock Exam & Practice</title>
+  <style>
+    :root {
+      --primary: #1e40af;
+      --primary-light: #3b82f6;
+      --primary-dark: #1e3a8a;
+      --accent: #0ea5e9;
+      --bg-main: #f8fafc;
+      --bg-card: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --border-focus: #93c5fd;
+      --success: #16a34a;
+      --success-bg: #f0fdf4;
+      --success-border: #bbf7d0;
+      --danger: #dc2626;
+      --danger-bg: #fef2f2;
+      --danger-border: #fecaca;
+      --warning: #f59e0b;
+      --warning-bg: #fffbeb;
+      --warning-border: #fde68a;
+      --flagged: #e11d48;
+      --flagged-bg: #ffe4e6;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --radius: 12px;
+      --radius-sm: 6px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #0369a1 100%);
+      color: #ffffff;
+      padding: 18px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .badge-itil {
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    .brand-subtitle {
+      font-size: 0.85rem;
+      color: #bfdbfe;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .mode-selector {
+      display: flex;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 4px;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .mode-btn {
+      background: transparent;
+      border: none;
+      color: #e2e8f0;
+      padding: 6px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .mode-btn.active {
+      background: #ffffff;
+      color: var(--primary-dark);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .timer-badge {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      background: #ef4444;
+      color: #ffffff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.85; }
+    }
+
+    /* Container */
+    .main-layout {
+      max-width: 1200px;
+      margin: 24px auto;
+      padding: 0 16px;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .main-layout {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        order: 2;
+      }
+    }
+
+    /* Progress Bar */
+    .progress-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .progress-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .progress-track {
+      background: #e2e8f0;
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      background: linear-gradient(90deg, #3b82f6, #0ea5e9);
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    /* Question Card */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tags-group {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .badge-qnum {
+      background: #dbeafe;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .badge-criteria {
+      background: #f1f5f9;
+      color: #475569;
+      font-weight: 600;
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+    }
+
+    .badge-category {
+      background: #e0f2fe;
+      color: #0369a1;
+      font-weight: 600;
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .btn-flag {
+      background: transparent;
+      border: 1px solid #cbd5e1;
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-flag:hover {
+      border-color: var(--flagged);
+      color: var(--flagged);
+    }
+
+    .btn-flag.active {
+      background: var(--flagged-bg);
+      border-color: var(--flagged);
+      color: var(--flagged);
+    }
+
+    .question-text {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 18px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: #ffffff;
+      user-select: none;
+    }
+
+    .option-item:hover {
+      border-color: var(--primary-light);
+      background: #f8fafc;
+      transform: translateY(-1px);
+    }
+
+    .option-item.selected {
+      border-color: var(--primary);
+      background: #eff6ff;
+      box-shadow: 0 0 0 1px var(--primary);
+    }
+
+    .option-item.correct-reveal {
+      border-color: var(--success) !important;
+      background: var(--success-bg) !important;
+      box-shadow: 0 0 0 1px var(--success) !important;
+    }
+
+    .option-item.incorrect-reveal {
+      border-color: var(--danger) !important;
+      background: var(--danger-bg) !important;
+      box-shadow: 0 0 0 1px var(--danger) !important;
+    }
+
+    .option-item input[type="radio"] {
+      margin-top: 4px;
+      accent-color: var(--primary);
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .option-label {
+      font-size: 0.98rem;
+      color: #334155;
+      font-weight: 500;
+      flex-grow: 1;
+    }
+
+    /* Actions */
+    .card-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .nav-btn-group {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn {
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-secondary {
+      background: #f1f5f9;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+    }
+
+    .btn-secondary:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-check {
+      background: #0284c7;
+      color: #ffffff;
+    }
+
+    .btn-check:hover {
+      background: #0369a1;
+    }
+
+    .btn-success {
+      background: var(--success);
+      color: #ffffff;
+    }
+
+    .btn-success:hover {
+      background: #15803d;
+    }
+
+    /* Rationale Box */
+    .rationale-box {
+      margin-top: 20px;
+      padding: 18px 20px;
+      border-radius: 10px;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .rationale-box.visible {
+      display: block;
+    }
+
+    .rationale-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .rationale-title.success {
+      color: var(--success);
+    }
+
+    .rationale-title.danger {
+      color: var(--danger);
+    }
+
+    .rationale-content {
+      font-size: 0.92rem;
+      color: #334155;
+      line-height: 1.65;
+    }
+
+    /* Sidebar Grid */
+    .sidebar {
+      position: sticky;
+      top: 90px;
+    }
+
+    .sidebar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .sidebar-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .grid-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .stat-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      padding: 8px;
+      border-radius: 6px;
+    }
+
+    .stat-num {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .stat-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .question-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      max-height: 360px;
+      overflow-y: auto;
+      padding-right: 4px;
+      margin-bottom: 18px;
+    }
+
+    .grid-item {
+      height: 40px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.15s ease;
+    }
+
+    .grid-item:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .grid-item.current {
+      outline: 2px solid var(--primary);
+      outline-offset: 1px;
+    }
+
+    .grid-item.answered {
+      background: #dbeafe;
+      color: var(--primary-dark);
+      border-color: #bfdbfe;
+    }
+
+    .grid-item.flagged::after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      width: 7px;
+      height: 7px;
+      background: var(--flagged);
+      border-radius: 50%;
+    }
+
+    .grid-item.correct {
+      background: var(--success-bg) !important;
+      border-color: var(--success-border) !important;
+      color: var(--success) !important;
+    }
+
+    .grid-item.incorrect {
+      background: var(--danger-bg) !important;
+      border-color: var(--danger-border) !important;
+      color: var(--danger) !important;
+    }
+
+    .submit-exam-btn {
+      width: 100%;
+      padding: 12px;
+      background: #15803d;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .submit-exam-btn:hover {
+      background: #166534;
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 16px;
+      animation: fadeIn 0.2s ease;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-card {
+      background: #ffffff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      max-width: 600px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 28px;
+    }
+
+    .modal-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .modal-subtitle {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    /* Scoreboard */
+    .score-summary {
+      text-align: center;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+    }
+
+    .score-summary.pass {
+      background: #f0fdf4;
+      border: 2px solid #bbf7d0;
+    }
+
+    .score-summary.fail {
+      background: #fef2f2;
+      border: 2px solid #fecaca;
+    }
+
+    .score-badge {
+      display: inline-block;
+      font-size: 1.1rem;
+      font-weight: 800;
+      padding: 6px 18px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .score-badge.pass {
+      background: #22c55e;
+      color: #ffffff;
+    }
+
+    .score-badge.fail {
+      background: #ef4444;
+      color: #ffffff;
+    }
+
+    .score-number {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .score-number.pass { color: #15803d; }
+    .score-number.fail { color: #b91c1c; }
+
+    .score-text {
+      font-size: 0.95rem;
+      color: #475569;
+    }
+
+    /* Category Breakdown Table */
+    .category-breakdown {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+      font-size: 0.88rem;
+    }
+
+    .category-breakdown th, .category-breakdown td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .category-breakdown th {
+      background: #f8fafc;
+      color: #475569;
+      font-weight: 700;
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+    }
+
+    .filter-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="brand-area">
+        <span class="badge-itil">ITIL v5</span>
+        <div>
+          <div class="brand-title">ITIL® 5 Foundation Mock Exam</div>
+          <div class="brand-subtitle">Sample Paper 2 (40 Questions) • Complete Interactive Simulator</div>
+        </div>
+      </div>
+
+      <div class="header-controls">
+        <div class="mode-selector">
+          <button class="mode-btn active" id="btnPracticeMode" onclick="setMode('practice')">Practice Mode</button>
+          <button class="mode-btn" id="btnMockMode" onclick="setMode('mock')">Mock Exam (60 Min)</button>
+        </div>
+        <div class="timer-badge" id="timerBadge">
+          ⏱️ <span id="timerText">60:00</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-layout">
+    <!-- Left Column: Question Area -->
+    <section>
+      <!-- Progress Bar -->
+      <div class="progress-section">
+        <div class="progress-labels">
+          <span id="progressText">Progress: 0 / 40 Questions</span>
+          <span id="progressPercent">0%</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-bar-fill" id="progressBarFill"></div>
+        </div>
+      </div>
+
+      <!-- Question Card -->
+      <div class="card" id="questionCard">
+        <div class="question-header">
+          <div class="tags-group">
+            <span class="badge-qnum" id="qNumBadge">Question 1 of 40</span>
+            <span class="badge-criteria" id="criteriaBadge">Criteria: 1.1.2</span>
+            <span class="badge-category" id="categoryBadge">Concepts</span>
+          </div>
+          <button class="btn-flag" id="btnFlag" onclick="toggleFlag()">
+            <span>🚩</span> <span id="flagText">Flag for Review</span>
+          </button>
+        </div>
+
+        <div class="question-text" id="questionText">
+          Loading question text...
+        </div>
+
+        <div class="options-list" id="optionsList">
+          <!-- Options injected via JavaScript -->
+        </div>
+
+        <div class="card-actions">
+          <div class="nav-btn-group">
+            <button class="btn btn-secondary" id="btnPrev" onclick="navigatePrev()">← Previous</button>
+            <button class="btn btn-secondary" id="btnNext" onclick="navigateNext()">Next →</button>
+          </div>
+
+          <div style="display: flex; gap: 8px;">
+            <button class="btn btn-check" id="btnCheckAnswer" onclick="checkCurrentAnswer()">Check Answer (ตรวจคำตอบ)</button>
+            <button class="btn btn-primary" id="btnReviewFilterReset" style="display:none;" onclick="clearReviewFilter()">Clear Filter</button>
+          </div>
+        </div>
+
+        <!-- Rationale Box -->
+        <div class="rationale-box" id="rationaleBox">
+          <div class="rationale-title" id="rationaleTitle">
+            <!-- Correct/Incorrect Title -->
+          </div>
+          <div class="rationale-content" id="rationaleContent">
+            <!-- Thai explanation & rationale -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right Column: Sidebar Navigation Grid -->
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-title">
+          <span>Question Navigator</span>
+          <span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);" id="modeIndicatorLabel">Practice Mode</span>
+        </div>
+
+        <div class="grid-stats">
+          <div class="stat-box">
+            <div class="stat-num" id="statAnswered">0</div>
+            <div class="stat-label">Answered</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num" id="statRemaining">40</div>
+            <div class="stat-label">Remaining</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num" id="statFlagged" style="color: var(--flagged);">0</div>
+            <div class="stat-label">Flagged</div>
+          </div>
+        </div>
+
+        <div class="question-grid" id="questionGrid">
+          <!-- 40 grid items generated via JS -->
+        </div>
+
+        <button class="submit-exam-btn" id="btnSubmitExam" onclick="confirmSubmitExam()">
+          Submit Exam (ส่งคำตอบ)
+        </button>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Submit Confirmation / Result Modal -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal-card">
+      <div id="modalConfirmView">
+        <h2 class="modal-title">ยืนยันการส่งข้อสอบ?</h2>
+        <p class="modal-subtitle">โปรดตรวจสอบสถานะการทำข้อสอบก่อนส่งตรวจผลคะแนน</p>
+        
+        <div style="background: #f8fafc; border: 1px solid var(--border); padding: 16px; border-radius: 8px; margin-bottom: 20px;">
+          <p style="margin-bottom: 8px;"><strong>ตอบแล้ว:</strong> <span id="modalAnsweredCount">0</span> / 40 ข้อ</p>
+          <p style="margin-bottom: 8px;"><strong>ยังไม่ได้ตอบ:</strong> <span id="modalUnansweredCount" style="color: #dc2626; font-weight: 700;">40</span> ข้อ</p>
+          <p><strong>ปักหมุดไว้:</strong> <span id="modalFlaggedCount" style="color: var(--flagged);">0</span> ข้อ</p>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 10px;">
+          <button class="btn btn-secondary" onclick="closeModal()">กลับไปทำต่อ</button>
+          <button class="btn btn-success" onclick="finishAndGradeExam()">ยืนยันส่งข้อสอบ</button>
+        </div>
+      </div>
+
+      <!-- Scoreboard View (Shown after submission) -->
+      <div id="modalScoreboardView" style="display: none;">
+        <h2 class="modal-title">ผลการสอบ (Exam Results)</h2>
+        <p class="modal-subtitle">เกณฑ์ผ่าน: ตอบถูกตั้งแต่ 26 จาก 40 ข้อขึ้นไป (65%)</p>
+
+        <div class="score-summary" id="scoreSummaryBox">
+          <div class="score-badge" id="scoreBadge">PASS</div>
+          <div class="score-number" id="scoreNumber">34 / 40</div>
+          <div class="score-text" id="scorePercentageText">คิดเป็น 85.0% • เวลาที่ใช้: 28 นาที 15 วินาที</div>
+        </div>
+
+        <h3 style="font-size: 1rem; margin-bottom: 10px; font-weight: 700;">คะแนนแยกตามหมวดหมู่ (Category Breakdown)</h3>
+        <table class="category-breakdown" id="categoryBreakdownTable">
+          <thead>
+            <tr>
+              <th>หมวดหมู่เนื้อหา</th>
+              <th>ข้อสอบ</th>
+              <th>ตอบถูก</th>
+              <th>ผลประเมิน</th>
+            </tr>
+          </thead>
+          <tbody id="categoryBreakdownTbody">
+            <!-- Injected via JS -->
+          </tbody>
+        </table>
+
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 18px;">
+          <div style="display: flex; gap: 8px;">
+            <button class="btn btn-primary" onclick="reviewExam('all')">ทบทวนข้อสอบทั้งหมด</button>
+            <button class="btn btn-secondary" onclick="reviewExam('incorrect')">ดูเฉพาะข้อที่ผิด</button>
+          </div>
+          <button class="btn btn-secondary" onclick="restartExam()">ทำใหม่อีกครั้ง (Reset)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+  {
+    "id": 1,
+    "criteria": "1.1.2",
+    "category": "Concepts of Product & Service",
+    "question": "What is the PRIMARY purpose of a product in ITIL product and service management?",
+    "options": [
+      "A. To offer value to consumers through a defined configuration of resources",
+      "B. To replace service management practices with product management",
+      "C. To enable value co-creation by facilitating outcomes that customers want to achieve",
+      "D. To ensure regulatory compliance across digital services"
+    ],
+    "correctAnswer": "A",
+    "rationale_th": "<b>A ถูกต้อง:</b> ผลิตภัณฑ์ (Product) คือการจัดโครงสร้าง/องค์ประกอบทรัพยากรขององค์กร (Configuration of resources) เพื่อเสนอคุณค่า (Offer value) ให้แก่ผู้บริโภค (Ref 3.1.2)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• B ผิด เพราะ ITIL ผสานรวมการจัดการผลิตภัณฑ์และบริการเข้าด้วยกัน ไม่ได้นำมาทดแทนกัน (Ref 1.2)<br>• C ผิด เพราะนี่คือนิยามของ 'บริการ (Service)' ไม่ใช่ผลิตภัณฑ์ (Ref 3.1.1)<br>• D ผิด เพราะเกี่ยวข้องกับการกำกับดูแล (Governance) ไม่ใช่วัตถุประสงค์หลักของผลิตภัณฑ์ (Ref 5.3.1)"
+  },
+  {
+    "id": 2,
+    "criteria": "1.1.2",
+    "category": "Concepts of Product & Service",
+    "question": "What is the PRIMARY role of a digital service?",
+    "options": [
+      "A. To define processes and workflows for value creation",
+      "B. To enable value co-creation by facilitating customer outcomes",
+      "C. To replace product management practices with service management",
+      "D. To ensure compliance with policies and external regulations"
+    ],
+    "correctAnswer": "B",
+    "rationale_th": "<b>B ถูกต้อง:</b> วัตถุประสงค์หลักของบริการ (รวมถึงบริการดิจิทัล) คือการอำนวยความสะดวกในการร่วมสร้างคุณค่า (Value co-creation) โดยช่วยให้ลูกค้าบรรลุผลลัพธ์ (Outcomes) ที่ต้องการ โดยผู้รับบริการไม่ต้องบริหารจัดการต้นทุนและความเสี่ยงเฉพาะเจาะจงเอง (Ref 3.1.1)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• A ผิด เพราะเป็นการอธิบาย 'สายธารคุณค่าและกระบวนการ (Value streams & processes)' (Ref 2.3.1)<br>• C ผิด เพราะบริการดิจิทัลไม่ได้มาแทนที่การจัดการผลิตภัณฑ์ ITIL บูรณาการทั้งสองเข้าด้วยกัน (Ref 1.2)<br>• D ผิด เพราะเป็นหน้าที่ของการกำกับดูแล (Governance) (Ref 5.3.1)"
+  },
+  {
+    "id": 3,
+    "criteria": "1.1.3",
+    "category": "Concepts of Product & Service",
+    "question": "Which option is CORRECT in the context of a digital product and a digital service?",
+    "options": [
+      "A. A digital service enables value through the use of digital products",
+      "B. A digital product replaces the need for services",
+      "C. A digital service is limited to internal IT systems",
+      "D. A digital service is independent of a digital product"
+    ],
+    "correctAnswer": "A",
+    "rationale_th": "<b>A ถูกต้อง:</b> บริการดิจิทัล (Digital service) อาศัยผลิตภัณฑ์ดิจิทัล (Digital product) เป็นพื้นฐาน โดยผลิตภัณฑ์จัดหาขีดความสามารถ (Capabilities) และบริการนำความสามารถนั้นมาแปลงเป็นการร่วมสร้างคุณค่าแก่ผู้ใช้ (Ref 3.1.2)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• B ผิด เพราะผลิตภัณฑ์สนับสนุนบริการ ไม่ได้ตัดความจำเป็นของบริการออกไป<br>• C ผิด เพราะบริการดิจิทัลส่งมอบทั้งแก่ลูกค้าภายนอกและภายในในหลากหลายอุตสาหกรรม<br>• D ผิด เพราะบริการดิจิทัลไม่สามารถแยกเป็นอิสระจากผลิตภัณฑ์ดิจิทัลได้ (Digital services are always based on digital products)"
+  },
+  {
+    "id": 4,
+    "criteria": "1.2.4",
+    "category": "Service Offerings & Interactions",
+    "question": "A printer is delivered to a customer, while ongoing maintenance and support are provided by the supplier. Which combination of service interactions is shown in this situation?",
+    "options": [
+      "A. Access to resources and service actions",
+      "B. Service offering and service actions",
+      "C. Transfer of goods and service actions",
+      "D. Transfer of goods and service journey"
+    ],
+    "correctAnswer": "C",
+    "rationale_th": "<b>C ถูกต้อง:</b> การส่งมอบเครื่องพิมพ์ให้ลูกค้าเป็นการโอนกรรมสิทธิ์สินค้า (Transfer of goods) ส่วนการบำรุงรักษาและสนับสนุนต่อเนื่องโดยผู้จัดหาเป็นการปฏิบัติการบริการ (Service actions) ทั้งสองเป็นรูปแบบปฏิสัมพันธ์บริการตามข้อเสนอบริการ (Ref 3.1.2)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• A ผิด เพราะ Access to resources หมายถึงการให้สิทธิ์เข้าใช้โดยไม่โอนความเป็นเจ้าของ (เช่น คลาวด์ หรือเครื่องเช่า)<br>• B และ D ผิด เพราะ Service offering คือคำอธิบายแพ็กเกจบริการ และ Service journey คือเส้นทางปฏิสัมพันธ์ตลอดวงจร ไม่ใช่ประเภทการปฏิสัมพันธ์เฉพาะเจาะจงคู่ตรงนี้"
+  },
+  {
+    "id": 5,
+    "criteria": "1.2.4",
+    "category": "Service Offerings & Interactions",
+    "question": "How does ‘access to resources’ support value co-creation in a service interaction?",
+    "options": [
+      "A. By allowing consumers to use provider resources",
+      "B. By transferring responsibility for resources to consumers",
+      "C. By limiting resource use to internal teams",
+      "D. By replacing service actions with automation"
+    ],
+    "correctAnswer": "A",
+    "rationale_th": "<b>A ถูกต้อง:</b> การเข้าถึงทรัพยากร (Access to resources) ช่วยให้ผู้บริโภคสามารถเข้าใช้ทรัพยากรของผู้ให้บริการได้ตามเงื่อนไขที่ตกลงกัน ทำให้ผู้บริโภคบรรลุผลลัพธ์โดยไม่ต้องลงทุนเป็นเจ้าของทรัพยากรเอง (Ref 3.1.2)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• B ผิด เพราะไม่ได้โอนความรับผิดชอบในการดูแลรักษาทรัพยากรให้ผู้บริโภค<br>• C ผิด เพราะไม่ได้จำกัดไว้เฉพาะทีมภายใน<br>• D ผิด เพราะไม่ได้มาแทนที่ Service actions"
+  },
+  {
+    "id": 6,
+    "criteria": "1.3.5",
+    "category": "Value Co-creation",
+    "question": "Which of the following is TRUE about value co-creation?",
+    "options": [
+      "A. Value is created only by the service provider and delivered to the consumer",
+      "B. Value is defined and consumed by a service provider",
+      "C. Value is created independently of service relationships",
+      "D. Value is created jointly through interactions between service providers and service consumers"
+    ],
+    "correctAnswer": "D",
+    "rationale_th": "<b>D ถูกต้อง:</b> คุณค่าไม่ได้เกิดจากผู้ให้บริการฝ่ายเดียว แต่เกิดจากการร่วมมือและมีปฏิสัมพันธ์ร่วมกัน (Jointly through interactions) ระหว่าง Service Provider และ Service Consumer (Ref 3.1.1)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• A ผิด เพราะผู้ให้บริการไม่สามารถสร้างคุณค่าแล้วยื่นให้ทางเดียวได้<br>• B ผิด เพราะคุณค่าถูกกำหนดและรับรู้โดยผู้รับบริการ (Consumer)<br>• C ผิด เพราะคุณค่าต้องเกิดขึ้นผ่านความสัมพันธ์ของบริการ (Service relationships) เสมอ"
+  },
+  {
+    "id": 7,
+    "criteria": "1.4.11",
+    "category": "Utility and Warranty",
+    "question": "How do ‘utility’ and ‘warranty’ together support value co-creation?",
+    "options": [
+      "A. Utility focuses on cost control, while warranty focuses on risk avoidance",
+      "B. Utility and warranty apply only to products, not services",
+      "C. Utility ensures the service is fit for use, while warranty ensures it is fit for purpose",
+      "D. Utility ensures the service is fit for purpose, while warranty ensures it is fit for use"
+    ],
+    "correctAnswer": "D",
+    "rationale_th": "<b>D ถูกต้อง:</b> Utility คือฟังก์ชันการทำงานที่ทำให้บริการ 'เหมาะกับวัตถุประสงค์ (Fit for purpose / What it does)' ส่วน Warranty คือการรับประกันคุณภาพว่าบริการ 'เหมาะกับการใช้งานจริง (Fit for use / How it performs)' ทั้งสองเกื้อหนุนกัน (Ref 3.2.4)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• A ผิด เพราะแคบเกินไป Utility และ Warranty ไม่ได้จำกัดแค่เรื่องคุมต้นทุนหรือเลี่ยงความเสี่ยง<br>• B ผิด เพราะใช้กับทั้งผลิตภัณฑ์และบริการ<br>• C ผิด เพราะสลับความหมายกัน (Utility ต้องคู่กับ Fit for purpose และ Warranty ต้องคู่กับ Fit for use)"
+  },
+  {
+    "id": 8,
+    "criteria": "1.3.6",
+    "category": "Outcomes, Costs and Risks",
+    "question": "Why does ITIL consider outcomes, costs, and risks together when explaining value co-creation?",
+    "options": [
+      "A. Because value is created when desired outcomes are achieved while costs and risks are optimized",
+      "B. Because outcomes eliminate the need to manage costs and risks",
+      "C. Because costs are more important than outcomes",
+      "D. Because risks are more important than outcomes"
+    ],
+    "correctAnswer": "A",
+    "rationale_th": "<b>A ถูกต้อง:</b> คุณค่าจะเกิดขึ้นเมื่อผลลัพธ์ที่ต้องการ (Desired outcomes) บรรลุผล ในขณะที่ต้นทุน (Costs) และความเสี่ยง (Risks) ได้รับการปรับให้เหมาะสมที่สุดสำหรับผู้บริโภค (Ref 3.1.1)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• B ผิด เพราะการบรรลุผลลัพธ์ไม่ได้ตัดความจำเป็นในการคุมต้นทุนและความเสี่ยงออกไป<br>• C และ D ผิด เพราะไม่มีองค์ประกอบใดมีความสำคัญเหนือกว่าตัวอื่นอย่างสิ้นเชิง ต้องรักษาสมดุลร่วมกัน"
+  },
+  {
+    "id": 9,
+    "criteria": "1.4.3",
+    "category": "Service Relationships",
+    "question": "What does a service journey describe?",
+    "options": [
+      "A. End-to-end interactions between a service provider and a service consumer",
+      "B. The internal workflows and processes of a service provider",
+      "C. The end-to-end lifecycle of a product",
+      "D. The sequence of value chain activities"
+    ],
+    "correctAnswer": "A",
+    "rationale_th": "<b>A ถูกต้อง:</b> เส้นทางการใช้บริการ (Service Journey) อธิบายผลรวมของกิจกรรมและการปฏิสัมพันธ์ตั้งแต่ต้นจนจบ (End-to-end interactions) ระหว่างผู้ให้บริการและผู้รับบริการตลอดช่วงความสัมพันธ์ (Ref 3.2.3)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• B ผิด เพราะขั้นตอนภายในคือสายธารคุณค่าและกระบวนการ ไม่ใช่การปฏิสัมพันธ์สองฝ่าย<br>• C ผิด เพราะวงจรชีวิตผลิตภัณฑ์อธิบายด้วย Product and Service Lifecycle Model<br>• D ผิด เพราะลำดับกิจกรรมห่วงโซ่คุณค่าคือ Value chain activities"
+  },
+  {
+    "id": 10,
+    "criteria": "1.4.4",
+    "category": "Stakeholder Roles",
+    "question": "Which role authorizes budget for a service in a service relationship?",
+    "options": [
+      "A. Customer",
+      "B. User",
+      "C. Sponsor",
+      "D. Product vendor"
+    ],
+    "correctAnswer": "C",
+    "rationale_th": "<b>C ถูกต้อง:</b> Sponsor (ผู้สนับสนุนงบประมาณ) คือบทบาทที่ทำหน้าที่อนุมัติงบประมาณและเงินทุนสำหรับการบริโภคบริการ (Authorizes budget for service consumption) (Ref 3.2.1.1)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• A ผิด เพราะ Customer คือผู้กำหนดความต้องการและรับผิดชอบต่อผลลัพธ์การใช้บริการ<br>• B ผิด เพราะ User คือผู้ที่ใช้งานบริการในชีวิตประจำวัน<br>• D ผิด เพราะ Product vendor คือผู้ขาย/ผู้จัดหาผลิตภัณฑ์ ไม่ใช่บทบาทผู้บริโภคบริการ"
+  },
+  {
+    "id": 11,
+    "criteria": "1.4.5",
+    "category": "Service Quality",
+    "question": "What is service quality MOST concerned with?",
+    "options": [
+      "A. How well a service meets agreed requirements and expectations",
+      "B. How quickly incidents are resolved",
+      "C. The speed of service development",
+      "D. The social responsibility of a service provider"
+    ],
+    "correctAnswer": "A",
+    "rationale_th": "<b>A ถูกต้อง:</b> คุณภาพบริการ (Service Quality) คือผลรวมของคุณลักษณะของบริการที่ตอบสนองต่อความต้องการที่ระบุไว้และความคาดหวังที่ตกลงร่วมกัน (Meets agreed requirements and expectations) (Ref 3.2.4)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• B ผิด เพราะความเร็วในการแก้เหตุขัดข้องเป็นเพียงส่วนหนึ่งของงานสนับสนุน (Support metric)<br>• C ผิด เพราะความเร็วในการพัฒนาเป็นตัวชี้วัดประสิทธิภาพของวงจรชีวิต ไม่ใช่คุณภาพบริการโดยรวม<br>• D ผิด เพราะความรับผิดชอบต่อสังคมเป็นองค์ประกอบของ Sustainability แต่ไม่ใช่นิยามหลักของ Service Quality"
+  },
+  {
+    "id": 12,
+    "criteria": "1.4.6",
+    "category": "Service Level Agreement",
+    "question": "Which of the following is typically used to establish a shared understanding of expected and achieved service quality?",
+    "options": [
+      "A. Product specification",
+      "B. Service Level Agreement",
+      "C. Product and service roadmaps",
+      "D. Service level requirements"
+    ],
+    "correctAnswer": "B",
+    "rationale_th": "<b>B ถูกต้อง:</b> Service Level Agreement (SLA) คือข้อตกลงอย่างเป็นทางการระหว่างผู้ให้บริการและลูกค้าที่ใช้สร้างความเข้าใจร่วมกัน (Shared understanding) เกี่ยวกับระดับคุณภาพบริการที่คาดหวังและผลงานที่ส่งมอบจริง (Ref 3.2.5, 4.8.1)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• A ผิด เพราะ Product specification เป็นเอกสารระบุลักษณะทางเทคนิคของสิ่งที่จะสร้างในขั้น Design/Build<br>• C ผิด เพราะ Roadmap แสดงทิศทางการพัฒนาในอนาคต<br>• D ผิด เพราะ Service level requirements เป็นเพียงข้อมูลความต้องการก่อนที่จะถูกตกลงและลงนามเป็น SLA"
+  },
+  {
+    "id": 13,
+    "criteria": "2.2.2",
+    "category": "The Four Dimensions",
+    "question": "How does the ‘information and technology’ dimension support effective product and service management?",
+    "options": [
+      "A. By enabling the use of data, information, and technology required to deliver services",
+      "B. By defining organizational roles and responsibilities needed for product development",
+      "C. By defining workflows and activities required for product development",
+      "D. By managing relationships with external suppliers"
+    ],
+    "correctAnswer": "A",
+    "rationale_th": "<b>A ถูกต้อง:</b> มิติ 'Information and Technology' มุ่งเน้นการจัดการข้อมูล สารสนเทศ คลังความรู้ และเทคโนโลยีที่จำเป็นต่อการส่งมอบบริการและระบบบริหารจัดการ (Ref 2.4)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• B ผิด เพราะการกำหนดบทบาทหน้าที่และโครงสร้างจัดอยู่ในมิติ Organizations and people<br>• C ผิด เพราะเวิร์กโฟลว์และกิจกรรมจัดอยู่ในมิติ Value streams and processes<br>• D ผิด เพราะการจัดการความสัมพันธ์กับคู่ค้าภายนอกจัดอยู่ในมิติ Partners and suppliers"
+  },
+  {
+    "id": 14,
+    "criteria": "2.2.2",
+    "category": "The Four Dimensions",
+    "question": "Which dimension is concerned with management of relationships with external organizations?",
+    "options": [
+      "A. Partners and suppliers",
+      "B. Information and technology",
+      "C. Organizations and people",
+      "D. Value streams and processes"
+    ],
+    "correctAnswer": "A",
+    "rationale_th": "<b>A ถูกต้อง:</b> มิติ 'Partners and Suppliers' ครอบคลุมความสัมพันธ์ ข้อตกลง และสัญญาขององค์กรกับองค์กรภายนอกที่มีส่วนร่วมในการสำรวจ ออกแบบ สร้าง ส่งมอบ และปรับปรุงบริการ (Ref 2.5)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• B ผิด เพราะเกี่ยวข้องกับข้อมูลและโครงสร้างพื้นฐานเทคโนโลยี<br>• C ผิด เพราะเกี่ยวข้องกับบุคลากร วัฒนธรรม และโครงสร้างภายใน<br>• D ผิด เพราะเกี่ยวข้องกับลำดับขั้นตอนการทำงานและการประสานงานกิจกรรม"
+  },
+  {
+    "id": 15,
+    "criteria": "2.2.2",
+    "category": "The Four Dimensions",
+    "question": "Why are ‘value streams and processes’ important in product and service management?",
+    "options": [
+      "A. They specify the tools used for service monitoring",
+      "B. They show how activities are coordinated to create and deliver value",
+      "C. They define organizational hierarchies and reporting lines",
+      "D. They describe supplier agreements and help manage contracts"
+    ],
+    "correctAnswer": "B",
+    "rationale_th": "<b>B ถูกต้อง:</b> มิติ 'Value streams and processes' แสดงให้เห็นว่ากิจกรรมต่างๆ ถูกจัดระเบียบและประสานเชื่อมโยงกันอย่างไร เพื่อสร้างและส่งมอบคุณค่าให้แก่ผู้มีส่วนได้ส่วนเสียอย่างมีประสิทธิผล (Ref 2.3.1)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• A ผิด เพราะเครื่องมือตรวจสอบระบบจัดอยู่ในมิติ Information and Technology<br>• C ผิด เพราะสายการบังคับบัญชาจัดอยู่ในมิติ Organizations and people<br>• D ผิด เพราะสัญญาและข้อตกลงคู่ค้าจัดอยู่ในมิติ Partners and suppliers"
+  },
+  {
+    "id": 16,
+    "criteria": "2.2.2",
+    "category": "The Four Dimensions",
+    "question": "How does the ‘organizations and people’ dimension contribute to effective product and service management?",
+    "options": [
+      "A. By ensuring skills, culture, and communication support value creation",
+      "B. By defining the technologies used to deliver services",
+      "C. By managing relationships with external organizations",
+      "D. By automating workflows across value streams"
+    ],
+    "correctAnswer": "A",
+    "rationale_th": "<b>A ถูกต้อง:</b> มิติ 'Organizations and people' ช่วยให้มั่นใจว่าทักษะ วัฒนธรรมองค์กร ภาวะผู้นำ และการสื่อสาร สนับสนุนการสร้างคุณค่าและการบรรลุกลยุทธ์ขององค์กร (Ref Glossary, 2.2)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• B ผิด เพราะตรงกับมิติ Information and technology<br>• C ผิด เพราะตรงกับมิติ Partners and suppliers<br>• D ผิด เพราะการทำเวิร์กโฟลว์อัตโนมัติคาบเกี่ยวกับมิติ Value streams & processes และ Information & technology"
+  },
+  {
+    "id": 17,
+    "criteria": "4.1.1",
+    "category": "The ITIL Value System",
+    "question": "Which set CORRECTLY lists the components of the ITIL Value System?",
+    "options": [
+      "A. Value streams, projects, releases, incidents, changes",
+      "B. Guiding principles, governance, discover, deliver",
+      "C. Products, services, customers, suppliers, partners",
+      "D. Guiding principles, governance, value chain, management practices, continual improvement"
+    ],
+    "correctAnswer": "D",
+    "rationale_th": "<b>D ถูกต้อง:</b> องค์ประกอบทั้ง 5 ของ ITIL Value System (ITIL VS) ได้แก่: 1. Guiding principles, 2. Governance, 3. Value chain, 4. Management practices, และ 5. Continual improvement (Ref 1.3)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• A ผิด เพราะเป็นรายการกิจกรรมและแนวปฏิบัติย่อย<br>• B ผิด เพราะ Discover และ Deliver เป็นกิจกรรมย่อยใน Value chain ไม่ใช่องค์ประกอบระดับระบบ<br>• C ผิด เพราะเป็นผู้มีส่วนได้ส่วนเสียและองค์ประกอบบริการ"
+  },
+  {
+    "id": 18,
+    "criteria": "4.2.4",
+    "category": "Guiding Principles",
+    "question": "A team is developing a new digital service. Instead of delivering all features at once, they release a small set of features, gather user feedback, and adjust the next release based on what they learn. Which ITIL Guiding Principle is the team applying in this situation?",
+    "options": [
+      "A. Keep it simple and practical",
+      "B. Focus on value",
+      "C. Progress iteratively with feedback",
+      "D. Collaborate and promote visibility"
+    ],
+    "correctAnswer": "C",
+    "rationale_th": "<b>C ถูกต้อง:</b> การแบ่งงานออกเป็นส่วนเล็กๆ ทยอยส่งมอบ (Small increments) พร้อมเก็บข้อมูลย้อนกลับ (Gather feedback) และปรับแผนในรอบถัดไป ตรงกับหลักการ 'Progress iteratively with feedback' โดยตรง (Ref 5.2.3)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• A ผิด เพราะเน้นการลดขั้นตอนที่ไม่จำเป็น<br>• B ผิด เพราะเน้นการเชื่อมโยงงานกับประโยชน์ของผู้ใช้<br>• D ผิด เพราะเน้นการดึงผู้มีส่วนได้ส่วนเสียมาร่วมมือและเปิดเผยข้อมูลการทำงาน"
+  },
+  {
+    "id": 19,
+    "criteria": "4.2.8",
+    "category": "Guiding Principles",
+    "question": "How should the ITIL Guiding Principle ‘optimize and automate’ be applied?",
+    "options": [
+      "A. By replacing people with technology across all functions",
+      "B. By optimizing processes before automating them",
+      "C. By automating all activities immediately",
+      "D. By automating processes before optimizing them"
+    ],
+    "correctAnswer": "B",
+    "rationale_th": "<b>B ถูกต้อง:</b> หัวใจของหลักการนี้คือ 'ต้องปรับปรุงกระบวนการให้มีประสิทธิภาพสูงสุดก่อน จึงนำระบบอัตโนมัติมาใช้ (Optimize processes before automating them)' เพื่อไม่ให้เป็นการเพิ่มความสูญเปล่าและความเสี่ยงโดยไม่จำเป็น (Ref 5.2.7, 5.2.7.3)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• A ผิด เพราะไม่ได้มีเป้าหมายเพื่อทดแทนมนุษย์ในทุกหน้าที่<br>• C ผิด เพราะการทำทุกอย่างอัตโนมัติทันทีอาจเพิ่มต้นทุนและความเสี่ยงสูงมาก<br>• D ผิด เพราะสลับลำดับกัน การทำอัตโนมัติก่อนปรับปรุงจะทำให้ระบบผิดพลาดเร็วขึ้น"
+  },
+  {
+    "id": 20,
+    "criteria": "4.2.6",
+    "category": "Guiding Principles",
+    "question": "What does the ITIL Guiding Principle ‘think and work holistically’ emphasize?",
+    "options": [
+      "A. Considering all components of the value system when making decisions",
+      "B. Assigning responsibility for improvements to a single team",
+      "C. Ensuring all activities result in value creation for the stakeholders",
+      "D. Automating repetitive and manual tasks"
+    ],
+    "correctAnswer": "A",
+    "rationale_th": "<b>A ถูกต้อง:</b> 'Think and work holistically' เน้นย้ำว่าไม่มีส่วนงานใดทำงานอยู่อย่างโดดเดี่ยว การตัดสินใจต้องพิจารณาองค์ประกอบทั้งหมดของระบบคุณค่าและมิติทั้ง 4 ร่วมกันแบบบูรณาการ (Ref 5.2.5)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• B ผิด เพราะขัดกับหลักองค์รวม การโยนงานให้ทีมเดียวสะท้อนการทำงานแบบ Silo<br>• C ผิด เพราะเป็นการอธิบายหลัก Focus on value<br>• D ผิด เพราะเป็นการอธิบายหลัก Optimize and automate"
+  },
+  {
+    "id": 21,
+    "criteria": "4.2.5",
+    "category": "Guiding Principles",
+    "question": "How should the ITIL Guiding Principle ‘collaborate and promote visibility’ be applied?",
+    "options": [
+      "A. By involving stakeholders and sharing information with them",
+      "B. By limiting communication to management only",
+      "C. By reusing existing processes wherever possible",
+      "D. By capturing feedback after each iteration"
+    ],
+    "correctAnswer": "A",
+    "rationale_th": "<b>A ถูกต้อง:</b> 'Collaborate and promote visibility' ปฏิบัติได้โดยการดึงผู้มีส่วนได้ส่วนเสียที่เหมาะสมเข้ามาร่วมมือ และแบ่งปันข้อมูลอย่างเปิดเผยโปร่งใส เพื่อสร้างความเข้าใจที่ถูกต้องและการตัดสินใจที่ดี (Ref 5.2.4)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• B ผิด เพราะการจำกัดข้อมูลเฉพาะผู้บริหารคือการสร้าง Silo ขัดกับหลักการนี้<br>• C ผิด เพราะตรงกับหลัก Start where you are<br>• D ผิด เพราะตรงกับหลัก Progress iteratively with feedback"
+  },
+  {
+    "id": 22,
+    "criteria": "4.2.9",
+    "category": "Guiding Principles",
+    "question": "How does ITIL describe the way the Guiding Principles should be applied together?",
+    "options": [
+      "A. They should be applied one at a time in a fixed sequence",
+      "B. They replace the need for governance and management practices",
+      "C. They should be applied independent of each other",
+      "D. They should be used collectively and balanced based on the situation"
+    ],
+    "correctAnswer": "D",
+    "rationale_th": "<b>D ถูกต้อง:</b> หลักการชี้นำทั้ง 7 ไม่มีลำดับขั้นตายตัว (No hierarchy/sequence) แต่ให้ใช้ร่วมกันและปรับน้ำหนักความสมดุลตามบริบทของสถานการณ์ (Used collectively and balanced based on the situation) (Ref 5.2.8)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• A ผิด เพราะไม่ได้กำหนดให้ใช้เรียงตามลำดับตายตัว<br>• B ผิด เพราะไม่ได้มาแทนที่ Governance หรือ Practices แต่ใช้สนับสนุนการตัดสินใจ<br>• C ผิด เพราะหลักการแต่ละข้อส่งผลกระทบและพึ่งพาอาศัยซึ่งกันและกัน (Interdependent)"
+  },
+  {
+    "id": 23,
+    "criteria": "4.3.2",
+    "category": "Governance",
+    "question": "Which governance activity is focused on ensuring adherence with policies and strategic direction?",
+    "options": [
+      "A. Evaluate",
+      "B. Direct",
+      "C. Monitor",
+      "D. Discover"
+    ],
+    "correctAnswer": "C",
+    "rationale_th": "<b>C ถูกต้อง:</b> ในกิจกรรมการกำกับดูแล EDM กิจกรรม 'Monitor' มีหน้าที่ในการติดตามตรวจสอบผลการดำเนินงาน และตรวจตราให้แน่ใจว่าการปฏิบัติงานจริงเป็นไปตามนโยบายและทิศทางเชิงกลยุทธ์ (Ensuring adherence with policies and strategic direction) (Ref 5.3.1)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• A ผิด เพราะ Evaluate คือการประเมินสถานะ กลยุทธ์ และพอร์ตโฟลิโอ<br>• B ผิด เพราะ Direct คือการกำหนดทิศทาง นโยบาย และมอบหมายความรับผิดชอบ (ระวังอย่าสับสนกับ Monitor!)<br>• D ผิด เพราะ Discover เป็นกิจกรรมใน Value Chain ไม่ใช่กิจกรรมของ Governance"
+  },
+  {
+    "id": 24,
+    "criteria": "3.2.7",
+    "category": "Value Chain & Lifecycle",
+    "question": "Which of the following is a part of purpose of ‘deliver’ activity?",
+    "options": [
+      "A. Managing user onboarding",
+      "B. Monitoring support systems",
+      "C. Designing product prototypes",
+      "D. Obtaining supplier resources"
+    ],
+    "correctAnswer": "A",
+    "rationale_th": "<b>A ถูกต้อง:</b> วัตถุประสงค์ของกิจกรรม 'Deliver' คือการส่งมอบบริการแก่ผู้ใช้ รวมถึงการจัดการเริ่มต้นใช้งานของผู้ใช้ (User onboarding/offboarding), รักษามาตรฐานคุณภาพบริการ และรวบรวมฟีดแบ็ก (Ref 4.8.1)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• B ผิด เพราะการมอนิเตอร์ระบบสนับสนุนเป็นหน้าที่ของ 'Operate'<br>• C ผิด เพราะการสร้าง Prototype เป็นหน้าที่ของ 'Design'<br>• D ผิด เพราะการจัดหาทรัพยากรจากซัพพลายเออร์เป็นหน้าที่ของ 'Acquire'"
+  },
+  {
+    "id": 25,
+    "criteria": "3.2.6",
+    "category": "Value Chain & Lifecycle",
+    "question": "Which activity has the PRIMARY responsibility for maintaining and monitoring digital products and supporting systems?",
+    "options": [
+      "A. Deliver",
+      "B. Support",
+      "C. Operate",
+      "D. Transition"
+    ],
+    "correctAnswer": "C",
+    "rationale_th": "<b>C ถูกต้อง:</b> กิจกรรม 'Operate' มีหน้าที่หลักในการดูแลรักษาและเฝ้าติดตามตรวจสอบ (Maintaining and monitoring) ผลิตภัณฑ์ดิจิทัลและระบบโครงสร้างพื้นฐาน เพื่อให้ระบบทำงานได้อย่างมีเสถียรภาพและประสิทธิภาพสูงสุด (Ref 4.7.1)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• A ผิด เพราะ Deliver เน้นการให้บริการแก่ผู้ใช้และการ Onboard<br>• B ผิด เพราะ Support เน้นการรับมือและแก้ไขเหตุขัดข้อง (Incidents/Disasters) และช่วยเหลือผู้ใช้<br>• D ผิด เพราะ Transition เน้นการนำการเปลี่ยนแปลงเข้าสู่สภาพแวดล้อมใช้งานจริง"
+  },
+  {
+    "id": 26,
+    "criteria": "3.2.5",
+    "category": "Value Chain & Lifecycle",
+    "question": "Which activity ensures that new or changed products are seamlessly introduced in the live environment?",
+    "options": [
+      "A. Build",
+      "B. Transition",
+      "C. Deliver",
+      "D. Operate"
+    ],
+    "correctAnswer": "B",
+    "rationale_th": "<b>B ถูกต้อง:</b> กิจกรรม 'Transition' รับผิดชอบในการนำผลิตภัณฑ์ใหม่หรือที่ได้รับการปรับปรุงเข้าสู่สภาพแวดล้อมปฏิบัติการจริง (Live/Operational environment) อย่างราบรื่นและไร้รอยต่อ (Ref 4.6.1)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• A ผิด เพราะ Build เน้นการพัฒนาและทดสอบผลิตภัณฑ์<br>• C ผิด เพราะ Deliver ให้บริการแก่ผู้ใช้เมื่อระบบขึ้น Live แล้ว<br>• D ผิด เพราะ Operate ดูแลรักษาระบบหลังผ่านช่วง Transition เรียบร้อยแล้ว"
+  },
+  {
+    "id": 27,
+    "criteria": "3.2.8",
+    "category": "Value Chain & Lifecycle",
+    "question": "What is the purpose of the ‘support’ activity?",
+    "options": [
+      "A. To assist users and maintain service performance",
+      "B. To design service architectures",
+      "C. To build solution components",
+      "D. To discover new business opportunities"
+    ],
+    "correctAnswer": "A",
+    "rationale_th": "<b>A ถูกต้อง:</b> วัตถุประสงค์ของ 'Support' คือการช่วยเหลือผู้ใช้ (Assist users), จัดการและแก้ไขอุบัติการณ์ (Incidents/Disasters) และฟื้นคืนการทำงานปกติเพื่อให้สมรรถนะของบริการคงอยู่ตามข้อตกลง (Ref 4.9.1)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• B ผิด เพราะการออกแบบสถาปัตยกรรมเป็นของ 'Design'<br>• C ผิด เพราะการสร้างชิ้นส่วนโซลูชันเป็นของ 'Build'<br>• D ผิด เพราะการสำรวจโอกาสทางธุรกิจใหม่เป็นของ 'Discover'"
+  },
+  {
+    "id": 28,
+    "criteria": "4.4.5",
+    "category": "DevOps & Modern Engineering",
+    "question": "What distinguishes ‘continuous deployment’ from ‘continuous delivery’?",
+    "options": [
+      "A. Continuous deployment prevents frequent releases",
+      "B. Continuous delivery requires manual code integration",
+      "C. Continuous deployment automatically deploys changes to production",
+      "D. Continuous delivery eliminates testing activities"
+    ],
+    "correctAnswer": "C",
+    "rationale_th": "<b>C ถูกต้อง:</b> ITIL ชี้ให้เห็นความแตกต่างสำคัญคือ Continuous Deployment จะนำโค้ดทุกส่วนที่ผ่านการทดสอบอัตโนมัติขึ้นสู่ Production จริงโดยอัตโนมัติทันที โดยไม่ต้องรอการอนุมัติด้วยมือเพิ่มเติม (Without additional authorization) ต่างจาก Continuous Delivery ที่เตรียมโค้ดให้พร้อมปล่อยแต่ยังอาจมีขั้นตอนอนุมัติ (Ref 4.6.2)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• A ผิด เพราะ Continuous deployment ช่วยให้ปล่อยของได้บ่อยขึ้นมาก<br>• B ผิด เพราะ Continuous delivery ใช้ Continuous Integration (CI) รวมโค้ดอัตโนมัติ ไม่ใช่ใช้มือ<br>• D ผิด เพราะทั้งสองแนวทางจำเป็นต้องมีการทดสอบอย่างเข้มงวด"
+  },
+  {
+    "id": 29,
+    "criteria": "4.4.2",
+    "category": "Design & Specifications",
+    "question": "What refers to a detailed document outlining the requirements and characteristics of a product?",
+    "options": [
+      "A. Change request",
+      "B. Service request",
+      "C. Product prototype",
+      "D. Product specification"
+    ],
+    "correctAnswer": "D",
+    "rationale_th": "<b>D ถูกต้อง:</b> Product specification (ข้อกำหนดผลิตภัณฑ์) คือเอกสารรายละเอียดที่ระบุความต้องการ คุณลักษณะ ฟังก์ชัน และกรอบการทำงานของผลิตภัณฑ์หรือบริการที่จะสร้างขึ้น (Ref 4.3.1)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• A ผิด เพราะ Change request คือคำขอปรับเปลี่ยนระบบหรือบริการ<br>• B ผิด เพราะ Service request คือคำขอบริการมาตรฐานตามปกติจากผู้ใช้<br>• C ผิด เพราะ Prototype คือชิ้นงานต้นแบบจำลองที่สร้างขึ้นมาเพื่อทดสอบฟังก์ชันและการเรียนรู้"
+  },
+  {
+    "id": 30,
+    "criteria": "4.4.6",
+    "category": "Observability & SRE",
+    "question": "What does observability enable in digital product and service management?",
+    "options": [
+      "A. Understanding system behaviour through outputs such as logs, metrics, and traces",
+      "B. Ensuring changes are approved before being deployed",
+      "C. Automatically preventing incidents from occurring",
+      "D. Improving service reliability through engineering practices"
+    ],
+    "correctAnswer": "A",
+    "rationale_th": "<b>A ถูกต้อง:</b> Observability คือความสามารถในการทำความเข้าใจสภาวะและพฤติกรรมภายในของระบบที่ซับซ้อน โดยการวิเคราะห์ข้อมูลส่งออกภายนอก ได้แก่ Metrics, Logs, และ Traces (Ref 4.7.1)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• B ผิด เพราะการอนุมัติการเปลี่ยนแปลงเป็นหน้าที่ของ Change Enablement<br>• C ผิด เพราะ Observability ช่วยให้เห็นและเข้าใจระบบ แต่ไม่ได้ป้องกันอุบัติการณ์ทั้งหมดอัตโนมัติ<br>• D ผิด เพราะการปรับปรุงความเสถียรด้วยหลักวิศวกรรมเป็นเป้าหมายของ Site Reliability Engineering (SRE)"
+  },
+  {
+    "id": 31,
+    "criteria": "4.4.8",
+    "category": "Incident & Problem Management",
+    "question": "What is a problem?",
+    "options": [
+      "A. An unplanned service interruption",
+      "B. Root cause of one or more incidents",
+      "C. A service access request from users",
+      "D. An incident that impacts critical services"
+    ],
+    "correctAnswer": "B",
+    "rationale_th": "<b>B ถูกต้อง:</b> ตามนิยาม ITIL ปัญหา (Problem) คือ 'สาเหตุ หรือสาเหตุที่อาจเกิดขึ้น ของอุบัติการณ์ตั้งแต่หนึ่งรายการขึ้นไป (A cause, or potential cause, of one or more incidents)' (Ref 4.9.1)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• A ผิด เพราะการขัดข้องที่ไม่ได้วางแผนคือนิยามของ 'Incident'<br>• C ผิด เพราะคำขอเข้าใช้งานบริการคือ 'Service request'<br>• D ผิด เพราะอุบัติการณ์ที่ส่งผลกระทบร้ายแรงต่อธุรกิจคือ 'Major incident'"
+  },
+  {
+    "id": 32,
+    "criteria": "4.4.11",
+    "category": "Value Chain Metrics",
+    "question": "An organization wants to evaluate how well the ‘transition’ value chain activity is performing. Which metric would BEST support this evaluation?",
+    "options": [
+      "A. Success rate of releases deployed into the live environment",
+      "B. Number of ideas generated for new services",
+      "C. Average cost per service request",
+      "D. Percentage of value streams mapped"
+    ],
+    "correctAnswer": "A",
+    "rationale_th": "<b>A ถูกต้อง:</b> กิจกรรม 'Transition' มีหน้าที่นำระบบขึ้นใช้งานจริง ดังนั้นตัวชี้วัดความสำเร็จที่ตรงที่สุดคือ 'อัตราความสำเร็จของการปล่อยเวอร์ชันขึ้นสู่สภาพแวดล้อมจริง (Success rate of releases deployed into the live environment)' และจำนวนข้อผิดพลาดจากการเปลี่ยนผ่าน (Ref 4.6.2, Table 4.5)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• B ผิด เพราะการระดมไอเดียเป็นตัวชี้วัดของ 'Discover'<br>• C ผิด เพราะต้นทุนต่อคำขอบริการเป็นตัวชี้วัดของ 'Deliver'<br>• D ผิด เพราะเปอร์เซ็นต์การทำแผนผังเป็นเรื่องของ Value stream mapping ไม่ใช่ตัวชี้วัดของ Transition"
+  },
+  {
+    "id": 33,
+    "criteria": "4.4.11",
+    "category": "Value Chain Metrics",
+    "question": "Which metric is MOST appropriate for assessing the success of the ‘build’ value chain activity?",
+    "options": [
+      "A. Number of incidents resolved within agreed targets",
+      "B. Customer satisfaction score after service delivery",
+      "C. Percentage of service requests fulfilled on first contact",
+      "D. Quality of the product solutions"
+    ],
+    "correctAnswer": "D",
+    "rationale_th": "<b>D ถูกต้อง:</b> กิจกรรม 'Build' เน้นการพัฒนา รวบรวม และทดสอบผลิตภัณฑ์ ดังนั้นตัวชี้วัดหลักที่สะท้อนความสำเร็จโดยตรงคือ 'คุณภาพของโซลูชันผลิตภัณฑ์ (Quality of the product solutions)' (Ref 4.5.2, Table 4.4)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• A ผิด เพราะการแก้เหตุขัดข้องตามเป้าหมายเป็นของ 'Support' / Incident Management<br>• B ผิด เพราะความพึงพอใจหลังส่งมอบบริการเป็นของ 'Deliver'<br>• C ผิด เพราะ First-contact resolution เป็นตัวชี้วัดของ Service Desk และ 'Deliver'"
+  },
+  {
+    "id": 34,
+    "criteria": "4.4.12",
+    "category": "Value Chain & Purpose",
+    "question": "How do value chain activities support an organization’s purpose?",
+    "options": [
+      "A. By turning strategic intent into coordinated workflows that enable outcomes for stakeholders",
+      "B. By defining governance controls and decision-making authority across management levels",
+      "C. By standardizing operational procedures aligning them to the organization's purpose to improve consistency and efficiency",
+      "D. By setting predefined service quality targets to direct what the operational workflows should achieve"
+    ],
+    "correctAnswer": "A",
+    "rationale_th": "<b>A ถูกต้อง:</b> กิจกรรมใน Value Chain ทำหน้าที่แปลงเจตนาเชิงกลยุทธ์ (Strategic intent) ให้กลายเป็นเวิร์กโฟลว์การทำงานที่ประสานกัน เพื่อขับเคลื่อนผลลัพธ์ (Outcomes) และคุณค่าให้แก่ผู้มีส่วนได้ส่วนเสียตามวัตถุประสงค์ขององค์กร (Ref 4.8.2)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• B ผิด เพราะการกำหนดอำนาจตัดสินใจและการควบคุมเป็นบทบาทของ Governance<br>• C ผิด เพราะกิจกรรม Value Chain มีความยืดหยุ่นปรับใช้ได้หลากหลาย ไม่ได้บังคับมาตรฐานขั้นตอนตายตัว<br>• D ผิด เพราะการกำหนดเป้าหมายคุณภาพบริการเป็นบทบาทของ Service Level Management และ Governance"
+  },
+  {
+    "id": 35,
+    "criteria": "4.4.12",
+    "category": "Practices & Value Chain",
+    "question": "Why are management practices important for value chain activities?",
+    "options": [
+      "A. They define the organization’s purpose and strategy",
+      "B. They enable value chain activities by providing the required capabilities",
+      "C. They ensure activities are performed in a fixed order",
+      "D. They replace value chain activities with standardized processes"
+    ],
+    "correctAnswer": "B",
+    "rationale_th": "<b>B ถูกต้อง:</b> Management Practices รวมทรัพยากรจาก 4 มิติเข้าด้วยกัน เพื่อจัดหาขีดความสามารถ (Capabilities) และทักษะที่จำเป็นในการขับเคลื่อนกิจกรรมต่างๆ ของ Value Chain ให้สำเร็จอย่างมีประสิทธิผล (Ref 1.3, Figure 1.9)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• A ผิด เพราะวัตถุประสงค์และกลยุทธ์กำหนดโดยผู้นำองค์กรและการกำกับดูแล (Governance)<br>• C ผิด เพราะกิจกรรม Value chain ไม่ได้ทำตามลำดับตายตัว<br>• D ผิด เพราะแนวปฏิบัติไม่ได้มาแทนที่กิจกรรมใน Value chain แต่เข้ามาสนับสนุน"
+  },
+  {
+    "id": 36,
+    "criteria": "4.5.4",
+    "category": "Practice Guides",
+    "question": "Why do ITIL Official Practice Guides follow a standardized structure across all practices?",
+    "options": [
+      "A. To make it easier for organizations to understand and apply different practices",
+      "B. To ensure all practices are implemented in the same sequence",
+      "C. To enforce uniform tooling and technology choices",
+      "D. To limit the flexibility of practice adoption"
+    ],
+    "correctAnswer": "A",
+    "rationale_th": "<b>A ถูกต้อง:</b> คู่มือ ITIL Practice Guides มีโครงสร้างที่เป็นแบบแผนมาตรฐานเดียวกัน เพื่อช่วยให้ผู้อ่านสามารถทำความเข้าใจ เปรียบเทียบ และนำแนวปฏิบัติต่างๆ ไปปรับใช้อย่างสม่ำเสมอและง่ายดาย (Ref 5.5)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• B ผิด เพราะไม่ได้บังคับลำดับการนำไปใช้ ทุกองค์กรเลือกปรับใช้ตามความจำเป็น<br>• C ผิด เพราะ ITIL เป็นอิสระจากเทคโนโลยี (Tool-agnostic) ไม่ได้บังคับเครื่องมือ<br>• D ผิด เพราะ ITIL เน้นย้ำความยืดหยุ่นในการประยุกต์ ไม่ได้จำกัดความคล่องตัว"
+  },
+  {
+    "id": 37,
+    "criteria": "4.5.3",
+    "category": "Practice Guides",
+    "question": "How do ITIL Official Practice Guides benefit organizations managing digital products and services?",
+    "options": [
+      "A. By prescribing mandatory tools and technologies for service management",
+      "B. By separating product management guidance from service management guidance",
+      "C. By supporting organizations in developing product and service management capabilities",
+      "D. By defining a fixed maturity level that organizations must achieve"
+    ],
+    "correctAnswer": "C",
+    "rationale_th": "<b>C ถูกต้อง:</b> คู่มือแนวปฏิบัติของ ITIL มีประโยชน์หลักในการให้คำแนะนำเชิงปฏิบัติการ เพื่อช่วยให้องค์กรพัฒนาขีดความสามารถ (Capabilities) ในการบริหารจัดการผลิตภัณฑ์และบริการดิจิทัลได้อย่างครอบคลุม (Ref 1.2.1)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• A ผิด เพราะคู่มือไม่ได้บังคับเครื่องมือหรือซอฟต์แวร์เฉพาะ<br>• B ผิด เพราะ ITIL ผสานรวมการจัดการผลิตภัณฑ์และบริการเข้าด้วยกัน ไม่ได้แยกขาด<br>• D ผิด เพราะ ITIL ไม่ได้กำหนดระดับวุฒิภาวะ (Maturity level) ตายตัวที่ทุกองค์กรต้องไปให้ถึงเท่ากัน"
+  },
+  {
+    "id": 38,
+    "criteria": "4.6.2",
+    "category": "Continual Improvement",
+    "question": "Why does the ITIL Continual Improvement Model begin by defining the vision?",
+    "options": [
+      "A. To document current performance metrics before changes are made",
+      "B. To ensure improvement efforts are aligned with the organization’s objectives",
+      "C. To identify improvement actions and assign responsibilities",
+      "D. To confirm whether previous improvement initiatives were successful"
+    ],
+    "correctAnswer": "B",
+    "rationale_th": "<b>B ถูกต้อง:</b> ขั้นตอนแรก 'What is the vision?' มีจุดประสงค์เพื่อให้มั่นใจว่าความคิดริเริ่มในการปรับปรุงทุกอย่างมีความสอดคล้องและเชื่อมโยงกับเป้าหมาย วัตถุประสงค์ และลำดับความสำคัญขององค์กร (Ref 5.6.1.1)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• A ผิด เพราะการวัดค่าประสิทธิภาพปัจจุบันเป็นขั้นตอนที่ 2 'Where are we now?'<br>• C ผิด เพราะการกำหนดแผนงานและผู้รับผิดชอบเป็นขั้นตอนที่ 4 'How do we get there?' และ 5 'Take action'<br>• D ผิด เพราะการตรวจสอบผลสำเร็จเป็นการประเมินในขั้นตอนที่ 6 'Are we getting there?'"
+  },
+  {
+    "id": 39,
+    "criteria": "5.1.1",
+    "category": "Value Streams",
+    "question": "How does an enabling value stream contribute to value creation?",
+    "options": [
+      "A. By supporting the effective operation of core value streams",
+      "B. By replacing the need for core value streams",
+      "C. By defining customer outcomes and service expectations",
+      "D. By acting as the primary interface with service consumers"
+    ],
+    "correctAnswer": "A",
+    "rationale_th": "<b>A ถูกต้อง:</b> Enabling Value Stream ส่งมอบคุณค่าให้แก่ลูกค้าภายในองค์กร เพื่อสนับสนุนให้สายธารคุณค่าหลัก (Core Value Streams) สามารถดำเนินงานได้อย่างมีประสิทธิภาพและส่งมอบคุณค่าสู่ลูกค้าภายนอกได้ (Ref 6.2)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• B ผิด เพราะ Enabling value stream ไม่ได้มาแทนที่ Core value stream แต่อยู่เพื่อสนับสนุน<br>• C และ D ผิด เพราะการติดต่อผู้บริโภคภายนอกและกำหนดผลลัพธ์ลูกค้าโดยตรงเป็นบทบาทของ Core Value Stream"
+  },
+  {
+    "id": 40,
+    "criteria": "5.3.2",
+    "category": "Value Streams",
+    "question": "What does ITIL emphasize as a key difference between ‘value stream mapping’ and ‘value stream management’?",
+    "options": [
+      "A. Mapping identifies how value flows, while management ensures the value stream performs effectively over time",
+      "B. Mapping is used only for reporting, while management is used only for auditing",
+      "C. Mapping applies to services, while management applies to products",
+      "D. Mapping focuses on cost control, while management focuses on risk avoidance"
+    ],
+    "correctAnswer": "A",
+    "rationale_th": "<b>A ถูกต้อง:</b> Value Stream Mapping เป็นเทคนิคในการระบุ วาดแผนผัง และวิเคราะห์การไหลของคุณค่าในระยะสั้นเพื่อหาจุดปรับปรุง ส่วน Value Stream Management เป็นกิจกรรมการบริหารจัดการอย่างต่อเนื่องในระยะยาวเพื่อรักษาและเพิ่มประสิทธิภาพของสายธารคุณค่านั้นตลอดเวลา (Ref 6.3, 6.4)<br><br><b>ตัวเลือกอื่นไม่ถูกต้อง:</b><br>• B ผิด เพราะทั้งสองไม่ได้มีไว้แค่รายงานหรือตรวจสอบบัญชี แต่มีไว้เพื่อสร้างคุณค่าและลดความสูญเปล่า<br>• C ผิด เพราะทั้งสองใช้ร่วมกันทั้งกับผลิตภัณฑ์และบริการดิจิทัล<br>• D ผิด เพราะทั้งสองไม่ได้แยกมุ่งเน้นต้นทุนกับความเสี่ยงออกจากกันแบบนั้น"
+  }
+];
+
+    // State Variables
+    let currentQuestionIndex = 0;
+    let userAnswers = {}; // { qId: 'A' }
+    let flaggedQuestions = new Set();
+    let currentMode = 'practice'; // 'practice' | 'mock' | 'review'
+    let isExamSubmitted = false;
+    let timerInterval = null;
+    let timeRemaining = 60 * 60; // 60 minutes in seconds
+    let timeSpentSeconds = 0;
+    let activeReviewFilter = null; // null | 'incorrect'
+
+    // Init
+    document.addEventListener('DOMContentLoaded', () => {
+      renderQuestionGrid();
+      loadQuestion(0);
+      updateStats();
+    });
+
+    function setMode(mode) {
+      if (isExamSubmitted && mode !== 'review') {
+        if (!confirm('คุณต้องการรีเซ็ตเพื่อเริ่มทำแบบทดสอบใหม่หรือไม่?')) return;
+        restartExam();
+      }
+      currentMode = mode;
+      document.getElementById('btnPracticeMode').classList.toggle('active', mode === 'practice');
+      document.getElementById('btnMockMode').classList.toggle('active', mode === 'mock');
+      
+      const timerBadge = document.getElementById('timerBadge');
+      const btnCheckAnswer = document.getElementById('btnCheckAnswer');
+      const modeIndicator = document.getElementById('modeIndicatorLabel');
+
+      if (mode === 'mock') {
+        modeIndicator.textContent = 'Mock Exam Mode (Timed)';
+        timerBadge.style.display = 'inline-flex';
+        btnCheckAnswer.style.display = 'none';
+        startTimer();
+      } else {
+        modeIndicator.textContent = 'Practice Mode (Immediate Feedback)';
+        timerBadge.style.display = 'none';
+        btnCheckAnswer.style.display = 'inline-flex';
+        clearInterval(timerInterval);
+      }
+
+      loadQuestion(currentQuestionIndex);
+    }
+
+    function startTimer() {
+      clearInterval(timerInterval);
+      timeRemaining = 60 * 60;
+      timeSpentSeconds = 0;
+      updateTimerDisplay();
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timeSpentSeconds++;
+        updateTimerDisplay();
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert('หมดเวลาสอบ 60 นาทีแล้ว! ระบบจะทำการส่งข้อสอบและสรุปผลคะแนนโดยอัตโนมัติ');
+          finishAndGradeExam();
+        }
+      }, 1000);
+    }
+
+    function updateTimerDisplay() {
+      const minutes = Math.floor(timeRemaining / 60);
+      const seconds = timeRemaining % 60;
+      const formatted = String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
+      document.getElementById('timerText').textContent = formatted;
+    }
+
+    function renderQuestionGrid() {
+      const grid = document.getElementById('questionGrid');
+      grid.innerHTML = '';
+      questions.forEach((q, idx) => {
+        const item = document.createElement('div');
+        item.className = 'grid-item' + (idx === currentQuestionIndex ? ' current' : '');
+        item.id = 'grid-item-' + q.id;
+        item.textContent = q.id;
+        item.onclick = () => {
+          currentQuestionIndex = idx;
+          loadQuestion(idx);
+        };
+        grid.appendChild(item);
+      });
+    }
+
+    function loadQuestion(index) {
+      currentQuestionIndex = index;
+      const q = questions[index];
+
+      // Update Header Badges
+      document.getElementById('qNumBadge').textContent = 'Question ' + q.id + ' of ' + questions.length;
+      document.getElementById('criteriaBadge').textContent = 'Criteria: ' + q.criteria;
+      document.getElementById('categoryBadge').textContent = q.category;
+      document.getElementById('questionText').textContent = q.question;
+
+      // Update Flag state
+      const btnFlag = document.getElementById('btnFlag');
+      const isFlagged = flaggedQuestions.has(q.id);
+      btnFlag.classList.toggle('active', isFlagged);
+      document.getElementById('flagText').textContent = isFlagged ? 'Flagged (ปักหมุดแล้ว)' : 'Flag for Review';
+
+      // Render Options
+      const optionsList = document.getElementById('optionsList');
+      optionsList.innerHTML = '';
+      const selectedAns = userAnswers[q.id];
+
+      q.options.forEach((optText) => {
+        const optLetter = optText.charAt(0);
+        const optItem = document.createElement('label');
+        optItem.className = 'option-item' + (selectedAns === optLetter ? ' selected' : '');
+        optItem.id = 'option-' + q.id + '-' + optLetter;
+
+        const radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.name = 'question_' + q.id;
+        radio.value = optLetter;
+        radio.checked = selectedAns === optLetter;
+        radio.onchange = () => selectOption(q.id, optLetter);
+
+        const labelSpan = document.createElement('span');
+        labelSpan.className = 'option-label';
+        labelSpan.textContent = optText;
+
+        optItem.appendChild(radio);
+        optItem.appendChild(labelSpan);
+        optionsList.appendChild(optItem);
+      });
+
+      // Update Nav Buttons
+      document.getElementById('btnPrev').disabled = index === 0;
+      document.getElementById('btnNext').disabled = index === questions.length - 1;
+
+      // Rationale Box handling
+      const rationaleBox = document.getElementById('rationaleBox');
+      if (isExamSubmitted || (currentMode === 'practice' && selectedAns && userAnswers[q.id + '_checked'])) {
+        showRationale(q);
+      } else {
+        rationaleBox.classList.remove('visible');
+      }
+
+      // Update Grid Current
+      document.querySelectorAll('.grid-item').forEach(el => el.classList.remove('current'));
+      const activeGrid = document.getElementById('grid-item-' + q.id);
+      if (activeGrid) activeGrid.classList.add('current');
+    }
+
+    function selectOption(qId, letter) {
+      userAnswers[qId] = letter;
+      
+      // Update UI option items
+      const q = questions.find(item => item.id === qId);
+      ['A', 'B', 'C', 'D'].forEach(l => {
+        const itemEl = document.getElementById('option-' + qId + '-' + l);
+        if (itemEl) itemEl.classList.toggle('selected', l === letter);
+      });
+
+      // Update Grid item
+      const gridEl = document.getElementById('grid-item-' + qId);
+      if (gridEl) gridEl.classList.add('answered');
+
+      updateStats();
+
+      // In Practice mode, automatically mark ready or check
+      if (currentMode === 'practice') {
+        userAnswers[qId + '_checked'] = false; // Reset checked until user clicks check or can check directly
+        document.getElementById('rationaleBox').classList.remove('visible');
+      }
+    }
+
+    function toggleFlag() {
+      const qId = questions[currentQuestionIndex].id;
+      if (flaggedQuestions.has(qId)) {
+        flaggedQuestions.delete(qId);
+      } else {
+        flaggedQuestions.add(qId);
+      }
+      const gridEl = document.getElementById('grid-item-' + qId);
+      if (gridEl) gridEl.classList.toggle('flagged', flaggedQuestions.has(qId));
+      loadQuestion(currentQuestionIndex);
+      updateStats();
+    }
+
+    function navigatePrev() {
+      if (currentQuestionIndex > 0) {
+        loadQuestion(currentQuestionIndex - 1);
+      }
+    }
+
+    function navigateNext() {
+      if (currentQuestionIndex < questions.length - 1) {
+        loadQuestion(currentQuestionIndex + 1);
+      }
+    }
+
+    function checkCurrentAnswer() {
+      const q = questions[currentQuestionIndex];
+      const selected = userAnswers[q.id];
+      if (!selected) {
+        alert('กรุณาเลือกคำตอบ A, B, C หรือ D ก่อนกดตรวจคำตอบ');
+        return;
+      }
+      userAnswers[q.id + '_checked'] = true;
+      showRationale(q);
+    }
+
+    function showRationale(q) {
+      const selected = userAnswers[q.id];
+      const isCorrect = selected === q.correctAnswer;
+      const rationaleBox = document.getElementById('rationaleBox');
+      const rationaleTitle = document.getElementById('rationaleTitle');
+      const rationaleContent = document.getElementById('rationaleContent');
+
+      // Highlight options
+      ['A', 'B', 'C', 'D'].forEach(l => {
+        const itemEl = document.getElementById('option-' + q.id + '-' + l);
+        if (!itemEl) return;
+        itemEl.classList.remove('correct-reveal', 'incorrect-reveal');
+        if (l === q.correctAnswer) {
+          itemEl.classList.add('correct-reveal');
+        } else if (l === selected && !isCorrect) {
+          itemEl.classList.add('incorrect-reveal');
+        }
+      });
+
+      // Update Grid Status
+      const gridEl = document.getElementById('grid-item-' + q.id);
+      if (gridEl) {
+        gridEl.classList.remove('correct', 'incorrect');
+        gridEl.classList.add(isCorrect ? 'correct' : 'incorrect');
+      }
+
+      rationaleTitle.className = 'rationale-title ' + (isCorrect ? 'success' : 'danger');
+      rationaleTitle.innerHTML = isCorrect 
+        ? '✓ ถูกต้อง! (Correct: ' + q.correctAnswer + ')' 
+        : '✗ ตอบผิด! คำตอบที่ถูกต้องคือ ' + q.correctAnswer + ' (คุณเลือก ' + (selected || 'ยังไม่ได้ตอบ') + ')';
+
+      rationaleContent.innerHTML = q.rationale_th;
+      rationaleBox.classList.add('visible');
+    }
+
+    function updateStats() {
+      const answeredCount = Object.keys(userAnswers).filter(k => !k.endsWith('_checked')).length;
+      const remainingCount = questions.length - answeredCount;
+      const flaggedCount = flaggedQuestions.size;
+      const percent = Math.round((answeredCount / questions.length) * 100);
+
+      document.getElementById('statAnswered').textContent = answeredCount;
+      document.getElementById('statRemaining').textContent = remainingCount;
+      document.getElementById('statFlagged').textContent = flaggedCount;
+
+      document.getElementById('progressText').textContent = 'Progress: ' + answeredCount + ' / ' + questions.length + ' Questions';
+      document.getElementById('progressPercent').textContent = percent + '%';
+      document.getElementById('progressBarFill').style.width = percent + '%';
+    }
+
+    function confirmSubmitExam() {
+      const answeredCount = Object.keys(userAnswers).filter(k => !k.endsWith('_checked')).length;
+      const unansweredCount = questions.length - answeredCount;
+      document.getElementById('modalAnsweredCount').textContent = answeredCount;
+      document.getElementById('modalUnansweredCount').textContent = unansweredCount;
+      document.getElementById('modalFlaggedCount').textContent = flaggedQuestions.size;
+
+      document.getElementById('modalConfirmView').style.display = 'block';
+      document.getElementById('modalScoreboardView').style.display = 'none';
+      document.getElementById('modalBackdrop').classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('modalBackdrop').classList.remove('open');
+    }
+
+    function finishAndGradeExam() {
+      clearInterval(timerInterval);
+      isExamSubmitted = true;
+      currentMode = 'review';
+
+      let score = 0;
+      const categoryStats = {};
+
+      questions.forEach(q => {
+        if (!categoryStats[q.category]) {
+          categoryStats[q.category] = { total: 0, correct: 0 };
+        }
+        categoryStats[q.category].total++;
+
+        const isCorrect = userAnswers[q.id] === q.correctAnswer;
+        if (isCorrect) {
+          score++;
+          categoryStats[q.category].correct++;
+        }
+
+        // Color grid items
+        const gridEl = document.getElementById('grid-item-' + q.id);
+        if (gridEl) {
+          gridEl.classList.remove('correct', 'incorrect');
+          gridEl.classList.add(isCorrect ? 'correct' : 'incorrect');
+        }
+      });
+
+      const passThreshold = 26; // 65% of 40
+      const isPass = score >= passThreshold;
+      const percent = ((score / questions.length) * 100).toFixed(1);
+
+      // Scorebox rendering
+      const summaryBox = document.getElementById('scoreSummaryBox');
+      summaryBox.className = 'score-summary ' + (isPass ? 'pass' : 'fail');
+
+      const badge = document.getElementById('scoreBadge');
+      badge.className = 'score-badge ' + (isPass ? 'pass' : 'fail');
+      badge.textContent = isPass ? 'PASS (ผ่านการสอบ)' : 'FAIL (ไม่ผ่านเกณฑ์)';
+
+      const scoreNum = document.getElementById('scoreNumber');
+      scoreNum.className = 'score-number ' + (isPass ? 'pass' : 'fail');
+      scoreNum.textContent = score + ' / ' + questions.length;
+
+      const mins = Math.floor(timeSpentSeconds / 60);
+      const secs = timeSpentSeconds % 60;
+      document.getElementById('scorePercentageText').textContent = 
+        'คะแนน: ' + percent + '% (เกณฑ์ผ่าน 65% หรือ 26 ข้อ) • ใช้เวลา: ' + mins + ' นาที ' + secs + ' วินาที';
+
+      // Category breakdown table
+      const tbody = document.getElementById('categoryBreakdownTbody');
+      tbody.innerHTML = '';
+      Object.keys(categoryStats).forEach(cat => {
+        const item = categoryStats[cat];
+        const catPercent = Math.round((item.correct / item.total) * 100);
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><strong>${cat}</strong></td>
+          <td>${item.total} ข้อ</td>
+          <td>${item.correct} ข้อ (${catPercent}%)</td>
+          <td style="color: ${catPercent >= 65 ? '#15803d' : '#dc2626'}; font-weight: 700;">
+            ${catPercent >= 65 ? '✓ แข็งแกร่ง' : '⚠️ ควรทบทวนเพิ่ม'}
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      document.getElementById('modalConfirmView').style.display = 'none';
+      document.getElementById('modalScoreboardView').style.display = 'block';
+      document.getElementById('modalBackdrop').classList.add('open');
+
+      // Refresh current question in review mode
+      loadQuestion(currentQuestionIndex);
+    }
+
+    function reviewExam(filter) {
+      closeModal();
+      activeReviewFilter = filter;
+      const resetBtn = document.getElementById('btnReviewFilterReset');
+      if (filter === 'incorrect') {
+        resetBtn.style.display = 'inline-flex';
+        resetBtn.textContent = 'Showing Incorrect Only (Click to Clear)';
+        // Jump to first incorrect question
+        const firstWrong = questions.findIndex(q => userAnswers[q.id] !== q.correctAnswer);
+        if (firstWrong !== -1) {
+          loadQuestion(firstWrong);
+        } else {
+          alert('ยอดเยี่ยมมาก! คุณไม่มีข้อที่ตอบผิดเลย');
+        }
+      } else {
+        resetBtn.style.display = 'none';
+        loadQuestion(0);
+      }
+    }
+
+    function clearReviewFilter() {
+      activeReviewFilter = null;
+      document.getElementById('btnReviewFilterReset').style.display = 'none';
+      loadQuestion(currentQuestionIndex);
+    }
+
+    function restartExam() {
+      userAnswers = {};
+      flaggedQuestions.clear();
+      isExamSubmitted = false;
+      currentQuestionIndex = 0;
+      closeModal();
+      setMode('practice');
+      renderQuestionGrid();
+      loadQuestion(0);
+      updateStats();
+    }
+  </script>
+</body>
+</html>
