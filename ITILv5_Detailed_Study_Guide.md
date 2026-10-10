@@ -111,19 +111,12 @@
 
 คุณภาพบริการ (Service Quality) ใน ITIL 5 ถูกวัดผ่าน **Service Level Metrics 4 หมวดหมู่** ดังนี้:
 
-```
-                            ┌──────────────────────────────────────────┐
-                            │   Service Quality / Service Metrics      │
-                            └────────────────────┬─────────────────────┘
-                                                 │
-        ┌─────────────────────────┬──────────────┴───────────┬─────────────────────────┐
-        ▼                         ▼                          ▼                         ▼
-┌───────────────┐         ┌───────────────┐          ┌───────────────┐         ┌───────────────┐
-│    Utility    │         │   Warranty    │          │Sustainability │         │User Experience│
-│Fit for Purpose│         │  Fit for Use  │          │Triple Bottom  │         │   (UX)        │
-│(What it does) │         │(How it works) │          │  Line         │         │Emotional &    │
-│               │         │               │          │               │         │Functional     │
-└───────────────┘         └───────────────┘          └───────────────┘         └───────────────┘
+```mermaid
+graph TD
+    SQ["🎯 Service Quality / Service Level Metrics"] --> U["⚙️ Utility<br/><b>Fit for Purpose</b><br/>(What it does)<br/><i>OR condition</i>"]
+    SQ --> W["🛡️ Warranty<br/><b>Fit for Use</b><br/>(How it works)<br/><i>AND condition (ครบ 4 มิติ)</i>"]
+    SQ --> S["🌱 Sustainability<br/><b>Triple Bottom Line</b><br/>(ESG: Env, Social, Econ)"]
+    SQ --> UX["💫 User Experience (UX)<br/><b>Perception & Feeling</b><br/>(Functional & Emotional)"]
 ```
 
 ### 1) Utility (อรรถประโยชน์) – "Fit for Purpose"
@@ -170,19 +163,11 @@
 
 ในความสัมพันธ์ของบริการ ผู้บริโภคบริการ (Service Consumer) จะแบ่งบทบาทออกเป็น 3 บทบาทหลักอย่างชัดเจน (ซึ่งบุคคลคนเดียวอาจทำหลายบทบาทพร้อมกัน หรือแยกคนละคนก็ได้):
 
-```
-                   ┌──────────────────────────────────────┐
-                   │    Service Consumer Roles            │
-                   └──────────────────┬───────────────────┘
-                                      │
-         ┌────────────────────────────┼────────────────────────────┐
-         ▼                            ▼                            ▼
-  ┌──────────────┐             ┌──────────────┐             ┌──────────────┐
-  │   Sponsor    │             │   Customer   │             │     User     │
-  │Authorizes    │             │Defines       │             │Uses service  │
-  │Budget        │             │Requirements &│             │on day-to-day │
-  │(ผู้อนุมัติงบ)  │             │Accountable   │             │basis (ผู้ใช้)│
-  └──────────────┘             └──────────────┘             └──────────────┘
+```mermaid
+graph TD
+    SCR["👥 Service Consumer Roles"] --> SP["💰 Sponsor<br/><b>Authorizes Budget</b><br/>(ผู้อนุมัติงบประมาณและเงินทุน)"]
+    SCR --> CS["📋 Customer<br/><b>Defines Requirements</b><br/>& Accountable for Outcomes (ลูกค้า)"]
+    SCR --> US["👤 User<br/><b>Uses Services</b><br/>on a day-to-day basis (ผู้ใช้บริการ)"]
 ```
 
 1. **Sponsor (ผู้สนับสนุนงบประมาณ):**
@@ -206,13 +191,11 @@
 
 **Service Offering** คือแพ็กเกจคำอธิบายอย่างเป็นทางการที่ผู้ให้บริการจัดทำขึ้นเพื่อนำเสนอแก่ผู้บริโภค ซึ่งประกอบด้วยองค์ประกอบย่อย 3 ประเภท:
 
-```
-  ┌────────────────────────────────────────────────────────────────────────┐
-  │                      Service Offering Components                       │
-  ├───────────────────────┬────────────────────────┬───────────────────────┤
-  │    1. Goods           │ 2. Access to Resources │   3. Service Actions  │
-  │ (การโอนกรรมสิทธิ์สินค้า) │  (การให้สิทธิ์เข้าใช้)   │ (การลงมือปฏิบัติการบริการ) │
-  └───────────────────────┴────────────────────────┴───────────────────────┘
+```mermaid
+graph TD
+    SO["🎁 Service Offering Components"] --> G["📦 1. Goods<br/><b>โอนกรรมสิทธิ์สินค้า</b><br/>(Ownership Transferred)"]
+    SO --> AR["🔑 2. Access to Resources<br/><b>ให้สิทธิ์เข้าใช้ทรัพยากร</b><br/>(No Ownership Transfer)"]
+    SO --> SA["🤝 3. Service Actions<br/><b>การลงมือปฏิบัติการบริการ</b><br/>(Provider Execution)"]
 ```
 
 1. **Goods (การโอนย้ายกรรมสิทธิ์สินค้า):**
@@ -249,17 +232,12 @@
 
 เพื่อให้การสร้างคุณค่ามีประสิทธิผล องค์กรต้องมองภาพรวมแบบองค์รวม (Holistic Approach) ครอบคลุมทั้ง 4 มิติ หากมองข้ามมิติใดมิติหนึ่ง บริการอาจล้มเหลวได้:
 
-```
-               ┌───────────────────────────────────────────────┐
-               │    The Four Dimensions of Service Management  │
-               └───────────────────────┬───────────────────────┘
-                                       │
-     ┌───────────────────┬─────────────┴─────────────┬───────────────────┐
-     ▼                   ▼                           ▼                   ▼
-┌──────────────┐  ┌──────────────┐            ┌──────────────┐    ┌──────────────┐
-│Organizations │  │ Information  │            │ Partners     │    │Value Streams │
-│  & People    │  │& Technology  │            │ & Suppliers  │    │ & Processes  │
-└──────────────┘  └──────────────┘            └──────────────┘    └──────────────┘
+```mermaid
+graph TD
+    FD["🏛️ The Four Dimensions of Service Management"] --> OP["👥 Organizations & People<br/>โครงสร้าง, บทบาทหน้าที่, วัฒนธรรม, ทักษะ"]
+    FD --> IT["💻 Information & Technology<br/>ระบบ, สถาปัตยกรรม, ความปลอดภัย, AI"]
+    FD --> PS["🤝 Partners & Suppliers<br/>คู่ค้าภายนอก, สัญญาจัดจ้าง, Supply Chain"]
+    FD --> VP["🔄 Value Streams & Processes<br/>สายธารคุณค่า, ขั้นตอน, เวิร์กโฟลว์"]
 ```
 
 1. **Organizations and People (องค์กรและบุคลากร):**
@@ -287,30 +265,17 @@
 
 **วัตถุประสงค์ (Purpose) ของ SVS:** แสดงให้เห็นว่าทุกองค์ประกอบและกิจกรรมทั้งหมดขององค์กรทำงานร่วมกันเป็นระบบอย่างไร เพื่อขับเคลื่อนและอำนวยความสะดวกในการสร้างคุณค่า (*To ensure that the organization continually co-creates value with all stakeholders through the use and management of products and services*).
 
-```
-                      ┌─────────────────────────────────────────┐
-                      │        ITIL Service Value System        │
-                      │                                         │
-                      │       ┌─────────────────────────┐       │
-                      │       │    Guiding Principles   │       │
-                      │       └────────────┬────────────┘       │
-                      │                    ▼                    │
-                      │       ┌─────────────────────────┐       │
-                      │       │       Governance        │       │
-                      │       └────────────┬────────────┘       │
-┌──────────────┐      │                    ▼                    │      ┌──────────────┐
-│ Opportunity  ├─────►│       ┌─────────────────────────┐       ├─────►│    Value     │
-│      &       │      │       │   Service Value Chain   │       │      │  (คุณค่าที่ส่ง  │
-│    Demand    │      │       └────────────┬────────────┘       │      │   มอบจริง)   │
-└──────────────┘      │                    ▼                    │      └──────────────┘
-                      │       ┌─────────────────────────┐       │
-                      │       │        Practices        │       │
-                      │       └────────────┬────────────┘       │
-                      │                    ▼                    │
-                      │       ┌─────────────────────────┐       │
-                      │       │  Continual Improvement  │       │
-                      │       └─────────────────────────┘       │
-                      └─────────────────────────────────────────┘
+```mermaid
+flowchart LR
+    IN(["⚡ Opportunity & Demand"]) --> SVS
+    subgraph SVS ["🌐 ITIL Service Value System (SVS)"]
+        direction TB
+        GP["🧭 Guiding Principles"] --> GV["⚖️ Governance"]
+        GV --> SVC["⛓️ Service Value Chain"]
+        SVC --> PR["🛠️ Practices"]
+        PR --> CI["📈 Continual Improvement"]
+    end
+    SVS --> OUT(["💎 Value (คุณค่าร่วม)"])
 ```
 
 * **ปัจจัยนำเข้า (Inputs):**
@@ -349,17 +314,11 @@
 
 Governing Body ขับเคลื่อนงานกำกับดูแลผ่าน 3 กิจกรรมหลัก (**EDM**):
 
-```
-                        ┌──────────────────────────────────────┐
-                        │        Governance Activities         │
-                        └──────────────────┬───────────────────┘
-                                           │
-         ┌─────────────────────────────────┼─────────────────────────────────┐
-         ▼                                 ▼                                 ▼
-  ┌──────────────┐                  ┌──────────────┐                  ┌──────────────┐
-  │   Evaluate   │                  │    Direct    │                  │   Monitor    │
-  │  (ประเมินผล)  │                  │(กำหนดทิศทาง) │                  │(ติดตามตรวจตรา)│
-  └──────────────┘                  └──────────────┘                  └──────────────┘
+```mermaid
+graph LR
+    EV["🔍 Evaluate<br/>(ประเมินผล)"] --> DI["🧭 Direct<br/>(กำหนดทิศทาง)"]
+    DI --> MO["📊 Monitor<br/>(ติดตามตรวจตรา)"]
+    MO --> EV
 ```
 
 1. **Evaluate (ประเมินผล):**
@@ -392,15 +351,15 @@ Governing Body ขับเคลื่อนงานกำกับดูแ�
 
 หลักการชี้นำ 7 ประการ (7 Guiding Principles) คือปรัชญาและคำแนะนำที่เป็นสากล นำไปปรับใช้ได้กับทุกองค์กร ทุกสถานการณ์ โดยไม่มีหลักการใดเหนือกว่ากัน และ **ต้องนำมาใช้ร่วมกันอย่างสมดุล (Interdependent & Complementary)**
 
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│                      The 7 ITIL Guiding Principles                     │
-├───────────────────────────────────┬────────────────────────────────────┤
-│ 1. Focus on Value                 │ 2. Start Where You Are             │
-│ 3. Progress Iteratively w/ Feedback│ 4. Collaborate and Promote Visibility│
-│ 5. Think and Work Holistically     │ 6. Keep It Simple and Practical   │
-│ 7. Optimize and Automate          │                                    │
-└───────────────────────────────────┴────────────────────────────────────┘
+```mermaid
+graph TD
+    GP7["🧭 The 7 ITIL Guiding Principles"] --> P1["1. Focus on Value"]
+    GP7 --> P2["2. Start Where You Are"]
+    GP7 --> P3["3. Progress Iteratively with Feedback"]
+    GP7 --> P4["4. Collaborate & Promote Visibility"]
+    GP7 --> P5["5. Think & Work Holistically"]
+    GP7 --> P6["6. Keep It Simple & Practical"]
+    GP7 --> P7["7. Optimize & Automate"]
 ```
 
 ---
@@ -514,26 +473,17 @@ Governing Body ขับเคลื่อนงานกำกับดูแ�
 ### 1) กิจกรรมหลัก 6 ประการของ Service Value Chain ดั้งเดิม:
 Service Value Chain คือโมเดลการดำเนินงาน (Operating Model) ที่ประกอบด้วยกิจกรรม 6 ประการ ซึ่งทำงานเชื่อมโยงกันอย่างยืดหยุ่น (ไม่ใช่ลำดับเส้นตรงแบบ Waterfall):
 
-```
-                                ┌──────────────┐
-                                │     Plan     │
-                                └──────┬───────┘
-                                       │
-                ┌──────────────────────┼──────────────────────┐
-                ▼                      ▼                      ▼
-         ┌──────────────┐       ┌──────────────┐       ┌──────────────┐
-         │    Engage    │◄─────►│Design & Trans│◄─────►│ Obtain/Build │
-         └──────┬───────┘       └──────────────┘       └──────┬───────┘
-                │                                             │
-                └──────────────────────┬──────────────────────┘
-                                       ▼
-                                ┌──────────────┐
-                                │Deliver & Supp│
-                                └──────┬───────┘
-                                       ▼
-                                ┌──────────────┐
-                                │   Improve    │
-                                └──────────────┘
+```mermaid
+graph TD
+    PL["🎯 Plan (วางแผน)"] --> EN["🤝 Engage (มีส่วนร่วม)"]
+    PL --> DT["🎨 Design & Transition"]
+    PL --> OB["🔧 Obtain/Build"]
+    EN <--> DT
+    DT <--> OB
+    EN --> DS["🚀 Deliver & Support"]
+    DT --> DS
+    OB --> DS
+    DS --> IM["📈 Improve (ปรับปรุง)"]
 ```
 
 1. **Plan (วางแผน):**
@@ -560,8 +510,9 @@ Service Value Chain คือโมเดลการดำเนินงาน
 ### 2) การพัฒนาสู่ ITIL 5 Product and Service Lifecycle (8 Lifecycle Activities):
 ใน ITIL 5 กิจกรรมใน Value Chain ได้รับการขยายให้สอดคล้องกับวงจรชีวิตผลิตภัณฑ์ดิจิทัลสมัยใหม่ (**Discover, Design, Acquire, Build, Transition, Operate, Deliver, Support**):
 
-```
-Discover ──► Design ──► Acquire ──► Build ──► Transition ──► Operate ──► Deliver ──► Support
+```mermaid
+flowchart LR
+    D1["🔍 Discover"] --> D2["🎨 Design"] --> D3["🛒 Acquire"] --> D4["🔨 Build"] --> D5["🔄 Transition"] --> D6["⚙️ Operate"] --> D7["🚀 Deliver"] --> D8["🤝 Support"]
 ```
 
 | กิจกรรมใน ITIL 5 | วัตถุประสงค์หลัก (Primary Purpose) | ตัวชี้วัดความสำเร็จที่สำคัญ (Success Metric) |
@@ -594,23 +545,14 @@ ITIL 5 แบ่ง Practices ออกเป็น 2 กลุ่มหลั�
 ### 1) Incident Management vs. Problem Management
 นี่คือหัวข้อที่มีสถิติการออกสอบมากที่สุดใน ITIL ทุกเวอร์ชัน!
 
-```
-     [ Event / Anomaly ]
-              │
-              ▼
-    ┌───────────────────┐               ┌───────────────────┐
-    │ Incident Occurs!  │               │      Problem      │
-    │ (บริการหยุดชะงัก) │               │(สาเหตุของ Incident)│
-    └─────────┬─────────┘               └─────────┬─────────┘
-              │                                   │
-              ▼                                   ▼
-    Restore Service ASAP!               Identify Root Cause!
-    (ใช้ Workaround ชั่วคราว)           (สร้าง Known Error Record)
-              │                                   │
-              └─────────────────┬─────────────────┘
-                                ▼
-                        [ Permanent Fix ]
-                      (ส่งต่อ Change Enablement)
+```mermaid
+flowchart TD
+    EV["🚨 Event / Anomaly (สัญญาณผิดปกติ)"] --> INC["💥 Incident Occurs!<br/>(บริการหยุดชะงัก)"]
+    EV --> PRB["🔬 Problem Investigation<br/>(วิเคราะห์หาสาเหตุรากเหง้า)"]
+    INC --> RST["⏱️ Restore Service ASAP!<br/><i>(ใช้ Workaround ชั่วคราว)</i>"]
+    PRB --> KEDB["📝 Identify Root Cause!<br/><i>(สร้าง Known Error Record ใน KEDB)</i>"]
+    RST --> FIX["🛠️ Permanent Fix<br/>(ส่งต่อ Change Enablement เพื่อแก้ไขถาวร)"]
+    KEDB --> FIX
 ```
 
 * **นิยามศัพท์สำคัญ:**
@@ -690,34 +632,14 @@ ITIL 5 แบ่ง Practices ออกเป็น 2 กลุ่มหลั�
 
 โมเดล 7 ขั้นตอนเป็นแนวทางวงกลม (Iterative Loop) ที่ใช้ขับเคลื่อนการปรับปรุงในทุกระดับ:
 
-```
-        ┌────────────────────────────────────────────────────────┐
-        │ 1. What is the vision? (เชื่อมโยงกับวิสัยทัศน์องค์กร)    │
-        └───────────────────────────┬────────────────────────────┘
-                                    ▼
-        ┌────────────────────────────────────────────────────────┐
-        │ 2. Where are we now? (ประเมินสถานะปัจจุบัน / Baseline)   │
-        └───────────────────────────┬────────────────────────────┘
-                                    ▼
-        ┌────────────────────────────────────────────────────────┐
-        │ 3. Where do we want to be? (กำหนดเป้าหมาย / Target OKRs) │
-        └───────────────────────────┬────────────────────────────┘
-                                    ▼
-        ┌────────────────────────────────────────────────────────┐
-        │ 4. How do we get there? (วางแผนการเดินทางและกิจกรรม)     │
-        └───────────────────────────┬────────────────────────────┘
-                                    ▼
-        ┌────────────────────────────────────────────────────────┐
-        │ 5. Take action! (ลงมือปฏิบัติการปรับปรุง)                 │
-        └───────────────────────────┬────────────────────────────┘
-                                    ▼
-        ┌────────────────────────────────────────────────────────┐
-        │ 6. Are we getting there? (วัดผลว่าบรรลุเป้าหมายหรือไม่)   │
-        └───────────────────────────┬────────────────────────────┘
-                                    ▼
-        ┌────────────────────────────────────────────────────────┐
-        │ 7. How do we keep the momentum going? (รักษาความยั่งยืน) │
-        └────────────────────────────────────────────────────────┘
+```mermaid
+flowchart TD
+    S1["1. What is the vision? 🎯<br/><i>(เชื่อมโยงวิสัยทัศน์ & พันธกิจธุรกิจ)</i>"] --> S2["2. Where are we now? 📍<br/><i>(ประเมินสถานะปัจจุบัน / Baseline)</i>"]
+    S2 --> S3["3. Where do we want to be? 🏁<br/><i>(กำหนดเป้าหมายที่วัดผลได้ / OKRs)</i>"]
+    S3 --> S4["4. How do we get there? 🗺️<br/><i>(วางแผนการเดินทาง & กิจกรรมปรับปรุง)</i>"]
+    S4 --> S5["5. Take action! 🚀<br/><i>(ลงมือปฏิบัติจริงตามแผนงาน)</i>"]
+    S5 --> S6["6. Are we getting there? 📊<br/><i>(วัดผลเทียบเป้าหมายในขั้นตอนที่ 3)</i>"]
+    S6 --> S7["7. How do we keep momentum going? 🔄<br/><i>(รักษาความยั่งยืน & เริ่มรอบถัดไป)</i>"]
 ```
 
 > [!IMPORTANT]
@@ -746,13 +668,10 @@ ITIL 5 แบ่ง Practices ออกเป็น 2 กลุ่มหลั�
 
 ## 5.2 ประเภทของ Value Stream: Core vs. Enabling
 
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│                        Types of Value Streams                          │
-├───────────────────────────────────┬────────────────────────────────────┤
-│     Core Value Stream             │     Enabling Value Stream          │
-│ (ส่งมอบคุณค่าสู่ลูกค้าภายนอกโดยตรง)   │   (สนับสนุนลูกค้าภายในและ Core Stream)│
-└───────────────────────────────────┴────────────────────────────────────┘
+```mermaid
+graph TD
+    TVS["🌊 Types of Value Streams"] --> CVS["🌟 Core Value Stream<br/><b>ส่งมอบคุณค่าสู่ลูกค้าภายนอกโดยตรง</b><br/><i>(External Customer-Facing)</i><br/>เช่น เปิดบัญชีธนาคารออนไลน์, สั่งซื้อสินค้า"]
+    TVS --> EVS["🛡️ Enabling Value Stream<br/><b>สนับสนุนการทำงานภายในองค์กร</b><br/><i>(Internal Support & Enabler)</i><br/>เช่น จัดซื้อคอมพิวเตอร์พนักงาน, ดูแลโครงข่าย IT"]
 ```
 
 1. **Core Value Stream (สายธารคุณค่าหลัก):**
@@ -768,16 +687,9 @@ ITIL 5 แบ่ง Practices ออกเป็น 2 กลุ่มหลั�
 
 กระบวนการทำแผนผังสายธารคุณค่าประกอบด้วย 5 ขั้นตอนมาตรฐาน:
 
-```
-Step 1: Value Stream Identification (ระบุสายธารคุณค่าที่จะศึกษา)
-  ▼
-Step 2: Mapping of the 'as-is' Value Stream (วาดแผนผังขั้นตอนปัจจุบัน)
-  ▼
-Step 3: Analysing the Value Stream (วิเคราะห์จุดติดขัด คอขวด และสิ่งสูญเปล่า)
-  ▼
-Step 4: Mapping a 'to-be' Value Stream (ออกแบบแผนผังอนาคตที่ปรับปรุงแล้ว)
-  ▼
-Step 5: Planning and Implementing Improvements (วางแผนและลงมือปรับปรุง)
+```mermaid
+flowchart LR
+    V1["1. Identify<br/>ระบุสายธารคุณค่า"] --> V2["2. Map as-is<br/>วาดผังขั้นตอนปัจจุบัน"] --> V3["3. Analyse<br/>วิเคราะห์คอขวด & Waste"] --> V4["4. Map to-be<br/>ออกแบบผังขั้นตอนอนาคต"] --> V5["5. Implement<br/>วางแผน & ลงมือปรับปรุง"]
 ```
 
 ---
@@ -787,49 +699,25 @@ Step 5: Planning and Implementing Improvements (วางแผนและล�
 ### ตัวอย่างเคสที่ 1: Value Stream สำหรับการกู้คืนบริการเมื่อเกิดอุบัติการณ์ร้ายแรง (Restoring a Live Digital Service)
 แสดงการร้อยเรียงกิจกรรมใน Value Chain เข้าด้วยกันเมื่อเกิดเหตุระบบล่ม:
 
-```
-[ผู้ใช้แจ้งระบบล่ม]
-      │
-      ▼
- 1. ENGAGE ─────────────► เจ้าหน้าที่ Service Desk รับเรื่องผ่านพอร์ทัล และบันทึก Ticket
-      │
-      ▼
- 2. DELIVER & SUPPORT ──► ทีมปฏิบัติการเข้าตรวจสอบอาการ และยืนยันว่าเป็น Major Incident
-      │
-      ▼
- 3. OBTAIN/BUILD ───────► ทีมเทคนิคพบว่าฮาร์ดแวร์ Disk เสีย จึงเบิกชิ้นส่วนสำรองมาเปลี่ยน
-      │
-      ▼
- 4. DELIVER & SUPPORT ──► สลับระบบกลับมาทำงาน และทดสอบกู้คืนระบบจนกลับสู่สภาวะปกติ
-      │
-      ▼
- 5. ENGAGE ─────────────► แจ้งเตือนผู้ใช้งานว่าระบบพร้อมใช้งาน และสอบถามความพึงพอใจ
-      │
-      ▼
- 6. IMPROVE ────────────► ทีม Problem Management ประชุม Post-Mortem เพื่อหาทางป้องกันซ้ำ
+```mermaid
+flowchart TD
+    TR1(["💥 Trigger: ผู้ใช้แจ้งระบบล่มผ่าน Self-Service Portal"]) --> ST1["1. 🤝 ENGAGE<br/>Service Desk รับเรื่อง & บันทึก Ticket"]
+    ST1 --> ST2["2. 🚀 DELIVER & SUPPORT<br/>ทีมปฏิบัติการตรวจสอบ & ยืนยัน Major Incident"]
+    ST2 --> ST3["3. 🔧 OBTAIN / BUILD<br/>ทีมเทคนิคพบ Disk เสีย เบิกชิ้นส่วนสำรองมาเปลี่ยน"]
+    ST3 --> ST4["4. 🚀 DELIVER & SUPPORT<br/>สลับระบบกลับมาทำงาน ทดสอบจนคืนสู่สภาพปกติ"]
+    ST4 --> ST5["5. 🤝 ENGAGE<br/>แจ้งเตือนผู้ใช้ว่าระบบพร้อมใช้ & สอบถามความพึงพอใจ"]
+    ST5 --> ST6["6. 📈 IMPROVE<br/>ทีม Problem Management ประชุม Post-Mortem ป้องกันเกิดซ้ำ"]
 ```
 
 ### ตัวอย่างเคสที่ 2: Value Stream สำหรับการพัฒนาและปล่อยฟีเจอร์ใหม่ (Delivering a New Digital Feature)
-```
-[ลูกค้าต้องการระบบจ่ายเงินผ่าน QR]
-      │
-      ▼
- 1. ENGAGE / DISCOVER ──► ทีม Product รับข้อเสนอแนะและสำรวจความต้องการทางธุรกิจ
-      │
-      ▼
- 2. PLAN ───────────────► ผู้บริหารและทีมวางแผน Roadmap และจัดสรรงบประมาณ
-      │
-      ▼
- 3. DESIGN ─────────────► ทีม UX/UI ออกแบบ Prototype และทำ Product Specification
-      │
-      ▼
- 4. OBTAIN/BUILD ───────► ฝ่ายพัฒนาเขียนโค้ด เชื่อมต่อ API ธนาคาร และรัน Automated Test
-      │
-      ▼
- 5. TRANSITION ─────────► Deploy โค้ดขึ้น Live Environment อย่างปลอดภัยผ่าน CI/CD Pipeline
-      │
-      ▼
- 6. DELIVER & SUPPORT ──► เปิดให้ผู้ใช้กดใช้งานจริง และมอนิเตอร์ประสิทธิภาพผ่าน Dashboard
+```mermaid
+flowchart TD
+    TR2(["💡 Trigger: ลูกค้าและฝ่ายธุรกิจต้องการระบบจ่ายเงินผ่าน QR Code"]) --> FT1["1. 🤝 ENGAGE / DISCOVER<br/>ทีม Product รับข้อเสนอแนะ & สำรวจความต้องการ"]
+    FT1 --> FT2["2. 🎯 PLAN<br/>ผู้บริหารและทีมวาง Roadmap & จัดสรรงบประมาณ"]
+    FT2 --> FT3["3. 🎨 DESIGN<br/>ทีม UX/UI ออกแบบ Prototype & ข้อกำหนดระบบ"]
+    FT3 --> FT4["4. 🔧 OBTAIN / BUILD<br/>พัฒนาเขียนโค้ด เชื่อม API ธนาคาร & รัน Automated Test"]
+    FT4 --> FT5["5. 📦 TRANSITION<br/>Deploy ขึ้น Live ผ่าน CI/CD พร้อมจัดทำคู่มือและอบรม"]
+    FT5 --> FT6["6. 🚀 DELIVER & SUPPORT<br/>เปิดใช้งานจริง & มอนิเตอร์ประสิทธิภาพผ่าน Dashboard"]
 ```
 
 ---

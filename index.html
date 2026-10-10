@@ -1081,6 +1081,550 @@
       margin: 14px 0;
     }
 
+    /* ============================================================
+       PREMIUM ITIL DIAGRAMS COMPONENT SYSTEM
+       ============================================================ */
+    .itil-diagram-wrapper {
+      margin: 22px 0;
+      background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 24px 20px;
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+      position: relative;
+      overflow: hidden;
+      font-family: inherit;
+    }
+
+    .itil-diagram-wrapper::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #2563eb 0%, #0ea5e9 50%, #8b5cf6 100%);
+    }
+
+    .itil-diag-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .itil-diag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #eff6ff;
+      color: #1e3a8a;
+      border: 1px solid #bfdbfe;
+      padding: 7px 18px;
+      border-radius: 9999px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      box-shadow: 0 2px 6px rgba(30, 64, 175, 0.06);
+      letter-spacing: -0.2px;
+    }
+
+    .itil-diag-sub {
+      font-size: 0.84rem;
+      color: #64748b;
+      margin-top: 6px;
+      max-width: 600px;
+      line-height: 1.4;
+    }
+
+    .itil-diag-connector {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 20px;
+      position: relative;
+      margin: -6px 0 14px 0;
+      color: #94a3b8;
+      font-size: 11px;
+    }
+
+    .itil-diag-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+
+    .itil-diag-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+      position: relative;
+    }
+
+    .itil-diag-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px -3px rgba(15, 23, 42, 0.08);
+      border-color: #cbd5e1;
+    }
+
+    .itil-diag-card.border-blue { border-top: 4px solid #3b82f6; }
+    .itil-diag-card.border-indigo { border-top: 4px solid #6366f1; }
+    .itil-diag-card.border-emerald { border-top: 4px solid #10b981; }
+    .itil-diag-card.border-purple { border-top: 4px solid #8b5cf6; }
+    .itil-diag-card.border-amber { border-top: 4px solid #f59e0b; }
+    .itil-diag-card.border-rose { border-top: 4px solid #f43f5e; }
+    .itil-diag-card.border-sky { border-top: 4px solid #0ea5e9; }
+
+    .itil-card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+
+    .itil-card-sub {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #2563eb;
+      margin-bottom: 8px;
+    }
+
+    .itil-card-desc {
+      font-size: 0.82rem;
+      color: #475569;
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+
+    .itil-badge {
+      display: inline-flex;
+      align-items: center;
+      align-self: flex-start;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      margin-top: 10px;
+      letter-spacing: 0.2px;
+    }
+
+    .badge-blue { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+    .badge-indigo { background: #eef2ff; color: #4338ca; border: 1px solid #c7d2fe; }
+    .badge-emerald { background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; }
+    .badge-purple { background: #f5f3ff; color: #6d28d9; border: 1px solid #ddd6fe; }
+    .badge-amber { background: #fffbeb; color: #b45309; border: 1px solid #fde68a; }
+    .badge-rose { background: #fff1f2; color: #be123c; border: 1px solid #fecdd3; }
+    .badge-sky { background: #f0f9ff; color: #0369a1; border: 1px solid #bae6fd; }
+
+    /* Pipeline / Horizontal Flow */
+    .itil-pipeline-flow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 8px 4px 14px 4px;
+      scrollbar-width: thin;
+    }
+
+    .itil-pipeline-step {
+      flex: 1;
+      min-width: 120px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 10px 12px;
+      text-align: center;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .itil-pipeline-step:hover {
+      transform: translateY(-2px);
+      border-color: #3b82f6;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.12);
+    }
+
+    .itil-pipeline-num {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      line-height: 22px;
+      background: #eff6ff;
+      color: #2563eb;
+      border-radius: 50%;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .itil-pipeline-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .itil-pipeline-arrow {
+      color: #94a3b8;
+      font-size: 1.1rem;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    /* SVS Architecture Layout */
+    .itil-svs-wrapper {
+      display: grid;
+      grid-template-columns: 190px 1fr 190px;
+      gap: 16px;
+      align-items: center;
+    }
+
+    @media (max-width: 860px) {
+      .itil-svs-wrapper {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+    }
+
+    .itil-svs-terminal {
+      background: #ffffff;
+      border: 2px dashed #cbd5e1;
+      border-radius: 12px;
+      padding: 20px 14px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .itil-svs-terminal.input-box {
+      border-color: #f59e0b;
+      background: #fffbeb;
+    }
+
+    .itil-svs-terminal.output-box {
+      border-color: #10b981;
+      background: #f0fdf4;
+    }
+
+    .itil-svs-box {
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 14px;
+      padding: 18px 16px;
+      box-shadow: 0 4px 14px rgba(30, 64, 175, 0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .itil-svs-box-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #1e3a8a;
+      text-align: center;
+      margin-bottom: 2px;
+    }
+
+    .itil-svs-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: #1e293b;
+      transition: all 0.2s;
+    }
+
+    .itil-svs-item:hover {
+      background: #eff6ff;
+      border-color: #93c5fd;
+      transform: translateX(3px);
+    }
+
+    .itil-svs-arrow-down {
+      text-align: center;
+      color: #94a3b8;
+      font-size: 11px;
+      margin: -6px 0;
+    }
+
+    /* Fork Layout (Incident vs Problem) */
+    .itil-fork-top {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .itil-fork-event {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff1f2;
+      border: 1px solid #fecdd3;
+      color: #e11d48;
+      padding: 8px 20px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .itil-fork-branches {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 680px) {
+      .itil-fork-branches {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .itil-branch-track {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .itil-branch-track.incident {
+      border-left: 4px solid #ef4444;
+      background: linear-gradient(180deg, #fffafa 0%, #ffffff 100%);
+    }
+
+    .itil-branch-track.problem {
+      border-left: 4px solid #8b5cf6;
+      background: linear-gradient(180deg, #faf5ff 0%, #ffffff 100%);
+    }
+
+    .itil-step-node {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .itil-step-node-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+
+    .itil-step-node-desc {
+      font-size: 0.8rem;
+      color: #64748b;
+      line-height: 1.4;
+    }
+
+    .itil-fork-merge {
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    .itil-merge-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #065f46;
+      padding: 10px 24px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1);
+    }
+
+    /* Continual Improvement 7-Step List */
+    .itil-cim-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .itil-cim-item {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: all 0.2s;
+    }
+
+    .itil-cim-item:hover {
+      transform: translateX(4px);
+      border-color: #3b82f6;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08);
+    }
+
+    .itil-cim-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(30, 64, 175, 0.2);
+    }
+
+    .itil-cim-content {
+      flex-grow: 1;
+    }
+
+    .itil-cim-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .itil-cim-desc {
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    /* Value Stream Step Flow */
+    .itil-vs-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .itil-vs-step {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 12px 16px;
+      display: grid;
+      grid-template-columns: auto auto 1fr;
+      align-items: center;
+      gap: 14px;
+      transition: all 0.2s;
+    }
+
+    @media (max-width: 640px) {
+      .itil-vs-step {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+    }
+
+    .itil-vs-step:hover {
+      transform: translateX(4px);
+      border-color: #93c5fd;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+    }
+
+    .itil-vs-stepnum {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #94a3b8;
+    }
+
+    .itil-vs-act-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: #eff6ff;
+      color: #1e40af;
+      border: 1px solid #bfdbfe;
+      letter-spacing: 0.4px;
+      white-space: nowrap;
+    }
+
+    .itil-vs-act-desc {
+      font-size: 0.85rem;
+      color: #334155;
+      line-height: 1.4;
+    }
+
+    /* SVC Hex/Network Map */
+    .itil-svc-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .itil-svc-top, .itil-svc-bottom, .itil-svc-foundation {
+      text-align: center;
+    }
+
+    .itil-svc-mid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    @media (max-width: 680px) {
+      .itil-svc-mid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .itil-svc-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 14px;
+      text-align: center;
+      transition: all 0.2s;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .itil-svc-card:hover {
+      transform: translateY(-2px);
+      border-color: #3b82f6;
+      box-shadow: 0 6px 14px rgba(59, 130, 246, 0.1);
+    }
+
+    .itil-svc-card-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .itil-svc-card-desc {
+      font-size: 0.78rem;
+      color: #64748b;
+      line-height: 1.4;
+    }
+
+
     .guide-quote {
       border-left: 4px solid var(--primary-light);
       padding: 8px 16px;
@@ -1822,18 +2366,40 @@
 
 <p>คุณภาพบริการ (Service Quality) ใน ITIL 5 ถูกวัดผ่าน <strong>Service Level Metrics 4 หมวดหมู่</strong> ดังนี้:</p>
 
-<pre class="guide-pre"><code>┌──────────────────────────────────────────┐
-                            │   Service Quality / Service Metrics      │
-                            └────────────────────┬─────────────────────┘
-                                                 │
-        ┌─────────────────────────┬──────────────┴───────────┬─────────────────────────┐
-        ▼                         ▼                          ▼                         ▼
-┌───────────────┐         ┌───────────────┐          ┌───────────────┐         ┌───────────────┐
-│    Utility    │         │   Warranty    │          │Sustainability │         │User Experience│
-│Fit for Purpose│         │  Fit for Use  │          │Triple Bottom  │         │   (UX)        │
-│(What it does) │         │(How it works) │          │  Line         │         │Emotional &    │
-│               │         │               │          │               │         │Functional     │
-└───────────────┘         └───────────────┘          └───────────────┘         └───────────────┘</code></pre>
+
+<div class="itil-diagram-wrapper">
+  <div class="itil-diag-header">
+    <div class="itil-diag-pill">🎯 Service Quality / Service Level Metrics</div>
+    <div class="itil-diag-sub">มิติการวัดคุณภาพบริการ 4 ด้าน เพื่อประเมินความสมบูรณ์และคุณค่าที่ส่งมอบจริง</div>
+  </div>
+  <div class="itil-diag-connector">▼</div>
+  <div class="itil-diag-grid grid-4">
+    <div class="itil-diag-card border-blue">
+      <div class="itil-card-title">⚙️ Utility</div>
+      <div class="itil-card-sub">Fit for Purpose ("What it does")</div>
+      <div class="itil-card-desc">ฟังก์ชันการทำงานที่เพิ่มประสิทธิภาพ <strong>หรือ</strong> ขจัดอุปสรรคของผู้ใช้งาน</div>
+      <span class="itil-badge badge-blue">OR Condition (เลือกอย่างน้อย 1)</span>
+    </div>
+    <div class="itil-diag-card border-indigo">
+      <div class="itil-card-title">🛡️ Warranty</div>
+      <div class="itil-card-sub">Fit for Use ("How it works")</div>
+      <div class="itil-card-desc">การรับประกันคุณภาพ: ความพร้อมใช้ + รองรับความจุ + ปลอดภัย + กู้คืนได้ต่อเนื่อง</div>
+      <span class="itil-badge badge-indigo">AND Condition (ต้องครบทั้ง 4 ด้าน)</span>
+    </div>
+    <div class="itil-diag-card border-emerald">
+      <div class="itil-card-title">🌱 Sustainability</div>
+      <div class="itil-card-sub">Triple Bottom Line ("ESG")</div>
+      <div class="itil-card-desc">ความยั่งยืนระยะยาว: สิ่งแวดล้อม (Environmental) + สังคม (Social) + เศรษฐกิจ (Economic)</div>
+      <span class="itil-badge badge-emerald">ESG 3 มิติหลัก</span>
+    </div>
+    <div class="itil-diag-card border-purple">
+      <div class="itil-card-title">💫 User Experience</div>
+      <div class="itil-card-sub">Emotional & Functional (UX)</div>
+      <div class="itil-card-desc">ความรู้สึก การรับรู้ และการมีปฏิสัมพันธ์ของผู้ใช้ ทั้งความง่าย สะดวก และความมั่นใจ</div>
+      <span class="itil-badge badge-purple">CX & UX Perception</span>
+    </div>
+  </div>
+</div>
 
 <h4 class="guide-subheading">1) Utility (อรรถประโยชน์) – "Fit for Purpose"</h4>
 <ul><li><strong>นิยาม:</strong> ฟังก์ชันหรือหน้าที่การทำงานของผลิตภัณฑ์/บริการว่า <strong>"ทำอะไรได้บ้าง (What the service does)"</strong> เพื่อตอบสนองความต้องการเฉพาะ</li><li><strong>เงื่อนไขทางทฤษฎี:</strong> ต้องผ่านเงื่อนไขใดเงื่อนไขหนึ่งเป็นอย่างน้อย (OR condition):</li></ul>
@@ -1894,18 +2460,34 @@
 
 <p>ในความสัมพันธ์ของบริการ ผู้บริโภคบริการ (Service Consumer) จะแบ่งบทบาทออกเป็น 3 บทบาทหลักอย่างชัดเจน (ซึ่งบุคคลคนเดียวอาจทำหลายบทบาทพร้อมกัน หรือแยกคนละคนก็ได้):</p>
 
-<pre class="guide-pre"><code>┌──────────────────────────────────────┐
-                   │    Service Consumer Roles            │
-                   └──────────────────┬───────────────────┘
-                                      │
-         ┌────────────────────────────┼────────────────────────────┐
-         ▼                            ▼                            ▼
-  ┌──────────────┐             ┌──────────────┐             ┌──────────────┐
-  │   Sponsor    │             │   Customer   │             │     User     │
-  │Authorizes    │             │Defines       │             │Uses service  │
-  │Budget        │             │Requirements &│             │on day-to-day │
-  │(ผู้อนุมัติงบ)  │             │Accountable   │             │basis (ผู้ใช้)│
-  └──────────────┘             └──────────────┘             └──────────────┘</code></pre>
+
+<div class="itil-diagram-wrapper">
+  <div class="itil-diag-header">
+    <div class="itil-diag-pill">👥 Service Consumer Roles (3 บทบาทผู้บริโภคบริการ)</div>
+    <div class="itil-diag-sub">บุคคลหรือกลุ่มบุคคลหนึ่งคนอาจทำหน้าที่บทบาทเดียวหรือควบหลายบทบาทพร้อมกันได้</div>
+  </div>
+  <div class="itil-diag-connector">▼</div>
+  <div class="itil-diag-grid grid-3">
+    <div class="itil-diag-card border-amber">
+      <div class="itil-card-title">💰 Sponsor</div>
+      <div class="itil-card-sub">Authorizes Budget (ผู้อนุมัติงบ)</div>
+      <div class="itil-card-desc">ผู้มีอำนาจในการอนุมัติงบประมาณและจัดสรรเงินทุนสำหรับการจัดซื้อหรือใช้บริการ (เช่น CFO หรือบอร์ดบริหาร)</div>
+      <span class="itil-badge badge-amber">ควบคุมงบประมาณ / การเงิน</span>
+    </div>
+    <div class="itil-diag-card border-blue">
+      <div class="itil-card-title">📋 Customer</div>
+      <div class="itil-card-sub">Defines Requirements & Accountable (ลูกค้า)</div>
+      <div class="itil-card-desc">ผู้กำหนดความต้องการของบริการและเป็นผู้รับผิดชอบต่อผลลัพธ์ (Outcomes) ของบริการ (เช่น HR Director ตรวจรับงาน)</div>
+      <span class="itil-badge badge-blue">กำหนดความต้องการ & รับผิดชอบผลลัพธ์</span>
+    </div>
+    <div class="itil-diag-card border-emerald">
+      <div class="itil-card-title">👤 User</div>
+      <div class="itil-card-sub">Uses service on day-to-day basis (ผู้ใช้งาน)</div>
+      <div class="itil-card-desc">ผู้ที่ใช้งานบริการจริงในการทำงานหรือชีวิตประจำวัน (เช่น พนักงานล็อกอินเข้าใช้งานแอปยื่นใบลา)</div>
+      <span class="itil-badge badge-emerald">ใช้งานบริการจริงประจำวัน</span>
+    </div>
+  </div>
+</div>
 
 <p>1. <strong>Sponsor (ผู้สนับสนุนงบประมาณ):</strong><br>   <em> <strong>บทบาท:</strong> ผู้มีอำนาจในการอนุมัติงบประมาณและเงินทุนสำหรับการจัดซื้อหรือใช้บริการ (</em>Authorizes budget for service consumption*)<br><ul><li><strong>ตัวอย่าง:</strong> ประธานเจ้าหน้าที่ฝ่ายการเงิน (CFO) หรือบอร์ดบริหารที่เซ็นอนุมัติงบซื้อสิทธิ์ Microsoft 365</li></ul><br>2. <strong>Customer (ลูกค้า):</strong><br>   <em> <strong>บทบาท:</strong> ผู้กำหนดความต้องการของบริการ (</em>Defines requirements for services<em>) และเป็นผู้รับผิดชอบต่อผลลัพธ์ (</em>Takes responsibility for outcomes*) จากการใช้บริการ<br><ul><li><strong>ตัวอย่าง:</strong> ผู้อำนวยการฝ่ายทรัพยากรบุคคล (HR Director) ที่กำหนดความต้องการของระบบ Payroll และตรวจรับมอบงาน</li></ul><br>3. <strong>User (ผู้ใช้งาน):</strong><br>   <em> <strong>บทบาท:</strong> ผู้ที่ใช้งานบริการนั้นจริงในการทำงานหรือชีวิตประจำวัน (</em>Uses services on a day-to-day basis*)<br><ul><li><strong>ตัวอย่าง:</strong> พนักงานบริษัททั่วไปที่ล็อกอินเข้าไประบบบันทึกเวลาเข้า-ออกงานและยื่นใบลาผ่านมือถือ</li></ul></p>
 
@@ -1948,12 +2530,34 @@
 
 <p><strong>Service Offering</strong> คือแพ็กเกจคำอธิบายอย่างเป็นทางการที่ผู้ให้บริการจัดทำขึ้นเพื่อนำเสนอแก่ผู้บริโภค ซึ่งประกอบด้วยองค์ประกอบย่อย 3 ประเภท:</p>
 
-<pre class="guide-pre"><code>┌────────────────────────────────────────────────────────────────────────┐
-  │                      Service Offering Components                       │
-  ├───────────────────────┬────────────────────────┬───────────────────────┤
-  │    1. Goods           │ 2. Access to Resources │   3. Service Actions  │
-  │ (การโอนกรรมสิทธิ์สินค้า) │  (การให้สิทธิ์เข้าใช้)   │ (การลงมือปฏิบัติการบริการ) │
-  └───────────────────────┴────────────────────────┴───────────────────────┘</code></pre>
+
+<div class="itil-diagram-wrapper">
+  <div class="itil-diag-header">
+    <div class="itil-diag-pill">🎁 Service Offering Components (ข้อเสนอบริการ 3 ประเภท)</div>
+    <div class="itil-diag-sub">การจัดแพ็กเกจส่งมอบคุณค่าระหว่างผู้ให้บริการและผู้บริโภคบริการ</div>
+  </div>
+  <div class="itil-diag-connector">▼</div>
+  <div class="itil-diag-grid grid-3">
+    <div class="itil-diag-card border-blue">
+      <div class="itil-card-title">📦 1. Goods (สินค้า)</div>
+      <div class="itil-card-sub">Ownership Transferred (โอนกรรมสิทธิ์)</div>
+      <div class="itil-card-desc">ส่งมอบสิ่งของและโอนความเป็นเจ้าของให้ผู้บริโภค โดยผู้บริโภครับผิดชอบการใช้งานต่อ เช่น เครื่อง Server, โทรศัพท์, ซิมการ์ด</div>
+      <span class="itil-badge badge-blue">โอนกรรมสิทธิ์ความเป็นเจ้าของ</span>
+    </div>
+    <div class="itil-diag-card border-indigo">
+      <div class="itil-card-title">🔑 2. Access to Resources</div>
+      <div class="itil-card-sub">Licensed / Granted Access (ให้สิทธิ์เข้าใช้)</div>
+      <div class="itil-card-desc">ให้สิทธิ์เข้าใช้งานทรัพยากรภายใต้เงื่อนไขและข้อตกลงที่กำหนด ไม่โอนกรรมสิทธิ์ เช่น เครือข่าย Wi-Fi, บัญชี Cloud SaaS, Microsoft 365</div>
+      <span class="itil-badge badge-indigo">ให้สิทธิ์เข้าถึง (ไม่โอนกรรมสิทธิ์)</span>
+    </div>
+    <div class="itil-diag-card border-emerald">
+      <div class="itil-card-title">🤝 3. Service Actions</div>
+      <div class="itil-card-sub">Provider Executed (การลงมือปฏิบัติการ)</div>
+      <div class="itil-card-desc">การกระทำหรือกิจกรรมที่ทีมผู้ให้บริการลงมือปฏิบัติให้แก่ผู้บริโภค เช่น งาน Service Desk แก้ไขปัญหา, อบรมการใช้งาน, ซ่อมบำรุง</div>
+      <span class="itil-badge badge-emerald">ผู้ให้บริการลงมือปฏิบัติ</span>
+    </div>
+  </div>
+</div>
 
 <p>1. <strong>Goods (การโอนย้ายกรรมสิทธิ์สินค้า):</strong><br><ul><li>กรรมสิทธิ์ความเป็นเจ้าของถูกโอนไปยังผู้บริโภค ผู้บริโภคต้องรับผิดชอบการดูแลสินค้านั้นต่อในอนาคต</li></ul><br>   <em> </em>ตัวอย่าง:* การส่งมอบแล็ปท็อป โทรศัพท์มือถือบริษัท หรือเครื่องพิมพ์ให้พนักงานนำไปใช้เป็นของตน<br>2. <strong>Access to Resources (การอนุญาตให้เข้าถึงทรัพยากร):</strong><br><ul><li>ผู้ให้บริการยังคงเป็นเจ้าของทรัพยากร แต่ให้สิทธิ์ผู้บริโภคเข้าใช้งานตามข้อกำหนดและเงื่อนไข (Terms & Conditions) ที่ตกลงกัน</li></ul><br>   <em> </em>ตัวอย่าง:* การให้สิทธิ์ล็อกอินเข้าใช้ระบบแชร์ไฟล์ของบริษัท (OneDrive / Google Drive), สิทธิ์เข้าใช้เครือข่าย VPN, สิทธิ์เข้าใช้ AWS Virtual Machine<br>3. <strong>Service Actions (การปฏิบัติการบริการ):</strong><br><ul><li>กิจกรรมหรือการกระทำที่เจ้าหน้าที่ของผู้ให้บริการลงมือทำเพื่อตอบสนองความต้องการของผู้บริโภค</li></ul><br>   <em> </em>ตัวอย่าง:* วิศวกรไอทีช่วยเหลือผู้ใช้ในการลงโปรแกรมและตั้งค่าคอมพิวเตอร์ (Configuring laptop), การจัดฝึกอบรมพนักงาน, การบำรุงรักษาเครื่องจักรตามรอบ</p>
 
@@ -2039,16 +2643,43 @@
 
 <p>เพื่อให้การสร้างคุณค่ามีประสิทธิผล องค์กรต้องมองภาพรวมแบบองค์รวม (Holistic Approach) ครอบคลุมทั้ง 4 มิติ หากมองข้ามมิติใดมิติหนึ่ง บริการอาจล้มเหลวได้:</p>
 
-<pre class="guide-pre"><code>┌───────────────────────────────────────────────┐
-               │    The Four Dimensions of Service Management  │
-               └───────────────────────┬───────────────────────┘
-                                       │
-     ┌───────────────────┬─────────────┴─────────────┬───────────────────┐
-     ▼                   ▼                           ▼                   ▼
-┌──────────────┐  ┌──────────────┐            ┌──────────────┐    ┌──────────────┐
-│Organizations │  │ Information  │            │ Partners     │    │Value Streams │
-│  & People    │  │& Technology  │            │ & Suppliers  │    │ & Processes  │
-└──────────────┘  └──────────────┘            └──────────────┘    └──────────────┘</code></pre>
+
+<div class="itil-diagram-wrapper">
+  <div class="itil-diag-header">
+    <div class="itil-diag-pill">🏛️ The Four Dimensions of Service Management (4 มิติการจัดการบริการ)</div>
+    <div class="itil-diag-sub">มิติหลักทั้ง 4 ที่ต้องพิจารณาอย่างสมดุลเพื่อส่งมอบคุณค่า พร้อมปัจจัยภายนอก PESTLE</div>
+  </div>
+  <div class="itil-diag-connector">▼</div>
+  <div class="itil-diag-grid grid-4">
+    <div class="itil-diag-card border-blue">
+      <div class="itil-card-title">👥 Organizations & People</div>
+      <div class="itil-card-sub">องค์กรและบุคลากร</div>
+      <div class="itil-card-desc">โครงสร้างสายการบังคับบัญชา, วัฒนธรรมองค์กร, บทบาทหน้าที่, ทักษะและความพร้อมของทีมงาน</div>
+      <span class="itil-badge badge-blue">วัฒนธรรม & บทบาทคน</span>
+    </div>
+    <div class="itil-diag-card border-indigo">
+      <div class="itil-card-title">💻 Information & Technology</div>
+      <div class="itil-card-sub">สารสนเทศและเทคโนโลยี</div>
+      <div class="itil-card-desc">ฐานข้อมูล, ความรู้, สถาปัตยกรรมระบบ, คลาวด์คอมพิวติง, ความมั่นคงปลอดภัย, ระบบ AI และ Automation</div>
+      <span class="itil-badge badge-indigo">ระบบ, AI & ข้อมูล</span>
+    </div>
+    <div class="itil-diag-card border-amber">
+      <div class="itil-card-title">🤝 Partners & Suppliers</div>
+      <div class="itil-card-sub">พันธมิตรและซัพพลายเออร์</div>
+      <div class="itil-card-desc">ความสัมพันธ์กับคู่ค้าภายนอก, สัญญาว่าจ้าง (Underpinning Contracts), ห่วงโซ่อุปทาน (Supply Chain)</div>
+      <span class="itil-badge badge-amber">คู่ค้า & สัญญาจัดจ้าง</span>
+    </div>
+    <div class="itil-diag-card border-emerald">
+      <div class="itil-card-title">🔄 Value Streams & Processes</div>
+      <div class="itil-card-sub">สายธารคุณค่าและกระบวนการ</div>
+      <div class="itil-card-desc">ชุดกิจกรรม, เวิร์กโฟลว์, และขั้นตอนการทำงานประสานกันที่แปลงอินพุตให้กลายเป็นคุณค่าอย่างเป็นระบบ</div>
+      <span class="itil-badge badge-emerald">เวิร์กโฟลว์ & ขั้นตอน</span>
+    </div>
+  </div>
+  <div style="margin-top: 16px; padding: 10px 16px; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 8px; font-size: 0.8rem; color: #64748b; text-align: center;">
+    🌐 <strong>ปัจจัยภายนอก (PESTLE Factors):</strong> Political (การเมือง), Economic (เศรษฐกิจ), Social (สังคม), Technological (เทคโนโลยี), Legal (กฎหมาย), Environmental (สิ่งแวดล้อม)
+  </div>
+</div>
 
 <p>1. <strong>Organizations and People (องค์กรและบุคลากร):</strong><br><ul><li>ครอบคลุม: โครงสร้างสายการบังคับบัญชา, วัฒนธรรมองค์กร, ภาวะผู้นำ, ทักษะและความสามารถ, การสื่อสาร, และ <strong>ความปลอดภัยทางจิตวิทยา (Psychological safety)</strong> ที่เอื้อต่อการเรียนรู้อย่างต่อเนื่อง</li></ul><br>2. <strong>Information and Technology (สารสนเทศและเทคโนโลยี):</strong><br><ul><li>ครอบคลุม: ข้อมูล คลังความรู้ สถาปัตยกรรมระบบ โครงสร้างพื้นฐาน ซอฟต์แวร์ ระบบอัตโนมัติ และการประยุกต์ใช้ <strong>ปัญญาประดิษฐ์ (AI)</strong></li></ul><br>3. <strong>Partners and Suppliers (คู่ค้าและผู้จัดหา):</strong><br><ul><li>ครอบคลุม: ความสัมพันธ์ ข้อตกลง สัญญา และการบริหารจัดการองค์กรภายนอกที่มีส่วนร่วมในการสำรวจ ออกแบบ สร้าง และส่งมอบบริการ</li></ul><br>4. <strong>Value Streams and Processes (สายธารคุณค่าและกระบวนการ):</strong><br><ul><li>ครอบคลุม: เวิร์กโฟลว์ ลำดับกิจกรรม และการประสานงานทั้งภายในและข้ามองค์กร เพื่อเปลี่ยน Input ให้กลายเป็นคุณค่าส่งมอบแก่ลูกค้า</li></ul></p>
 
@@ -2094,29 +2725,54 @@
 
 <p><strong>วัตถุประสงค์ (Purpose) ของ SVS:</strong> แสดงให้เห็นว่าทุกองค์ประกอบและกิจกรรมทั้งหมดขององค์กรทำงานร่วมกันเป็นระบบอย่างไร เพื่อขับเคลื่อนและอำนวยความสะดวกในการสร้างคุณค่า (<em>To ensure that the organization continually co-creates value with all stakeholders through the use and management of products and services</em>).</p>
 
-<pre class="guide-pre"><code>┌─────────────────────────────────────────┐
-                      │        ITIL Service Value System        │
-                      │                                         │
-                      │       ┌─────────────────────────┐       │
-                      │       │    Guiding Principles   │       │
-                      │       └────────────┬────────────┘       │
-                      │                    ▼                    │
-                      │       ┌─────────────────────────┐       │
-                      │       │       Governance        │       │
-                      │       └────────────┬────────────┘       │
-┌──────────────┐      │                    ▼                    │      ┌──────────────┐
-│ Opportunity  ├─────►│       ┌─────────────────────────┐       ├─────►│    Value     │
-│      &       │      │       │   Service Value Chain   │       │      │  (คุณค่าที่ส่ง  │
-│    Demand    │      │       └────────────┬────────────┘       │      │   มอบจริง)   │
-└──────────────┘      │                    ▼                    │      └──────────────┘
-                      │       ┌─────────────────────────┐       │
-                      │       │        Practices        │       │
-                      │       └────────────┬────────────┘       │
-                      │                    ▼                    │
-                      │       ┌─────────────────────────┐       │
-                      │       │  Continual Improvement  │       │
-                      │       └─────────────────────────┘       │
-                      └─────────────────────────────────────────┘</code></pre>
+
+<div class="itil-diagram-wrapper">
+  <div class="itil-diag-header">
+    <div class="itil-diag-pill">🌐 ITIL Service Value System (SVS - สถาปัตยกรรมระบบสร้างคุณค่า)</div>
+    <div class="itil-diag-sub">ระบบที่แสดงให้เห็นว่าส่วนประกอบและกิจกรรมทั้งหมดในองค์กรทำงานร่วมกันอย่างไรเพื่อสร้างคุณค่า</div>
+  </div>
+  <div class="itil-svs-wrapper">
+    <div class="itil-svs-terminal input-box">
+      <div style="font-size: 2rem;">⚡</div>
+      <div style="font-weight: 700; color: #b45309; font-size: 0.95rem;">Opportunity & Demand</div>
+      <div style="font-size: 0.78rem; color: #78350f;">โอกาส & ความต้องการจาก Stakeholders</div>
+    </div>
+    
+    <div class="itil-svs-box">
+      <div class="itil-svs-box-title">🏢 Service Value System (SVS Core)</div>
+      <div class="itil-svs-item">
+        <span>🧭 1. Guiding Principles</span>
+        <span style="font-size: 0.75rem; color: #64748b;">(หลักการชี้นำ 7 ข้อ)</span>
+      </div>
+      <div class="itil-svs-arrow-down">▼</div>
+      <div class="itil-svs-item">
+        <span>⚖️ 2. Governance</span>
+        <span style="font-size: 0.75rem; color: #64748b;">(ธรรมาภิบาล: EDM)</span>
+      </div>
+      <div class="itil-svs-arrow-down">▼</div>
+      <div class="itil-svs-item" style="border: 2px solid #3b82f6; background: #eff6ff;">
+        <span style="color: #1e40af; font-weight: 700;">⛓️ 3. Service Value Chain</span>
+        <span style="font-size: 0.75rem; color: #2563eb; font-weight: 700;">(ห่วงโซ่ 6 กิจกรรมหลัก)</span>
+      </div>
+      <div class="itil-svs-arrow-down">▼</div>
+      <div class="itil-svs-item">
+        <span>🛠️ 4. Practices</span>
+        <span style="font-size: 0.75rem; color: #64748b;">(แนวทางปฏิบัติ 34 รายการ)</span>
+      </div>
+      <div class="itil-svs-arrow-down">▼</div>
+      <div class="itil-svs-item">
+        <span>📈 5. Continual Improvement</span>
+        <span style="font-size: 0.75rem; color: #64748b;">(การปรับปรุงอย่างต่อเนื่อง)</span>
+      </div>
+    </div>
+
+    <div class="itil-svs-terminal output-box">
+      <div style="font-size: 2rem;">💎</div>
+      <div style="font-weight: 700; color: #047857; font-size: 0.95rem;">Value</div>
+      <div style="font-size: 0.78rem; color: #064e3b;">คุณค่าร่วมที่ส่งมอบจริง (Co-created Value)</div>
+    </div>
+  </div>
+</div>
 <ul><li><strong>ปัจจัยนำเข้า (Inputs):</strong></li><li><strong>Opportunity (โอกาส):</strong> ทางเลือกหรือช่องทางใหม่ๆ ในการสร้างคุณค่าหรือพัฒนาธุรกิจ</li><li><strong>Demand (ความต้องการ):</strong> ความต้องการจำเป็นของผู้บริโภคและผู้มีส่วนได้ส่วนเสียต่อบริการ</li><li><strong>ผลลัพธ์ (Outputs):</strong></li><li><strong>Value (คุณค่า):</strong> การรับรู้ถึงผลประโยชน์และความคุ้มค่าที่เกิดขึ้นร่วมกัน</li></ul>
 
 ---
@@ -2183,16 +2839,34 @@
 
 <p>Governing Body ขับเคลื่อนงานกำกับดูแลผ่าน 3 กิจกรรมหลัก (<strong>EDM</strong>):</p>
 
-<pre class="guide-pre"><code>┌──────────────────────────────────────┐
-                        │        Governance Activities         │
-                        └──────────────────┬───────────────────┘
-                                           │
-         ┌─────────────────────────────────┼─────────────────────────────────┐
-         ▼                                 ▼                                 ▼
-  ┌──────────────┐                  ┌──────────────┐                  ┌──────────────┐
-  │   Evaluate   │                  │    Direct    │                  │   Monitor    │
-  │  (ประเมินผล)  │                  │(กำหนดทิศทาง) │                  │(ติดตามตรวจตรา)│
-  └──────────────┘                  └──────────────┘                  └──────────────┘</code></pre>
+
+<div class="itil-diagram-wrapper">
+  <div class="itil-diag-header">
+    <div class="itil-diag-pill">⚖️ Governance Activities (กิจกรรมการกำกับดูแล - วงจร EDM)</div>
+    <div class="itil-diag-sub">บทบาทของคณะผู้กำกับดูแลระดับสูง (Governing Body) ผ่าน 3 กิจกรรมหลัก</div>
+  </div>
+  <div class="itil-diag-connector">▼</div>
+  <div class="itil-diag-grid grid-3">
+    <div class="itil-diag-card border-blue">
+      <div class="itil-card-title">🔍 1. Evaluate</div>
+      <div class="itil-card-sub">ประเมินผล (Assessment)</div>
+      <div class="itil-card-desc">ประเมินองค์กร กลยุทธ์ แผนงาน พอร์ตโฟลิโอ และความต้องการทางธุรกิจอย่างสม่ำเสมอ เพื่อจับตาดูความเปลี่ยนแปลง</div>
+      <span class="itil-badge badge-blue">ประเมินสถานการณ์ & บริบท</span>
+    </div>
+    <div class="itil-diag-card border-indigo">
+      <div class="itil-card-title">🧭 2. Direct</div>
+      <div class="itil-card-sub">กำหนดทิศทาง (Leadership)</div>
+      <div class="itil-card-desc">กำหนดทิศทาง มอบหมายลำดับความสำคัญ และวางกรอบนโยบาย (Policies) ให้ฝ่ายบริหารนำไปปฏิบัติอย่างชัดเจน</div>
+      <span class="itil-badge badge-indigo">วางกรอบนโยบาย & ทิศทาง</span>
+    </div>
+    <div class="itil-diag-card border-emerald">
+      <div class="itil-card-title">📊 3. Monitor</div>
+      <div class="itil-card-sub">ติดตามตรวจตรา (Oversight)</div>
+      <div class="itil-card-desc">ตรวจสอบ ติดตาม และประเมินผลการดำเนินงานจริงเทียบกับนโยบายและเป้าหมายที่กำหนดไว้อย่างต่อเนื่อง</div>
+      <span class="itil-badge badge-emerald">ตรวจสอบผลเทียบเป้าหมาย</span>
+    </div>
+  </div>
+</div>
 
 <p>1. <strong>Evaluate (ประเมินผล):</strong><br><ul><li>ประเมินองค์กร กลยุทธ์ แผนงาน พอร์ตโฟลิโอ และความสัมพันธ์กับผู้มีส่วนได้ส่วนเสียอย่างสม่ำเสมอ โดยอิงจากบริบทที่เปลี่ยนแปลงไป</li></ul><br>2. <strong>Direct (กำหนดทิศทาง):</strong><br><ul><li>กำหนดกลยุทธ์ ทิศทางเป้าหมาย นโยบาย และมอบหมายความรับผิดชอบให้แก่ฝ่ายจัดการนำไปปฏิบัติ</li></ul><br>3. <strong>Monitor (ติดตามตรวจสอบ):</strong><br>   <em> ติดตามวัดผลการดำเนินงาน (</em>Performance<em>) และตรวจตราว่ากิจกรรมและการดำเนินงานจริง <strong>เป็นไปตามนโยบายและทิศทางเชิงกลยุทธ์ที่กำหนดไว้หรือไม่ (</em>Ensuring adherence with policies and strategic direction*)</strong></p>
 
@@ -2227,6 +2901,58 @@
         <div>
           <h2 class="module-title">ITIL Guiding Principles (Ch. 5)</h2>
           <div class="module-sub">หลักการชี้นำทั้ง 7 ประการ, กฎของกูดฮาร์ท (Goodhart's Law), และการบูรณาการหลักการร่วมกัน</div>
+        </div>
+      </div>
+
+      <div class="itil-diagram-wrapper" style="margin: 16px 0 24px 0;">
+        <div class="itil-diag-header">
+          <div class="itil-diag-pill">🧭 The 7 ITIL Guiding Principles (หลักการชี้นำ 7 ประการ)</div>
+          <div class="itil-diag-sub">หลักการที่เป็นสากลและเป็นอิสระต่อกัน แต่นำมาบูรณาการร่วมกัน (Interdependent & Complementary) เพื่อชี้นำการตัดสินใจในทุกสถานการณ์</div>
+        </div>
+        <div class="itil-diag-connector">▼</div>
+        <div class="itil-diag-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+          <div class="itil-diag-card border-blue">
+            <div class="itil-card-title">1. Focus on Value 🎯</div>
+            <div class="itil-card-sub">มุ่งเน้นที่คุณค่า</div>
+            <div class="itil-card-desc">ทุกสิ่งที่ทำต้องสร้างคุณค่าโดยตรงหรือโดยอ้อมต่อผู้มีส่วนได้ส่วนเสีย ทำความเข้าใจว่าใครคือลูกค้าและอะไรคือคุณค่าที่แท้จริง</div>
+            <span class="itil-badge badge-blue">Customer & Value First</span>
+          </div>
+          <div class="itil-diag-card border-indigo">
+            <div class="itil-card-title">2. Start Where You Are 📍</div>
+            <div class="itil-card-sub">เริ่มจากจุดที่เป็นอยู่</div>
+            <div class="itil-card-desc">อย่าเพิ่งทิ้งของเก่าแล้วเริ่มนับหนึ่งใหม่ ให้ประเมินสถานะปัจจุบัน (As-is) นำสิ่งที่มีอยู่และใช้การได้ดีมาต่อยอดและปรับปรุง</div>
+            <span class="itil-badge badge-indigo">Leverage Existing Assets</span>
+          </div>
+          <div class="itil-diag-card border-emerald">
+            <div class="itil-card-title">3. Progress Iteratively 🔄</div>
+            <div class="itil-card-sub">ก้าวหน้าทีละขั้นพร้อมรับข้อมูลป้อนกลับ</div>
+            <div class="itil-card-desc">อย่าทำโครงการใหญ่รวดเดียว ให้แบ่งเป็นรอบย่อยๆ (Iterations) ที่บริหารจัดการได้ และประเมินผลด้วย Feedback Loop</div>
+            <span class="itil-badge badge-emerald">Agile & Feedback Loop</span>
+          </div>
+          <div class="itil-diag-card border-sky">
+            <div class="itil-card-title">4. Collaborate & Visibility 🤝</div>
+            <div class="itil-card-sub">ร่วมมือและส่งเสริมการมองเห็น</div>
+            <div class="itil-card-desc">ทลายไซโล (Silos) ดึงผู้เกี่ยวข้องที่ถูกต้องมาร่วมมือกัน และเปิดเผยข้อมูล/ความคืบหน้าให้โปร่งใส มองเห็นได้ชัดเจน</div>
+            <span class="itil-badge badge-sky">Break Silos & Transparency</span>
+          </div>
+          <div class="itil-diag-card border-purple">
+            <div class="itil-card-title">5. Think Holistically 🌐</div>
+            <div class="itil-card-sub">คิดและทำงานแบบองค์รวม</div>
+            <div class="itil-card-desc">ไม่มีบริการใดทำงานโดดเดี่ยว ต้องมองภาพรวมทั้ง 4 มิติ และเข้าใจผลกระทบต่อทั้งระบบ (End-to-End System)</div>
+            <span class="itil-badge badge-purple">4 Dimensions & Whole System</span>
+          </div>
+          <div class="itil-diag-card border-amber">
+            <div class="itil-card-title">6. Keep It Simple ⚡</div>
+            <div class="itil-card-sub">เรียบง่ายและนำไปใช้ได้จริง</div>
+            <div class="itil-card-desc">ตัดขั้นตอนที่ไม่ก่อให้เกิดคุณค่า (Waste) ใช้กระบวนการที่สั้นและกระชับที่สุดเท่าที่จำเป็น (Outcome-based simplicity)</div>
+            <span class="itil-badge badge-amber">Outcome-focused Simplicity</span>
+          </div>
+          <div class="itil-diag-card border-rose">
+            <div class="itil-card-title">7. Optimize & Automate ⚙️</div>
+            <div class="itil-card-sub">ปรับให้เหมาะสมและใช้ระบบอัตโนมัติ</div>
+            <div class="itil-card-desc">ปรับปรุงกระบวนการให้มีประสิทธิภาพสูงสุดก่อน (Optimize) จากนั้นจึงนำระบบอัตโนมัติ (Automate) มาลดภาระงานซ้ำซาก</div>
+            <span class="itil-badge badge-rose">Simplify First, Then Automate</span>
+          </div>
         </div>
       </div>
   
@@ -2546,25 +3272,54 @@
 <h4 class="guide-subheading">1) กิจกรรมหลัก 6 ประการของ Service Value Chain ดั้งเดิม:</h4>
 Service Value Chain คือโมเดลการดำเนินงาน (Operating Model) ที่ประกอบด้วยกิจกรรม 6 ประการ ซึ่งทำงานเชื่อมโยงกันอย่างยืดหยุ่น (ไม่ใช่ลำดับเส้นตรงแบบ Waterfall):
 
-<pre class="guide-pre"><code>┌──────────────┐
-                                │     Plan     │
-                                └──────┬───────┘
-                                       │
-                ┌──────────────────────┼──────────────────────┐
-                ▼                      ▼                      ▼
-         ┌──────────────┐       ┌──────────────┐       ┌──────────────┐
-         │    Engage    │◄─────►│Design & Trans│◄─────►│ Obtain/Build │
-         └──────┬───────┘       └──────────────┘       └──────┬───────┘
-                │                                             │
-                └──────────────────────┬──────────────────────┘
-                                       ▼
-                                ┌──────────────┐
-                                │Deliver & Supp│
-                                └──────┬───────┘
-                                       ▼
-                                ┌──────────────┐
-                                │   Improve    │
-                                └──────────────┘</code></pre>
+
+<div class="itil-diagram-wrapper">
+  <div class="itil-diag-header">
+    <div class="itil-diag-pill">⛓️ Service Value Chain (SVC) Activities (6 กิจกรรมหลักห่วงโซ่คุณค่า)</div>
+    <div class="itil-diag-sub">แบบจำลองการดำเนินงาน (Operating Model) ที่ยืดหยุ่น สามารถนำกิจกรรมมาเรียงร้อยเป็นสายธารคุณค่าได้ไม่จำกัดรูปแบบ</div>
+  </div>
+  
+  <div class="itil-svc-layout">
+    <div class="itil-svc-top">
+      <div class="itil-svc-card" style="border-top: 4px solid #3b82f6; max-width: 380px; margin: 0 auto;">
+        <div class="itil-svc-card-title">🎯 Plan (วางแผน)</div>
+        <div class="itil-svc-card-desc">สร้างความเข้าใจร่วมกันในวิสัยทัศน์ สถานะปัจจุบัน และทิศทางการปรับปรุงทุกมิติ</div>
+      </div>
+    </div>
+
+    <div class="itil-diag-connector" style="margin: 2px 0;">▼</div>
+
+    <div class="itil-svc-mid">
+      <div class="itil-svc-card" style="border-top: 4px solid #0ea5e9;">
+        <div class="itil-svc-card-title">🤝 Engage (มีส่วนร่วม)</div>
+        <div class="itil-svc-card-desc">สร้างความเข้าใจความต้องการ เชื่อมโยง และสื่อสารกับผู้มีส่วนได้ส่วนเสียอย่างโปร่งใส</div>
+      </div>
+      <div class="itil-svc-card" style="border-top: 4px solid #6366f1;">
+        <div class="itil-svc-card-title">🎨 Design & Transition (ออกแบบและเปลี่ยนผ่าน)</div>
+        <div class="itil-svc-card-desc">ออกแบบและส่งมอบผลิตภัณฑ์/บริการให้ตรงตามความคาดหวังด้านต้นทุน เวลา และคุณภาพ</div>
+      </div>
+      <div class="itil-svc-card" style="border-top: 4px solid #8b5cf6;">
+        <div class="itil-svc-card-title">🔧 Obtain/Build (จัดหา/สร้าง)</div>
+        <div class="itil-svc-card-desc">สร้างส่วนประกอบของบริการ หรือจัดซื้อจัดหาทรัพยากรให้พร้อมใช้งานเมื่อต้องการ</div>
+      </div>
+    </div>
+
+    <div class="itil-diag-connector" style="margin: 2px 0;">▼</div>
+
+    <div class="itil-svc-bottom">
+      <div class="itil-svc-card" style="border-top: 4px solid #10b981; max-width: 420px; margin: 0 auto;">
+        <div class="itil-svc-card-title">🚀 Deliver & Support (ส่งมอบและสนับสนุน)</div>
+        <div class="itil-svc-card-desc">ดูแลการให้บริการรายวัน สนับสนุนการใช้งาน และแก้ไขปัญหาตามข้อตกลง SLA</div>
+      </div>
+    </div>
+
+    <div class="itil-svc-foundation" style="margin-top: 6px;">
+      <div style="background: #eff6ff; border: 1px dashed #93c5fd; border-radius: 8px; padding: 10px 16px; font-size: 0.85rem; color: #1e40af; font-weight: 600;">
+        📈 <strong>Improve (ปรับปรุง):</strong> กิจกรรมที่ขับเคลื่อนและสนับสนุนการพัฒนาอย่างต่อเนื่องในทุกกิจกรรมของ Value Chain
+      </div>
+    </div>
+  </div>
+</div>
 
 <p>1. <strong>Plan (วางแผน):</strong><br><ul><li><strong>หน้าที่:</strong> สร้างความเข้าใจร่วมกันเกี่ยวกับวิสัยทัศน์ สถานะปัจจุบัน ทิศทางการปรับปรุง และการจัดสรรทรัพยากรทั้ง 4 มิติ</li><li><strong>Input/Output:</strong> Input จาก Governance/กลยุทธ์, Output คือ Portfolio แผนงาน และนโยบาย</li></ul><br>2. <strong>Improve (ปรับปรุง):</strong><br><ul><li><strong>หน้าที่:</strong> รับประกันการปรับปรุงผลิตภัณฑ์ บริการ และแนวปฏิบัติอย่างต่อเนื่องในทุกจุดของ Value System</li><li><strong>Input/Output:</strong> Input คือข้อมูลวัดผลและฟีดแบ็ก, Output คือ Continual Improvement Initiatives</li></ul><br>3. <strong>Engage (มีปฏิสัมพันธ์/ผูกพัน):</strong><br><ul><li><strong>หน้าที่:</strong> สร้างความเข้าใจในความต้องการของผู้มีส่วนได้ส่วนเสีย ส่งเสริมความโปร่งใส และสร้างความสัมพันธ์อันดี</li><li><strong>Input/Output:</strong> เป็นด่านหน้าในการรับความต้องการ (Demand) และสะท้อนข้อมูลกลับสู่ผู้มีส่วนได้ส่วนเสีย</li></ul><br>4. <strong>Design and Transition (ออกแบบและเปลี่ยนผ่าน):</strong><br><ul><li><strong>หน้าที่:</strong> รับประกันว่าผลิตภัณฑ์และบริการตอบสนองความคาดหวังของลูกค้าทั้งด้านคุณภาพ ต้นทุน และเวลาส่งมอบ</li><li><strong>Input/Output:</strong> เปลี่ยนข้อกำหนดให้กลายเป็นพิมพ์เขียว สถาปัตยกรรม และส่งมอบระบบเข้าสู่สภาพแวดล้อมพร้อมใช้</li></ul><br>5. <strong>Obtain/Build (จัดหา/สร้าง):</strong><br><ul><li><strong>หน้าที่:</strong> จัดหาทรัพยากร ชิ้นส่วน หรือสร้างองค์ประกอบของบริการให้พร้อมใช้งานตามข้อกำหนด</li><li><strong>Input/Output:</strong> Output คือ Service Components ที่สร้างหรือซื้อมาพร้อมประกอบร่าง</li></ul><br>6. <strong>Deliver and Support (ส่งมอบและสนับสนุน):</strong><br><ul><li><strong>หน้าที่:</strong> รับประกันว่าการส่งมอบและสนับสนุนบริการในชีวิตประจำวันเป็นไปตามข้อตกลงและระดับคุณภาพที่คาดหวัง</li><li><strong>Input/Output:</strong> Output คือบริการที่ส่งมอบถึงมือผู้ใช้จริง และการแก้ไขเมื่อเกิดเหตุขัดข้อง</li></ul></p>
 
@@ -2573,7 +3328,54 @@ Service Value Chain คือโมเดลการดำเนินงาน
 <h4 class="guide-subheading">2) การพัฒนาสู่ ITIL 5 Product and Service Lifecycle (8 Lifecycle Activities):</h4>
 ใน ITIL 5 กิจกรรมใน Value Chain ได้รับการขยายให้สอดคล้องกับวงจรชีวิตผลิตภัณฑ์ดิจิทัลสมัยใหม่ (<strong>Discover, Design, Acquire, Build, Transition, Operate, Deliver, Support</strong>):
 
-<pre class="guide-pre"><code>Discover ──► Design ──► Acquire ──► Build ──► Transition ──► Operate ──► Deliver ──► Support</code></pre>
+
+<div class="itil-diagram-wrapper">
+  <div class="itil-diag-header">
+    <div class="itil-diag-pill">🚀 Digital Product Lifecycle (วงจรชีวิตผลิตภัณฑ์ดิจิทัล 8 ขั้นตอน)</div>
+    <div class="itil-diag-sub">ขั้นตอนการพัฒนาและส่งมอบคุณค่าผลิตภัณฑ์ดิจิทัลตั้งแต่ค้นพบจนถึงสนับสนุนการใช้งาน</div>
+  </div>
+  <div class="itil-pipeline-flow">
+    <div class="itil-pipeline-step">
+      <span class="itil-pipeline-num">1</span>
+      <div class="itil-pipeline-name">🔍 Discover</div>
+    </div>
+    <span class="itil-pipeline-arrow">➔</span>
+    <div class="itil-pipeline-step">
+      <span class="itil-pipeline-num">2</span>
+      <div class="itil-pipeline-name">🎨 Design</div>
+    </div>
+    <span class="itil-pipeline-arrow">➔</span>
+    <div class="itil-pipeline-step">
+      <span class="itil-pipeline-num">3</span>
+      <div class="itil-pipeline-name">🛒 Acquire</div>
+    </div>
+    <span class="itil-pipeline-arrow">➔</span>
+    <div class="itil-pipeline-step">
+      <span class="itil-pipeline-num">4</span>
+      <div class="itil-pipeline-name">🔨 Build</div>
+    </div>
+    <span class="itil-pipeline-arrow">➔</span>
+    <div class="itil-pipeline-step">
+      <span class="itil-pipeline-num">5</span>
+      <div class="itil-pipeline-name">🔄 Transition</div>
+    </div>
+    <span class="itil-pipeline-arrow">➔</span>
+    <div class="itil-pipeline-step">
+      <span class="itil-pipeline-num">6</span>
+      <div class="itil-pipeline-name">⚙️ Operate</div>
+    </div>
+    <span class="itil-pipeline-arrow">➔</span>
+    <div class="itil-pipeline-step">
+      <span class="itil-pipeline-num">7</span>
+      <div class="itil-pipeline-name">🚀 Deliver</div>
+    </div>
+    <span class="itil-pipeline-arrow">➔</span>
+    <div class="itil-pipeline-step">
+      <span class="itil-pipeline-num">8</span>
+      <div class="itil-pipeline-name">🤝 Support</div>
+    </div>
+  </div>
+</div>
 
 <div class="table-responsive"><table class="guide-table"><thead><tr><th>กิจกรรมใน ITIL 5</th><th>วัตถุประสงค์หลัก (Primary Purpose)</th><th>ตัวชี้วัดความสำเร็จที่สำคัญ (Success Metric)</th></tr></thead><tbody><tr><td><strong>1. Discover (สำรวจ)</strong></td><td>สำรวจความต้องการ โอกาสทางธุรกิจ และปรับความสามารถของผลิตภัณฑ์ให้สอดคล้องกับกลยุทธ์</td><td>Strategic fit, Market relevance, Stakeholder satisfaction (<em>ไม่ใช่ SLA!</em>)</td></tr><tr><td><strong>2. Design (ออกแบบ)</strong></td><td>ออกแบบข้อกำหนดผลิตภัณฑ์ (<strong>Product Specification</strong>) และสร้างต้นแบบ (<strong>Prototypes</strong>)</td><td>Design quality, Usability, Compliance with specifications</td></tr><tr><td><strong>3. Acquire (จัดหา)</strong></td><td>จัดซื้อ จัดหา หรือจัดสรรทรัพยากรและชิ้นส่วนจากภายนอกอย่างมีประสิทธิภาพ</td><td><strong>Quality of resources and services outsourced from suppliers</strong></td></tr><tr><td><strong>4. Build (สร้าง)</strong></td><td>พัฒนา เขียนโค้ด กำหนดค่าระบบ (Configure) และทดสอบชิ้นส่วนผลิตภัณฑ์</td><td><strong>Quality of the product solutions</strong>, Defect rate</td></tr><tr><td><strong>5. Transition (เปลี่ยนผ่าน)</strong></td><td>นำผลิตภัณฑ์และบริการใหม่/ที่ปรับปรุงเข้าสู่สภาพแวดล้อมใช้งานจริงอย่างราบรื่น</td><td><strong>Success rate of releases deployed into the live environment</strong></td></tr><tr><td><strong>6. Operate (ปฏิบัติการ)</strong></td><td>ดูแล ควบคุม และติดตามเฝ้าระวังผลิตภัณฑ์ดิจิทัลและระบบโครงสร้างพื้นฐาน</td><td>System uptime, Performance stability, Observability coverage</td></tr><tr><td><strong>7. Deliver (ส่งมอบ)</strong></td><td>ส่งมอบบริการตามข้อตกลง จัดการการเริ่มต้นใช้งาน (<strong>User Onboarding</strong>)</td><td><strong>Service performance against agreed SLA targets</strong></td></tr><tr><td><strong>8. Support (สนับสนุน)</strong></td><td>ฟื้นคืนระบบ ช่วยเหลือผู้ใช้ และ <strong>ลดผลกระทบจากอุบัติการณ์และภัยพิบัติ (Minimizing impact of incidents/disasters)</strong></td><td>Incident resolution time (MTTR), User satisfaction</td></tr></tbody></table></div>---
         </div>
@@ -2653,22 +3455,60 @@ Service Value Chain คือโมเดลการดำเนินงาน
           <h4 class="guide-subheading">1) Incident Management vs. Problem Management</h4>
 นี่คือหัวข้อที่มีสถิติการออกสอบมากที่สุดใน ITIL ทุกเวอร์ชัน!
 
-<pre class="guide-pre"><code>[ Event / Anomaly ]
-              │
-              ▼
-    ┌───────────────────┐               ┌───────────────────┐
-    │ Incident Occurs!  │               │      Problem      │
-    │ (บริการหยุดชะงัก) │               │(สาเหตุของ Incident)│
-    └─────────┬─────────┘               └─────────┬─────────┘
-              │                                   │
-              ▼                                   ▼
-    Restore Service ASAP!               Identify Root Cause!
-    (ใช้ Workaround ชั่วคราว)           (สร้าง Known Error Record)
-              │                                   │
-              └─────────────────┬─────────────────┘
-                                ▼
-                        [ Permanent Fix ]
-                      (ส่งต่อ Change Enablement)</code></pre>
+
+<div class="itil-diagram-wrapper">
+  <div class="itil-diag-header">
+    <div class="itil-diag-pill">⚡ Incident Management vs. Problem Management</div>
+    <div class="itil-diag-sub">เปรียบเทียบการทำงานคู่ขนานระหว่างการกู้คืนระบบเร่งด่วนกับการค้นหาสาเหตุรากเหง้า</div>
+  </div>
+  
+  <div class="itil-fork-top">
+    <div class="itil-fork-event">🚨 Event / Anomaly (สัญญาณแจ้งเตือนเหตุผิดปกติ)</div>
+  </div>
+
+  <div class="itil-diag-connector">▼</div>
+
+  <div class="itil-fork-branches">
+    <!-- Incident Track -->
+    <div class="itil-branch-track incident">
+      <div style="font-weight: 700; color: #dc2626; font-size: 0.95rem; display: flex; align-items: center; gap: 6px;">
+        💥 Incident Management Track
+      </div>
+      <div class="itil-step-node">
+        <div class="itil-step-node-title">1. Incident Occurs!</div>
+        <div class="itil-step-node-desc">บริการหยุดชะงัก หรือคุณภาพของบริการลดลง กระทบผู้ใช้งานโดยตรง</div>
+      </div>
+      <div style="text-align: center; color: #94a3b8; font-size: 11px;">▼</div>
+      <div class="itil-step-node">
+        <div class="itil-step-node-title">2. Restore Service ASAP!</div>
+        <div class="itil-step-node-desc">เน้นกู้ระบบให้กลับสู่สภาพปกติเร็วที่สุดตาม SLA มักใช้ <strong>Workaround (วิธีแก้ปัญหาชั่วคราว)</strong></div>
+      </div>
+    </div>
+
+    <!-- Problem Track -->
+    <div class="itil-branch-track problem">
+      <div style="font-weight: 700; color: #7c3aed; font-size: 0.95rem; display: flex; align-items: center; gap: 6px;">
+        🔬 Problem Management Track
+      </div>
+      <div class="itil-step-node">
+        <div class="itil-step-node-title">1. Problem Investigation</div>
+        <div class="itil-step-node-desc">วิเคราะห์หาสาเหตุที่แท้จริง (Root Cause) ของ Incident เพื่อป้องกันไม่ให้เกิดซ้ำ</div>
+      </div>
+      <div style="text-align: center; color: #94a3b8; font-size: 11px;">▼</div>
+      <div class="itil-step-node">
+        <div class="itil-step-node-title">2. Identify Root Cause!</div>
+        <div class="itil-step-node-desc">เมื่อพบสาเหตุและ Workaround จะบันทึกลงในฐานข้อมูล <strong>Known Error Record (KEDB)</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="itil-fork-merge">
+    <div class="itil-merge-card">
+      <span>🛠️ Permanent Fix (การแก้ไขถาวร)</span>
+      <span style="font-size: 0.8rem; font-weight: normal; color: #047857;">➔ ส่งต่อกระบวนการ Change Enablement เพื่อทดสอบและ Deploy ขึ้นระบบจริง</span>
+    </div>
+  </div>
+</div>
 <ul><li><strong>นิยามศัพท์สำคัญ:</strong></li></ul>
   <em> <strong>Incident (อุบัติการณ์/เหตุขัดข้อง):</strong> การหยุดชะงักของบริการที่ไม่ได้วางแผนไว้ หรือการลดลงของคุณภาพบริการ (</em>An unplanned interruption to a service or reduction in service quality*)
   <em> <strong>Problem (ปัญหา):</strong> สาเหตุ หรือสาเหตุที่อาจเกิดขึ้น ของอุบัติการณ์ตั้งแต่หนึ่งรายการขึ้นไป (</em>A cause, or potential cause, of one or more incidents*)
@@ -2830,33 +3670,65 @@ Service Value Chain คือโมเดลการดำเนินงาน
 
 <p>โมเดล 7 ขั้นตอนเป็นแนวทางวงกลม (Iterative Loop) ที่ใช้ขับเคลื่อนการปรับปรุงในทุกระดับ:</p>
 
-<pre class="guide-pre"><code>┌────────────────────────────────────────────────────────┐
-        │ 1. What is the vision? (เชื่อมโยงกับวิสัยทัศน์องค์กร)    │
-        └───────────────────────────┬────────────────────────────┘
-                                    ▼
-        ┌────────────────────────────────────────────────────────┐
-        │ 2. Where are we now? (ประเมินสถานะปัจจุบัน / Baseline)   │
-        └───────────────────────────┬────────────────────────────┘
-                                    ▼
-        ┌────────────────────────────────────────────────────────┐
-        │ 3. Where do we want to be? (กำหนดเป้าหมาย / Target OKRs) │
-        └───────────────────────────┬────────────────────────────┘
-                                    ▼
-        ┌────────────────────────────────────────────────────────┐
-        │ 4. How do we get there? (วางแผนการเดินทางและกิจกรรม)     │
-        └───────────────────────────┬────────────────────────────┘
-                                    ▼
-        ┌────────────────────────────────────────────────────────┐
-        │ 5. Take action! (ลงมือปฏิบัติการปรับปรุง)                 │
-        └───────────────────────────┬────────────────────────────┘
-                                    ▼
-        ┌────────────────────────────────────────────────────────┐
-        │ 6. Are we getting there? (วัดผลว่าบรรลุเป้าหมายหรือไม่)   │
-        └───────────────────────────┬────────────────────────────┘
-                                    ▼
-        ┌────────────────────────────────────────────────────────┐
-        │ 7. How do we keep the momentum going? (รักษาความยั่งยืน) │
-        └────────────────────────────────────────────────────────┘</code></pre>
+
+<div class="itil-diagram-wrapper">
+  <div class="itil-diag-header">
+    <div class="itil-diag-pill">📈 Continual Improvement Model (โมเดลการปรับปรุงอย่างต่อเนื่อง 7 ขั้นตอน)</div>
+    <div class="itil-diag-sub">กรอบการทำงานเชิงโครงสร้างสำหรับการขับเคลื่อนการเปลี่ยนแปลงและการพัฒนาในทุกระดับขององค์กร</div>
+  </div>
+  
+  <div class="itil-cim-list">
+    <div class="itil-cim-item">
+      <div class="itil-cim-num">1</div>
+      <div class="itil-cim-content">
+        <div class="itil-cim-title">What is the vision?</div>
+        <div class="itil-cim-desc">เชื่อมโยงกับวิสัยทัศน์ พันธกิจ กลยุทธ์ และเป้าหมายทางธุรกิจขององค์กร</div>
+      </div>
+    </div>
+    <div class="itil-cim-item">
+      <div class="itil-cim-num">2</div>
+      <div class="itil-cim-content">
+        <div class="itil-cim-title">Where are we now?</div>
+        <div class="itil-cim-desc">ประเมินสถานะปัจจุบัน เก็บรวบรวมข้อมูลเกณฑ์มาตรฐาน (Baseline Assessment)</div>
+      </div>
+    </div>
+    <div class="itil-cim-item">
+      <div class="itil-cim-num">3</div>
+      <div class="itil-cim-content">
+        <div class="itil-cim-title">Where do we want to be?</div>
+        <div class="itil-cim-desc">กำหนดเป้าหมายที่ชัดเจน วัดผลได้ และระบุตัวชี้วัดความสำเร็จ (Measurable Targets / OKRs)</div>
+      </div>
+    </div>
+    <div class="itil-cim-item">
+      <div class="itil-cim-num">4</div>
+      <div class="itil-cim-content">
+        <div class="itil-cim-title">How do we get there?</div>
+        <div class="itil-cim-desc">วางแผนการเดินทาง ออกแบบขั้นตอนการทำงานและกิจกรรมการปรับปรุงอย่างเป็นรูปธรรม</div>
+      </div>
+    </div>
+    <div class="itil-cim-item">
+      <div class="itil-cim-num">5</div>
+      <div class="itil-cim-content">
+        <div class="itil-cim-title">Take action!</div>
+        <div class="itil-cim-desc">ลงมือปฏิบัติตามแผนงานการปรับปรุง โดยใช้แนวทาง Agile / Iterative ควบคู่กับการสื่อสาร</div>
+      </div>
+    </div>
+    <div class="itil-cim-item">
+      <div class="itil-cim-num">6</div>
+      <div class="itil-cim-content">
+        <div class="itil-cim-title">Are we getting there?</div>
+        <div class="itil-cim-desc">วัดผลและตรวจสอบเมตริกเทียบกับเป้าหมายที่กำหนดไว้ในขั้นตอนที่ 3 เพื่อยืนยันคุณค่าที่เกิดขึ้น</div>
+      </div>
+    </div>
+    <div class="itil-cim-item" style="border: 2px solid #3b82f6; background: #eff6ff;">
+      <div class="itil-cim-num" style="background: #2563eb;">7</div>
+      <div class="itil-cim-content">
+        <div class="itil-cim-title" style="color: #1e40af;">How do we keep the momentum going?</div>
+        <div class="itil-cim-desc" style="color: #1d4ed8;">รักษาความยั่งยืนของการปรับปรุง ปลูกฝังเข้าสู่วัฒนธรรมองค์กร และเริ่มต้นรอบการปรับปรุงใหม่</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="guide-alert guide-alert-important">
       <div class="guide-alert-title">⚠️ สาระสำคัญ (Important)</div>
@@ -2931,12 +3803,30 @@ Service Value Chain คือโมเดลการดำเนินงาน
         <div class="guide-card-content">
           
 
-<pre class="guide-pre"><code>┌────────────────────────────────────────────────────────────────────────┐
-│                        Types of Value Streams                          │
-├───────────────────────────────────┬────────────────────────────────────┤
-│     Core Value Stream             │     Enabling Value Stream          │
-│ (ส่งมอบคุณค่าสู่ลูกค้าภายนอกโดยตรง)   │   (สนับสนุนลูกค้าภายในและ Core Stream)│
-└───────────────────────────────────┴────────────────────────────────────┘</code></pre>
+
+<div class="itil-diagram-wrapper">
+  <div class="itil-diag-header">
+    <div class="itil-diag-pill">🌊 Types of Value Streams (2 ประเภทของสายธารคุณค่า)</div>
+    <div class="itil-diag-sub">การแบ่งประเภทสายธารคุณค่าตามกลุ่มผู้รับผลประโยชน์หลัก</div>
+  </div>
+  <div class="itil-diag-connector">▼</div>
+  <div class="itil-diag-grid grid-2">
+    <div class="itil-diag-card border-blue">
+      <div class="itil-card-title">🌟 Core Value Stream</div>
+      <div class="itil-card-sub">สายธารคุณค่าหลัก (Customer-Facing)</div>
+      <div class="itil-card-desc">สายธารคุณค่าที่ส่งมอบคุณค่าและผลลัพธ์ให้แก่ <strong>ลูกค้าภายนอกองค์กรโดยตรง (External Customers)</strong> สร้างรายได้และขับเคลื่อนธุรกิจ</div>
+      <div style="font-size: 0.8rem; color: #64748b; margin-top: 6px;"><strong>ตัวอย่าง:</strong> กระบวนการสั่งซื้อและจัดส่งสินค้า E-Commerce, การเปิดบัญชีธนาคารออนไลน์</div>
+      <span class="itil-badge badge-blue">ส่งมอบสู่ลูกค้าภายนอกโดยตรง</span>
+    </div>
+    <div class="itil-diag-card border-indigo">
+      <div class="itil-card-title">🛡️ Enabling Value Stream</div>
+      <div class="itil-card-sub">สายธารคุณค่าสนับสนุน (Internal Enablers)</div>
+      <div class="itil-card-desc">สายธารคุณค่าที่สนับสนุน <strong>ลูกค้าภายในองค์กร (Internal Customers)</strong> และสร้างความพร้อมให้ Core Value Stream สามารถทำงานได้อย่างราบรื่นและต่อเนื่อง</div>
+      <div style="font-size: 0.8rem; color: #64748b; margin-top: 6px;"><strong>ตัวอย่าง:</strong> กระบวนการจัดซื้อและติดตั้งคอมพิวเตอร์พนักงานใหม่, การดูแลความปลอดภัยระบบ Network</div>
+      <span class="itil-badge badge-indigo">สนับสนุนภายใน & สนับสนุน Core Stream</span>
+    </div>
+  </div>
+</div>
 
 <p>1. <strong>Core Value Stream (สายธารคุณค่าหลัก):</strong><br><ul><li>สายธารคุณค่าที่ส่งมอบคุณค่าและผลลัพธ์ให้แก่ <strong>ผู้บริโภคภายนอก (External consumers)</strong> โดยตรง ตามโมเดลธุรกิจหลักขององค์กร</li></ul><br>   <em> </em>ตัวอย่าง:* สายธารคุณค่าการเปิดบัญชีเงินฝากออนไลน์ของธนาคาร, สายธารคุณค่าการสั่งซื้อและจัดส่งอาหารผ่านแอปพลิเคชัน<br>2. <strong>Enabling Value Stream (สายธารคุณค่าสนับสนุน):</strong><br>   <em> สายธารคุณค่าที่ส่งมอบคุณค่าให้แก่ <strong>ลูกค้าภายในองค์กร (Internal consumers)</strong> เพื่อสนับสนุนให้ Core Value Stream สามารถดำเนินงานได้อย่างมีประสิทธิภาพและราบรื่น (</em>By supporting the effective operation of core value streams*)<br>   <em> </em>ตัวอย่าง:* สายธารคุณค่าการจัดซื้ออุปกรณ์คอมพิวเตอร์ให้พนักงานใหม่ (IT Procurement), สายธารคุณค่าการรับสมัครและปฐมนิเทศพนักงาน (HR Onboarding)</p>
 
@@ -2970,15 +3860,41 @@ Service Value Chain คือโมเดลการดำเนินงาน
 
 <p>กระบวนการทำแผนผังสายธารคุณค่าประกอบด้วย 5 ขั้นตอนมาตรฐาน:</p>
 
-<pre class="guide-pre"><code>Step 1: Value Stream Identification (ระบุสายธารคุณค่าที่จะศึกษา)
-  ▼
-Step 2: Mapping of the 'as-is' Value Stream (วาดแผนผังขั้นตอนปัจจุบัน)
-  ▼
-Step 3: Analysing the Value Stream (วิเคราะห์จุดติดขัด คอขวด และสิ่งสูญเปล่า)
-  ▼
-Step 4: Mapping a 'to-be' Value Stream (ออกแบบแผนผังอนาคตที่ปรับปรุงแล้ว)
-  ▼
-Step 5: Planning and Implementing Improvements (วางแผนและลงมือปรับปรุง)</code></pre>
+
+<div class="itil-diagram-wrapper">
+  <div class="itil-diag-header">
+    <div class="itil-diag-pill">🗺️ 5 Steps of Value Stream Mapping (5 ขั้นตอนการจัดทำผังสายธารคุณค่า)</div>
+    <div class="itil-diag-sub">กระบวนการวิเคราะห์และปรับปรุงสายธารคุณค่าตามหลักการ Lean</div>
+  </div>
+  
+  <div class="itil-pipeline-flow" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px;">
+    <div class="itil-pipeline-step">
+      <span class="itil-pipeline-num">1</span>
+      <div class="itil-pipeline-name" style="font-size: 0.82rem;">🎯 Identification</div>
+      <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">ระบุสายธารคุณค่าที่จะศึกษา</div>
+    </div>
+    <div class="itil-pipeline-step">
+      <span class="itil-pipeline-num">2</span>
+      <div class="itil-pipeline-name" style="font-size: 0.82rem;">🗺️ Map 'as-is'</div>
+      <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">วาดผังขั้นตอนปัจจุบัน</div>
+    </div>
+    <div class="itil-pipeline-step">
+      <span class="itil-pipeline-num">3</span>
+      <div class="itil-pipeline-name" style="font-size: 0.82rem;">🔍 Analysing</div>
+      <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">วิเคราะห์คอขวดและสิ่งสูญเปล่า</div>
+    </div>
+    <div class="itil-pipeline-step">
+      <span class="itil-pipeline-num">4</span>
+      <div class="itil-pipeline-name" style="font-size: 0.82rem;">🚀 Map 'to-be'</div>
+      <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">ออกแบบผังขั้นตอนอนาคต</div>
+    </div>
+    <div class="itil-pipeline-step">
+      <span class="itil-pipeline-num">5</span>
+      <div class="itil-pipeline-name" style="font-size: 0.82rem;">🛠️ Implementation</div>
+      <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">วางแผนและลงมือปรับปรุง</div>
+    </div>
+  </div>
+</div>
 
 ---
         </div>
@@ -2997,46 +3913,88 @@ Step 5: Planning and Implementing Improvements (วางแผนและล�
 <h4 class="guide-subheading">ตัวอย่างเคสที่ 1: Value Stream สำหรับการกู้คืนบริการเมื่อเกิดอุบัติการณ์ร้ายแรง (Restoring a Live Digital Service)</h4>
 แสดงการร้อยเรียงกิจกรรมใน Value Chain เข้าด้วยกันเมื่อเกิดเหตุระบบล่ม:
 
-<pre class="guide-pre"><code>[ผู้ใช้แจ้งระบบล่ม]
-      │
-      ▼
- 1. ENGAGE ─────────────► เจ้าหน้าที่ Service Desk รับเรื่องผ่านพอร์ทัล และบันทึก Ticket
-      │
-      ▼
- 2. DELIVER & SUPPORT ──► ทีมปฏิบัติการเข้าตรวจสอบอาการ และยืนยันว่าเป็น Major Incident
-      │
-      ▼
- 3. OBTAIN/BUILD ───────► ทีมเทคนิคพบว่าฮาร์ดแวร์ Disk เสีย จึงเบิกชิ้นส่วนสำรองมาเปลี่ยน
-      │
-      ▼
- 4. DELIVER & SUPPORT ──► สลับระบบกลับมาทำงาน และทดสอบกู้คืนระบบจนกลับสู่สภาวะปกติ
-      │
-      ▼
- 5. ENGAGE ─────────────► แจ้งเตือนผู้ใช้งานว่าระบบพร้อมใช้งาน และสอบถามความพึงพอใจ
-      │
-      ▼
- 6. IMPROVE ────────────► ทีม Problem Management ประชุม Post-Mortem เพื่อหาทางป้องกันซ้ำ</code></pre>
+
+<div class="itil-diagram-wrapper">
+  <div class="itil-diag-header">
+    <div class="itil-diag-pill">🚨 เคสตัวอย่างที่ 1: Value Stream การกู้คืนระบบเมื่อเกิด Major Incident</div>
+    <div class="itil-diag-sub"><strong>Trigger:</strong> ผู้ใช้งานแจ้งระบบล่มผ่านช่องทาง Self-Service Portal</div>
+  </div>
+
+  <div class="itil-vs-flow">
+    <div class="itil-vs-step">
+      <span class="itil-vs-stepnum">STEP 1</span>
+      <span class="itil-vs-act-badge" style="background: #eff6ff; color: #1e40af; border-color: #bfdbfe;">🤝 ENGAGE</span>
+      <div class="itil-vs-act-desc">เจ้าหน้าที่ Service Desk รับเรื่องผ่านพอร์ทัล ตรวจสอบข้อมูลเบื้องต้น และบันทึกสร้าง Ticket ในระบบ</div>
+    </div>
+    <div class="itil-vs-step">
+      <span class="itil-vs-stepnum">STEP 2</span>
+      <span class="itil-vs-act-badge" style="background: #f0fdf4; color: #166534; border-color: #bbf7d0;">🚀 DELIVER & SUPPORT</span>
+      <div class="itil-vs-act-desc">ทีมปฏิบัติการเข้าตรวจสอบอาการ วิเคราะห์ผลกระทบ และยืนยันประกาศสถานะ Major Incident</div>
+    </div>
+    <div class="itil-vs-step">
+      <span class="itil-vs-stepnum">STEP 3</span>
+      <span class="itil-vs-act-badge" style="background: #f5f3ff; color: #6b21a8; border-color: #ddd6fe;">🔧 OBTAIN / BUILD</span>
+      <div class="itil-vs-act-desc">ทีมเทคนิคตรวจพบฮาร์ดแวร์ Disk เสีย จึงดำเนินการเบิกชิ้นส่วนสำรองจากสต็อกและเปลี่ยนทดแทน</div>
+    </div>
+    <div class="itil-vs-step">
+      <span class="itil-vs-stepnum">STEP 4</span>
+      <span class="itil-vs-act-badge" style="background: #f0fdf4; color: #166534; border-color: #bbf7d0;">🚀 DELIVER & SUPPORT</span>
+      <div class="itil-vs-act-desc">สลับระบบกลับมาทำงาน ทดสอบการกู้คืนข้อมูล และยืนยันว่าระบบกลับคืนสู่สภาวะปกติเรียบร้อย</div>
+    </div>
+    <div class="itil-vs-step">
+      <span class="itil-vs-stepnum">STEP 5</span>
+      <span class="itil-vs-act-badge" style="background: #eff6ff; color: #1e40af; border-color: #bfdbfe;">🤝 ENGAGE</span>
+      <div class="itil-vs-act-desc">ส่งแจ้งเตือนผู้ใช้งานว่าระบบพร้อมใช้งานแล้ว ปิด Incident Ticket และสอบถามความพึงพอใจการบริการ</div>
+    </div>
+    <div class="itil-vs-step">
+      <span class="itil-vs-stepnum">STEP 6</span>
+      <span class="itil-vs-act-badge" style="background: #fffbeb; color: #b45309; border-color: #fde68a;">📈 IMPROVE</span>
+      <div class="itil-vs-act-desc">ทีม Problem Management ประชุม Post-Mortem ทบทวนเหตุการณ์เพื่อหามาตรการป้องกันการเกิดซ้ำ</div>
+    </div>
+  </div>
+</div>
 
 <h4 class="guide-subheading">ตัวอย่างเคสที่ 2: Value Stream สำหรับการพัฒนาและปล่อยฟีเจอร์ใหม่ (Delivering a New Digital Feature)</h4>
-<pre class="guide-pre"><code>[ลูกค้าต้องการระบบจ่ายเงินผ่าน QR]
-      │
-      ▼
- 1. ENGAGE / DISCOVER ──► ทีม Product รับข้อเสนอแนะและสำรวจความต้องการทางธุรกิจ
-      │
-      ▼
- 2. PLAN ───────────────► ผู้บริหารและทีมวางแผน Roadmap และจัดสรรงบประมาณ
-      │
-      ▼
- 3. DESIGN ─────────────► ทีม UX/UI ออกแบบ Prototype และทำ Product Specification
-      │
-      ▼
- 4. OBTAIN/BUILD ───────► ฝ่ายพัฒนาเขียนโค้ด เชื่อมต่อ API ธนาคาร และรัน Automated Test
-      │
-      ▼
- 5. TRANSITION ─────────► Deploy โค้ดขึ้น Live Environment อย่างปลอดภัยผ่าน CI/CD Pipeline
-      │
-      ▼
- 6. DELIVER & SUPPORT ──► เปิดให้ผู้ใช้กดใช้งานจริง และมอนิเตอร์ประสิทธิภาพผ่าน Dashboard</code></pre>
+
+<div class="itil-diagram-wrapper">
+  <div class="itil-diag-header">
+    <div class="itil-diag-pill">💡 เคสตัวอย่างที่ 2: Value Stream การพัฒนาฟีเจอร์ใหม่ (ระบบจ่ายเงินผ่าน QR)</div>
+    <div class="itil-diag-sub"><strong>Trigger:</strong> ลูกค้าและฝ่ายธุรกิจต้องการระบบจ่ายเงินผ่าน QR Code ในแอปพลิเคชัน</div>
+  </div>
+
+  <div class="itil-vs-flow">
+    <div class="itil-vs-step">
+      <span class="itil-vs-stepnum">STEP 1</span>
+      <span class="itil-vs-act-badge" style="background: #eff6ff; color: #1e40af; border-color: #bfdbfe;">🤝 ENGAGE / DISCOVER</span>
+      <div class="itil-vs-act-desc">ทีม Product รับข้อเสนอแนะ สำรวจความต้องการทางธุรกิจ และรวบรวมฟีดแบ็กจากผู้ใช้งาน</div>
+    </div>
+    <div class="itil-vs-step">
+      <span class="itil-vs-stepnum">STEP 2</span>
+      <span class="itil-vs-act-badge" style="background: #fdf2f8; color: #9d174d; border-color: #fbcfe8;">🎯 PLAN</span>
+      <div class="itil-vs-act-desc">ผู้บริหารและทีมวางแผนจัดทำ Roadmap จัดสรรงบประมาณ และกำหนดเป้าหมายความสำเร็จ (OKRs)</div>
+    </div>
+    <div class="itil-vs-step">
+      <span class="itil-vs-stepnum">STEP 3</span>
+      <span class="itil-vs-act-badge" style="background: #eef2ff; color: #3730a3; border-color: #c7d2fe;">🎨 DESIGN</span>
+      <div class="itil-vs-act-desc">ทีม UX/UI ออกแบบ Prototype หน้าจอทำรายการ และกำหนดข้อกำหนดด้านสถาปัตยกรรมความปลอดภัย</div>
+    </div>
+    <div class="itil-vs-step">
+      <span class="itil-vs-stepnum">STEP 4</span>
+      <span class="itil-vs-act-badge" style="background: #f5f3ff; color: #6b21a8; border-color: #ddd6fe;">🔧 OBTAIN / BUILD</span>
+      <div class="itil-vs-act-desc">ฝ่ายพัฒนาเขียนโค้ด เชื่อมต่อ API ธนาคาร และรัน Automated Security & Regression Testing</div>
+    </div>
+    <div class="itil-vs-step">
+      <span class="itil-vs-stepnum">STEP 5</span>
+      <span class="itil-vs-act-badge" style="background: #fff7ed; color: #9a3412; border-color: #fed7aa;">📦 TRANSITION</span>
+      <div class="itil-vs-act-desc">Deploy ฟีเจอร์ขึ้น Live Environment อย่างปลอดภัยผ่าน CI/CD Pipeline พร้อมจัดทำคู่มือและอบรม Support</div>
+    </div>
+    <div class="itil-vs-step">
+      <span class="itil-vs-stepnum">STEP 6</span>
+      <span class="itil-vs-act-badge" style="background: #f0fdf4; color: #166534; border-color: #bbf7d0;">🚀 DELIVER & SUPPORT</span>
+      <div class="itil-vs-act-desc">เปิดให้ลูกค้าใช้งานจริง และมอนิเตอร์ความเสถียรของธุรกรรมผ่าน Real-Time Performance Dashboard</div>
+    </div>
+  </div>
+</div>
 
 ---
         </div>
