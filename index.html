@@ -838,15 +838,8 @@
       margin-bottom: 24px;
     }
 
-    .score-summary.pass {
-      background: #f0fdf4;
-      border: 2px solid #bbf7d0;
-    }
-
-    .score-summary.fail {
-      background: #fef2f2;
-      border: 2px solid #fecaca;
-    }
+    .score-summary.pass { background: #f0fdf4; border: 2px solid #bbf7d0; }
+    .score-summary.fail { background: #fef2f2; border: 2px solid #fecaca; }
 
     .score-badge {
       display: inline-block;
@@ -936,9 +929,7 @@
       box-shadow: var(--shadow-sm);
     }
 
-    .search-icon {
-      font-size: 1.1rem;
-    }
+    .search-icon { font-size: 1.1rem; }
 
     .guide-search-input {
       flex: 1;
@@ -967,9 +958,7 @@
       transition: all 0.2s ease;
     }
 
-    .guide-nav-pill:hover {
-      background: rgba(255, 255, 255, 0.25);
-    }
+    .guide-nav-pill:hover { background: rgba(255, 255, 255, 0.25); }
 
     .guide-nav-pill.active {
       background: #ffffff;
@@ -1005,16 +994,8 @@
       white-space: nowrap;
     }
 
-    .module-title {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: #0f172a;
-    }
-
-    .module-sub {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
+    .module-title { font-size: 1.25rem; font-weight: 800; color: #0f172a; }
+    .module-sub { font-size: 0.85rem; color: var(--text-muted); }
 
     .guide-card {
       background: var(--bg-card);
@@ -1059,18 +1040,63 @@
     }
 
     .guide-subheading {
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-weight: 700;
       color: #1e293b;
-      margin: 16px 0 8px 0;
+      margin: 18px 0 8px 0;
+    }
+
+    .guide-subsubheading {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #334155;
+      margin: 12px 0 6px 0;
+    }
+
+    .guide-card-content p {
+      margin-bottom: 12px;
+      line-height: 1.65;
+      color: #334155;
+    }
+
+    .guide-card-content ul, .guide-card-content ol {
+      margin: 10px 0 16px 24px;
+      color: #334155;
+    }
+
+    .guide-card-content li {
+      margin-bottom: 6px;
+      line-height: 1.6;
+    }
+
+    .guide-pre {
+      background: #0f172a;
+      color: #38bdf8;
+      padding: 14px 18px;
+      border-radius: 8px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      overflow-x: auto;
+      margin: 14px 0;
+    }
+
+    .guide-quote {
+      border-left: 4px solid var(--primary-light);
+      padding: 8px 16px;
+      background: #f8fafc;
+      font-style: italic;
+      color: #475569;
+      margin: 12px 0;
+      border-radius: 0 6px 6px 0;
     }
 
     .guide-alert {
-      padding: 12px 16px;
+      padding: 14px 18px;
       border-radius: 8px;
       margin: 14px 0;
       font-size: 0.92rem;
-      line-height: 1.55;
+      line-height: 1.6;
     }
 
     .guide-alert-note {
@@ -1110,7 +1136,7 @@
 
     .guide-alert-title {
       font-weight: 700;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
 
     .table-responsive {
@@ -1123,7 +1149,7 @@
       width: 100%;
       border-collapse: collapse;
       font-size: 0.9rem;
-      min-width: 500px;
+      min-width: 520px;
     }
 
     .guide-table th, .guide-table td {
@@ -1137,25 +1163,6 @@
       color: #1e293b;
       font-weight: 700;
     }
-
-    .role-grid, .dimensions-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 14px;
-      margin: 14px 0;
-    }
-
-    .role-card, .dim-card {
-      background: #f8fafc;
-      border: 1px solid var(--border);
-      padding: 16px;
-      border-radius: 8px;
-    }
-
-    .role-icon { font-size: 1.6rem; margin-bottom: 6px; }
-    .role-title, .dim-title { font-size: 1rem; font-weight: 700; color: #1e293b; margin-bottom: 6px; }
-    .role-example { font-size: 0.85rem; color: #475569; margin-top: 8px; border-top: 1px dashed var(--border); padding-top: 6px; }
-    .dim-num { font-size: 0.75rem; font-weight: 700; color: #3b82f6; text-transform: uppercase; margin-bottom: 2px; }
 
     /* Related Questions Container & Pills */
     .related-q-container {
@@ -1348,7 +1355,7 @@
       top: 0;
       right: 0;
       bottom: 0;
-      width: 650px;
+      width: 680px;
       max-width: 95vw;
       background: #ffffff;
       z-index: 1200;
@@ -1499,7 +1506,7 @@
         </button>
       </div>
 
-      <!-- Simulator Context Controls (Hidden in guide mode) -->
+      <!-- Simulator Context Controls -->
       <div class="header-controls" id="headerSimulatorControls">
         <div class="mode-selector">
           <button class="mode-btn active" id="btnPracticeMode" onclick="setMode('practice')">Practice Mode</button>
@@ -1654,20 +1661,19 @@
     </main>
   </div>
 
-  <!-- VIEW 2: STUDY GUIDE -->
+  <!-- VIEW 2: FULL UNABRIDGED STUDY GUIDE -->
   <div id="viewStudyGuide" style="display: none;">
-    
     <div class="guide-container">
       <!-- Guide Header & Controls -->
       <div class="guide-hero-card">
         <div class="guide-hero-title">📚 คู่มือเตรียมสอบและทบทวนเนื้อหาฉบับสมบูรณ์: ITIL Version 5</div>
         <div class="guide-hero-subtitle">
-          สรุปเข้มข้นตรงตามเกณฑ์ PeopleCert ทั้ง 7 บท • บูรณาการคำอธิบายเชิงลึก จุดดักข้อสอบ (Traps & Tips) คีย์เวิร์ดตัดชอยส์ภาษาอังกฤษ และเชื่อมโยงตรงกับคลังข้อสอบ 80 ข้อครบถ้วน
+          สรุปเนื้อหาเชิงลึกครบถ้วน 100% จากเอกสารบรรยายทั้ง 7 บท • บูรณาการคำอธิบายเชิงลึก ตารางเปรียบเทียบ จุดดักข้อสอบ (Traps & Tips) คีย์เวิร์ดตัดชอยส์ภาษาอังกฤษ และเชื่อมโยงตรงกับคลังข้อสอบ 80 ข้อครบถ้วน
         </div>
         
         <div class="guide-search-bar-wrapper">
           <span class="search-icon">🔍</span>
-          <input type="text" id="guideSearchInput" class="guide-search-input" placeholder="ค้นหาคำศัพท์, แนวคิด, หรือข้อสอบ เช่น Utility, Warranty, Incident, Monitor, Goodhart, PESTLE, SPOC..." oninput="filterStudyGuide(this.value)">
+          <input type="text" id="guideSearchInput" class="guide-search-input" placeholder="ค้นหาคำศัพท์, แนวคิด, หรือข้อสอบ เช่น Utility, Warranty, Incident, Monitor, Goodhart, PESTLE, Cynefin, SPOC..." oninput="filterStudyGuide(this.value)">
           <button class="btn btn-secondary btn-sm" onclick="document.getElementById('guideSearchInput').value=''; filterStudyGuide('')">ล้างค้นหา</button>
         </div>
 
@@ -1682,38 +1688,42 @@
         </div>
       </div>
 
-      <!-- MODULE 1 -->
-      <section class="guide-module-section" id="mod-1" data-module="mod-1">
-        <div class="module-banner">
-          <span class="module-number-badge">Module 1</span>
-          <div>
-            <h2 class="module-title">Introduction & Key Concepts of Service Management (Ch. 1 - 2)</h2>
-            <div class="module-sub">วิวัฒนาการ DPSM, Service, Value Co-creation, Utility vs Warranty, บทบาทผู้บริโภค, ข้อเสนอการให้บริการ และมิติทั้ง 4</div>
-          </div>
+      <!-- Injected 37 Unabridged Cards -->
+      
+    <section class="guide-module-section" id="mod-1" data-module="mod-1">
+      <div class="module-banner">
+        <span class="module-number-badge">Module 1</span>
+        <div>
+          <h2 class="module-title">Introduction & Key Concepts of Service Management (Ch. 1 - 2)</h2>
+          <div class="module-sub">บริบท DPSM, นิยามหัวใจสำคัญ, Utility vs Warranty, บทบาทผู้บริโภค, ข้อเสนอการให้บริการ, และมิติทั้ง 4 (PESTLE, Cynefin)</div>
         </div>
-
-        <!-- Section 1.1 -->
-        <article class="guide-card" id="sec-1-1">
-          <div class="guide-section-header">
-            <h3>1.1 บริบทใหม่: Digital Product and Service Management (DPSM)</h3>
-            <span class="guide-tag">Foundations</span>
-          </div>
-          <p>ในยุค <strong>ITIL Version 5</strong> ขอบเขตของการจัดการบริการไอที (ITSM) ได้รับการยกระดับขึ้นเป็น <strong>การจัดการผลิตภัณฑ์และบริการดิจิทัล (Digital Product and Service Management - DPSM)</strong> เนื่องจากในโลกธุรกิจปัจจุบัน เกือบทุกผลิตภัณฑ์และบริการล้วนขับเคลื่อนด้วยเทคโนโลยีดิจิทัล</p>
-          <div class="guide-alert guide-alert-note">
-            <div class="guide-alert-title">📌 หัวใจสำคัญของการเปลี่ยนแปลง</div>
-            <div class="guide-alert-body">
-              ITIL 5 ไม่ได้มองว่าไอทีเป็นเพียง "ฝ่ายสนับสนุนหลังบ้าน" แต่ไอทีคือ "กลไกขับเคลื่อนกลยุทธ์ทางธุรกิจ" โดยบูรณาการแนวคิดสมัยใหม่ เช่น <strong>Agile, DevOps, Lean, Cloud Computing, Site Reliability Engineering (SRE)</strong> และ <strong>Artificial Intelligence (AI)</strong> เข้ามาเป็นส่วนหนึ่งของการสร้างคุณค่า
-            </div>
-          </div>
-        </article>
-
-        <!-- Section 1.2 -->
-        <article class="guide-card" id="sec-1-2">
-          <div class="guide-section-header">
-            <h3>1.2 นิยามหัวใจสำคัญ (Core Terminology & Definitions)</h3>
-            <span class="guide-tag">Criteria: 1.1.2, 1.1.3, 1.2.3, 1.3.5, 1.3.6</span>
-          </div>
+      </div>
+  
+      <article class="guide-card" id="sec-1-1">
+        <div class="guide-section-header">
+          <h3>1.1 บริบทใหม่: Digital Product and Service Management (DPSM)</h3>
+          <span class="guide-tag">sec-1-1</span>
+        </div>
+        
+        
+        <div class="guide-card-content">
           
+
+<p>ในยุค ITIL Version 5 ขอบเขตของการจัดการบริการไอที (ITSM) ได้รับการยกระดับขึ้นเป็น <strong>การจัดการผลิตภัณฑ์และบริการดิจิทัล (Digital Product and Service Management - DPSM)</strong> เนื่องจากในโลกธุรกิจปัจจุบัน ธุรกิจและเทคโนโลยีไม่สามารถแยกขาดจากกันได้อีกต่อไป เกือบทุกผลิตภัณฑ์และบริการล้วนขับเคลื่อนด้วยเทคโนโลยีดิจิทัล</p>
+
+<blockquote class="guide-quote"><strong>หัวใจสำคัญของการเปลี่ยนแปลง:</strong>  </blockquote>
+<blockquote class="guide-quote">ITIL 5 ไม่ได้มองว่าไอทีเป็นเพียง "ฝ่ายสนับสนุนหลังบ้าน" แต่ไอทีคือ "กลไกขับเคลื่อนกลยุทธ์ทางธุรกิจ" โดยบูรณาการแนวคิดสมัยใหม่ เช่น <strong>Agile, DevOps, Lean, Cloud Computing, Site Reliability Engineering (SRE)</strong> และ <strong>Artificial Intelligence (AI)</strong> เข้ามาเป็นส่วนหนึ่งของการสร้างคุณค่า</blockquote>
+
+---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-1-2">
+        <div class="guide-section-header">
+          <h3>1.2 นิยามหัวใจสำคัญ (Core Terminology & Definitions)</h3>
+          <span class="guide-tag">sec-1-2</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -1746,72 +1756,50 @@
       </div>
     </div>
   
-
-          <h4 class="guide-subheading">1) Service (บริการ)</h4>
-          <p><strong>นิยามทางการ:</strong> วิธีการอำนวยความสะดวกในการสร้างคุณค่าร่วมกัน (<em>A means of enabling value co-creation</em>) โดยช่วยให้ผู้รับบริการบรรลุผลลัพธ์ (<em>Outcomes</em>) ที่ต้องการ โดยที่ผู้รับบริการ<strong>ไม่ต้องแบกรับการบริหารจัดการต้นทุนเฉพาะเจาะจง (Specific Costs) และความเสี่ยงเฉพาะเจาะจง (Specific Risks) เอง</strong></p>
-          <p><em>ตัวอย่าง:</em> ระบบคลาวด์องค์กร (AWS/Azure) ช่วยให้บริษัทรันระบบได้ตามต้องการ โดยไม่ต้องแบกรับภาระค่าดูแลตู้ Rack ค่าไฟ และความเสี่ยงฮาร์ดแวร์พังเอง</p>
-
-          <h4 class="guide-subheading">2) Digital Product vs. Digital Service (Critical Exam Concept!)</h4>
-          <ul>
-            <li><strong>Digital Product:</strong> การรวมกันของทรัพยากรขององค์กร (<em>A combination of an organization's resources</em>) ที่พึ่งพาเทคโนโลยีดิจิทัล และได้รับการออกแบบมาเพื่อเสนอคุณค่าแก่ผู้บริโภค</li>
-            <li><strong>Digital Service:</strong> บริการที่พึ่งพาผลิตภัณฑ์ดิจิทัลเป็นหลักหรือทั้งหมด (<em>A service that fully or largely relies on digital products</em>)</li>
-          </ul>
-          <div class="guide-alert guide-alert-important">
-            <div class="guide-alert-title">⚠️ กฎทองที่ข้อสอบออกซ้ำเสมอ:</div>
-            <div class="guide-alert-body">
-              <strong>"Digital services are always based on digital products."</strong><br>
-              (บริการดิจิทัลมีรากฐานมาจากผลิตภัณฑ์ดิจิทัลเสมอ โดยบริการจะแปลงคุณสมบัติของผลิตภัณฑ์ให้เกิดคุณค่าแก่ผู้ใช้งานจริง)
-            </div>
-          </div>
-
-          <h4 class="guide-subheading">3) Value & Co-creation of Value (การร่วมสร้างคุณค่า)</h4>
-          <p>คุณค่า (<strong>Value</strong>) ไม่ได้ถูกส่งมอบแบบทางเดียว (One-way delivery) จากผู้ให้บริการไปวางใส่ตักลูกค้า แต่เกิดจาก<strong>การมีปฏิสัมพันธ์และความร่วมมืออย่างต่อเนื่อง (Continuous collaboration and interaction)</strong> ระหว่างผู้ให้บริการ ผู้บริโภค และผู้มีส่วนได้ส่วนเสียอื่นๆ</p>
-
-          <h4 class="guide-subheading">4) Output vs. Outcome (ผลผลิต vs. ผลลัพธ์)</h4>
-          <div class="table-responsive">
-            <table class="guide-table">
-              <thead>
-                <tr>
-                  <th>มิติ</th>
-                  <th>Output (ผลผลิต)</th>
-                  <th>Outcome (ผลลัพธ์)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>ความหมาย</strong></td>
-                  <td>สิ่งที่ถูกสร้างหรือส่งมอบ (<em>What is produced/delivered</em>)</td>
-                  <td>ผลสัมฤทธิ์หรือการเปลี่ยนแปลงที่เกิดขึ้นจริง (<em>Result achieved for a stakeholder</em>)</td>
-                </tr>
-                <tr>
-                  <td><strong>ตัวอย่าง 1</strong></td>
-                  <td>ระบบ CRM ใหม่ที่ติดตั้งเสร็จสิ้น</td>
-                  <td>ทีมขายปิดดีลเร็วขึ้น 30% และลูกค้าพึงพอใจสูงขึ้น</td>
-                </tr>
-                <tr>
-                  <td><strong>ตัวอย่าง 2</strong></td>
-                  <td>การติดตั้ง Wi-Fi 6 ในโรงพยาบาล</td>
-                  <td>แพทย์เข้าถึงประวัติคนไข้ข้างเตียงได้ทันที ลดการจ่ายยาผิดพลาด</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="guide-alert guide-alert-warning">
-            <div class="guide-alert-title">🚨 Exam Trap เรื่อง Outcomes:</div>
-            <div class="guide-alert-body">
-              บริการ <strong>ไม่ได้รับประกัน (Does NOT guarantee)</strong> ว่าผลลัพธ์ที่วางแผนไว้ทั้งหมดจะเกิดขึ้น 100% เสมอไป และบริการอาจก่อให้เกิด <strong>ผลลัพธ์ที่ไม่ได้ตั้งใจ (Unintended & Surprising outcomes)</strong> ได้ทั้งในแง่บวกและแง่ลบ
-            </div>
-          </div>
-        </article>
-
-        <!-- Section 1.3 -->
-        <article class="guide-card" id="sec-1-3">
-          <div class="guide-section-header">
-            <h3>1.3 องค์ประกอบของความคุ้มค่าและคุณภาพบริการ (Service Quality & Metrics)</h3>
-            <span class="guide-tag">Criteria: 1.4.11, 1.4.5</span>
-          </div>
+        
+        <div class="guide-card-content">
           
+
+<h4 class="guide-subheading">1) Service (บริการ)</h4>
+<em> <strong>นิยามทางการ (Official Definition):</strong> วิธีการอำนวยความสะดวกในการสร้างคุณค่าร่วมกัน (</em>A means of enabling value co-creation<em>) โดยช่วยให้ผู้รับบริการบรรลุผลลัพธ์ (</em>Outcomes<em>) ที่ต้องการ โดยที่ผู้รับบริการไม่ต้องแบกรับการบริหารจัดการต้นทุนเฉพาะเจาะจง (</em>Specific Costs<em>) และความเสี่ยงเฉพาะเจาะจง (</em>Specific Risks*) เอง
+<ul><li><strong>ตัวอย่างสถานการณ์จริง:</strong></li><li><strong>ระบบคลาวด์องค์กร (Cloud Infrastructure เช่น AWS / Azure):</strong> บริษัทประกันภัยต้องการระบบวิเคราะห์ข้อมูลขนาดใหญ่ จึงเช่าใช้ Cloud Virtual Machines แทนการลงทุนซื้อเซิร์ฟเวอร์เอง ลูกค้าบรรลุผลลัพธ์ในการประมวลผลข้อมูลได้ตามต้องการ โดยไม่ต้องแบกรับภาระค่าดูแลตู้ Rack ค่าไฟ และความเสี่ยงเรื่องฮาร์ดแวร์เสียหรือไฟไหม้ห้องเซิร์ฟเวอร์</li></ul>
+
+<h4 class="guide-subheading">2) Digital Product vs. Digital Service</h4>
+<em> <strong>Digital Product (ผลิตภัณฑ์ดิจิทัล):</strong> การรวมกันของทรัพยากรขององค์กร (</em>A combination of an organization's resources*) ที่พึ่งพาเทคโนโลยีดิจิทัล และได้รับการออกแบบมาเพื่อเสนอคุณค่าแก่ผู้บริโภค
+<em> <strong>Digital Service (บริการดิจิทัล):</strong> บริการที่พึ่งพาผลิตภัณฑ์ดิจิทัลเป็นหลักหรือทั้งหมด (</em>A service that fully or largely relies on digital products*)
+<ul><li><strong>ความสัมพันธ์ระหว่างทั้งสอง (Critical Exam Concept):</strong></li></ul>
+  > <strong>Digital services are always based on digital products.</strong>  
+  > (บริการดิจิทัลมีรากฐานมาจากผลิตภัณฑ์ดิจิทัลเสมอ โดยบริการดิจิทัลจะแปลงคุณสมบัติของผลิตภัณฑ์ดิจิทัลให้เกิดคุณค่าแก่ผู้ใช้)
+<ul><li><strong>ตัวอย่างสถานการณ์จริง:</strong></li><li><strong>แอปพลิเคชัน Mobile Banking ของธนาคาร:</strong> ตัวแอปและระบบ Microservices หลังบ้านคือ <strong>Digital Product</strong> ส่วนบริการโอนเงิน จ่ายบิล ชำระค่าสินค้าผ่านพร้อมเพย์ที่ลูกค้าใช้งานในชีวิตประจำวันคือ <strong>Digital Service</strong></li></ul>
+
+<h4 class="guide-subheading">3) Value & Co-creation of Value (คุณค่าและการร่วมสร้างคุณค่า)</h4>
+<em> <strong>Value (คุณค่า):</strong> ประโยชน์ ความคุ้มค่า และความสำคัญของสิ่งใดสิ่งหนึ่งตามการรับรู้ของผู้มีส่วนได้ส่วนเสีย (</em>The perceived benefits, usefulness, and importance of something*)
+<ul><li><strong>Co-creation of Value (การสร้างคุณค่าร่วมกัน):</strong> คุณค่า <strong>ไม่ได้</strong> ถูกสร้างขึ้นโดยผู้ให้บริการฝ่ายเดียวแล้วนำไปวางใส่ตักลูกค้าแบบทางเดียว (One-way delivery) แต่คุณค่าเกิดจากการมีปฏิสัมพันธ์และความร่วมมืออย่างต่อเนื่องระหว่างผู้ให้บริการ (Service Provider) และผู้บริโภคบริการ (Service Consumer)</li><li><strong>ตัวอย่างสถานการณ์จริง:</strong></li><li><strong>ระบบ ERP สำหรับโรงพยาบาล:</strong> ผู้ให้บริการพัฒนาฟีเจอร์นัดหมายคนไข้ที่ดีเลิศ แต่หากบุคลากรทางการแพทย์ไม่ยอมบันทึกข้อมูลตารางเวร หรือคนไข้ไม่กดเช็กอินผ่านแอป ผลลัพธ์และคุณค่าเรื่องการลดระยะเวลารอคอยย่อมไม่เกิดขึ้น คุณค่าจะเกิดขึ้นได้จริงก็ต่อเมื่อทุกฝ่ายร่วมมือกันใช้งานและให้ฟีดแบ็ก</li></ul>
+
+<h4 class="guide-subheading">4) Output vs. Outcome (ผลผลิต vs. ผลลัพธ์)</h4>
+การแยกแยะระหว่างสองคำนี้เป็นข้อสอบยอดฮิตที่ออกซ้ำทุกปี:
+<ul><li><strong>Output (ผลผลิต):</strong> สิ่งที่ถูกสร้างขึ้นหรือส่งมอบจากการทำกิจกรรม (สิ่งที่จับต้องได้หรือส่งมอบเสร็จสิ้น เช่น Deliverable, System, Asset)</li><li><strong>Outcome (ผลลัพธ์):</strong> การเปลี่ยนแปลงหรือผลลัพธ์ที่เกิดขึ้นกับผู้มีส่วนได้ส่วนเสียจากการนำ Output นั้นไปใช้งาน</li><li><strong>ตารางเปรียบเทียบ Output vs. Outcome:</strong></li></ul>
+
+<div class="table-responsive"><table class="guide-table"><thead><tr><th>มิติ</th><th>Output (ผลผลิต)</th><th>Outcome (ผลลัพธ์)</th></tr></thead><tbody><tr><td><strong>ความหมาย</strong></td><td>สิ่งที่ถูกส่งมอบ (<em>What is produced/delivered</em>)</td><td>สภาวะหรือผลที่เกิดขึ้นจริง (<em>Result achieved for a stakeholder</em>)</td></tr><tr><td><strong>ตัวอย่างเคส 1</strong></td><td>ซอฟต์แวร์ CRM ระบบใหม่ที่ติดตั้งเสร็จ</td><td>ฝ่ายขายสามารถปิดดีลได้เร็วขึ้น 30% และลูกค้าพึงพอใจสูงขึ้น</td></tr><tr><td><strong>ตัวอย่างเคส 2</strong></td><td>การติดตั้งระบบเครือข่าย Wi-Fi 6 ในโรงพยาบาล</td><td>แพทย์เข้าถึงประวัติคนไข้ข้างเตียงได้อย่างทันท่วงที ช่วยลดอัตราการจ่ายยาผิดพลาด</td></tr></tbody></table></div><div class="guide-alert guide-alert-warning">
+      <div class="guide-alert-title">🚨 กับดักข้อสอบที่พบบ่อย (Exam Trap)</div>
+      <div class="guide-alert-body"><strong>Exam Trap เรื่อง Outcomes:</strong>  <br>บริการ <strong>ไม่ได้รับประกัน (Does NOT guarantee)</strong> ว่าผลลัพธ์ที่วางแผนไว้ทั้งหมดจะเกิดขึ้น 100% เสมอไป และบริการอาจก่อให้เกิด <strong>ผลลัพธ์ที่ไม่ได้ตั้งใจ (Unintended & Surprising outcomes)</strong> ได้ทั้งในแง่บวกและแง่ลบ (เช่น ระบบจองตั๋วออนไลน์ใหม่อาจทำให้พนักงานขายหน้าร้านว่างงาน หรือในทางกลับกันอาจเกิดการบอกต่อแบบไวรัลจนยอดขายพุ่งเกินคาด)</div>
+    </div>
+
+<h4 class="guide-subheading">5) Cost and Risk Balancing (การสมดุลต้นทุนและความเสี่ยง)</h4>
+คุณค่าเกิดขึ้นเมื่อผลลัพธ์เชิงบวกมีน้ำหนักมากกว่าผลกระทบเชิงลบ:
+<ul><li><strong>ฝั่งสร้างคุณค่า (Value Drivers):</strong></li><li>ผลลัพธ์ที่ต้องการได้รับการสนับสนุน (Supported desired outcomes)</li><li>ต้นทุนของผู้บริโภคที่ถูกลดทอนลง (Costs removed)</li><li>ความเสี่ยงของผู้บริโภคที่ถูกขจัดออกไป (Risks removed)</li><li><strong>ฝั่งลดทอนคุณค่า (Value Deterrents):</strong></li><li>ผลลัพธ์เชิงลบที่เกิดขึ้นโดยไม่ตั้งใจ (Negative outcomes introduced)</li><li>ต้นทุนใหม่ที่ผู้บริโภคต้องจ่ายเพิ่ม เช่น ค่าธรรมเนียม ค่าอบรม (Costs introduced)</li><li>ความเสี่ยงใหม่ที่เพิ่มเข้ามา เช่น เสี่ยงระบบล่ม เสี่ยงข้อมูลรั่วไหล (Risks introduced)</li></ul>
+<em> <strong>คีย์ลัดข้อสอบ:</strong> </em>Value is created when desired outcomes are achieved while costs and risks are optimized.*
+
+---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-1-3">
+        <div class="guide-section-header">
+          <h3>1.3 องค์ประกอบของความคุ้มค่าและคุณภาพบริการ (Service Quality & Metrics)</h3>
+          <span class="guide-tag">sec-1-3</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -1828,62 +1816,64 @@
       </div>
     </div>
   
-
-          <p>คุณภาพบริการใน ITIL 5 ถูกวัดผ่าน 4 องค์ประกอบสำคัญ:</p>
-          <div class="table-responsive">
-            <table class="guide-table">
-              <thead>
-                <tr>
-                  <th>หมวดหมู่</th>
-                  <th>สโลแกน</th>
-                  <th>ความหมาย / เงื่อนไข</th>
-                  <th>ตัวอย่าง</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Utility (อรรถประโยชน์)</strong></td>
-                  <td><strong>Fit for Purpose</strong></td>
-                  <td>บริการ <strong>ทำอะไรได้บ้าง (What it does)</strong> เพื่อหนุนเสริมงาน (Supports performance) หรือปลดล็อกข้อจำกัด (Removes constraints) [OR condition]</td>
-                  <td>แอปธนาคารมีฟังก์ชันโอนเงิน, สแกน QR, ดาวน์โหลด Statement</td>
-                </tr>
-                <tr>
-                  <td><strong>Warranty (การรับประกัน)</strong></td>
-                  <td><strong>Fit for Use</strong></td>
-                  <td>บริการ <strong>ทำงานได้เสถียรเพียงใด (How it performs)</strong> ต้องครบทั้ง 4 ด้าน: Availability, Capacity, Security, Continuity [AND condition]</td>
-                  <td>แอปเปิดใช้ได้ 24/7, รองรับ 10,000 tx/sec, ข้อมูลเข้ารหัสปลอดภัย, สลับศูนย์ข้อมูลสำรองได้ใน 5 นาที</td>
-                </tr>
-                <tr>
-                  <td><strong>Sustainability (ความยั่งยืน)</strong></td>
-                  <td><strong>Triple Bottom Line</strong></td>
-                  <td>คำนึงถึง 3 ด้าน (ESG): Environmental (ลดก๊าซเรือนกระจก, รีไซเคิล), Social (สิทธิมนุษยชน), Economic (ความโปร่งใสในซัพพลายเชน)</td>
-                  <td>ผู้ให้บริการไอทีใช้พลังงานหมุนเวียน 100% ในศูนย์ข้อมูลและเลือกชิ้นส่วนรีไซเคิล</td>
-                </tr>
-                <tr>
-                  <td><strong>User Experience (UX)</strong></td>
-                  <td><strong>Experience & Perception</strong></td>
-                  <td>ผลรวมของการรับรู้และความรู้สึกของผู้ใช้ ทั้ง Functional (ใช้ง่าย ไม่ค้าง) และ Emotional (ความสบายใจ มั่นใจ)</td>
-                  <td>หน้าจอแอปใช้งานลื่นไหล เมนูไม่ซับซ้อน ผู้ใช้รู้สึกปลอดภัย</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="guide-alert guide-alert-tip">
-            <div class="guide-alert-title">💡 สูตรลัดตัดชอยส์:</div>
-            <div class="guide-alert-body">
-              ถามเรื่อง "ปุ่ม, ฟังก์ชัน, เมนู, ทำอะไรได้" = <strong>Utility</strong><br>
-              ถามเรื่อง "ความเร็ว, ความพร้อมใช้ (Uptime), ความจุ, ความปลอดภัย, สำรองข้อมูล" = <strong>Warranty</strong>
-            </div>
-          </div>
-        </article>
-
-        <!-- Section 1.4 -->
-        <article class="guide-card" id="sec-1-4">
-          <div class="guide-section-header">
-            <h3>1.4 ผู้มีส่วนได้ส่วนเสียและบทบาทผู้บริโภคบริการ (Stakeholder Roles)</h3>
-            <span class="guide-tag">Criteria: 1.4.4</span>
-          </div>
+        
+        <div class="guide-card-content">
           
+
+<p>คุณภาพบริการ (Service Quality) ใน ITIL 5 ถูกวัดผ่าน <strong>Service Level Metrics 4 หมวดหมู่</strong> ดังนี้:</p>
+
+<pre class="guide-pre"><code>┌──────────────────────────────────────────┐
+                            │   Service Quality / Service Metrics      │
+                            └────────────────────┬─────────────────────┘
+                                                 │
+        ┌─────────────────────────┬──────────────┴───────────┬─────────────────────────┐
+        ▼                         ▼                          ▼                         ▼
+┌───────────────┐         ┌───────────────┐          ┌───────────────┐         ┌───────────────┐
+│    Utility    │         │   Warranty    │          │Sustainability │         │User Experience│
+│Fit for Purpose│         │  Fit for Use  │          │Triple Bottom  │         │   (UX)        │
+│(What it does) │         │(How it works) │          │  Line         │         │Emotional &    │
+│               │         │               │          │               │         │Functional     │
+└───────────────┘         └───────────────┘          └───────────────┘         └───────────────┘</code></pre>
+
+<h4 class="guide-subheading">1) Utility (อรรถประโยชน์) – "Fit for Purpose"</h4>
+<ul><li><strong>นิยาม:</strong> ฟังก์ชันหรือหน้าที่การทำงานของผลิตภัณฑ์/บริการว่า <strong>"ทำอะไรได้บ้าง (What the service does)"</strong> เพื่อตอบสนองความต้องการเฉพาะ</li><li><strong>เงื่อนไขทางทฤษฎี:</strong> ต้องผ่านเงื่อนไขใดเงื่อนไขหนึ่งเป็นอย่างน้อย (OR condition):</li></ul>
+  1. เพิ่มประสิทธิภาพ/สนับสนุนการทำงานของผู้บริโภค (<em>Supports performance</em>) <strong>หรือ</strong>
+  2. ขจัดอุปสรรค/ข้อจำกัดของผู้บริโภค (<em>Removes constraints</em>)
+<ul><li><strong>ตัวอย่าง:</strong> แอปธนาคารมีฟังก์ชันสแกน QR Code เพื่อจ่ายเงิน และมีฟังก์ชันดาวน์โหลด Statement ย้อนหลัง 1 ปี</li></ul>
+
+<h4 class="guide-subheading">2) Warranty (การรับประกันคุณภาพการใช้งาน) – "Fit for Use"</h4>
+<ul><li><strong>นิยาม:</strong> การรับประกันว่าบริการจะทำงานได้ตามข้อตกลงและเงื่อนไขที่กำหนด <strong>"ทำงานได้ดีเพียงใด (How the service performs)"</strong></li><li><strong>เงื่อนไขทางทฤษฎี:</strong> ต้องมีครบทุกมิติพร้อมกัน (AND condition) ได้แก่:</li></ul>
+  1. <strong>Availability (ความพร้อมใช้งาน):</strong> ระบบเปิดให้ใช้งานได้เมื่อต้องการ (เช่น Uptime 99.95%)
+  2. <strong>Capacity (ขีดความสามารถ):</strong> รองรับปริมาณผู้ใช้หรือธุรกรรมพร้อมกันได้เพียงพอ ไม่สะดุด
+  3. <strong>Security (ความปลอดภัยมั่นคง):</strong> ข้อมูลปลอดภัย ไม่รั่วไหล ป้องกันการเข้าถึงโดยมิชอบ
+  4. <strong>Continuity (ความต่อเนื่อง):</strong> มีแผนสำรองและกู้คืนระบบได้รวดเร็วหากเกิดภัยพิบัติ
+<ul><li><strong>ตัวอย่าง:</strong> แอปธนาคารเข้าใช้งานได้ 24/7 (Availability), รองรับธุรกรรม 10,000 รายการต่อวินาทีในวันเงินเดือนออก (Capacity), ข้อมูลธุรกรรมถูกเข้ารหัสอย่างปลอดภัย (Security), และสลับไปศูนย์ข้อมูลสำรองได้ภายใน 5 นาทีหากศูนย์หลักไฟดับ (Continuity)</li></ul>
+
+<h4 class="guide-subheading">3) Sustainability (ความยั่งยืน) – "Triple Bottom Line"</h4>
+<ul><li><strong>นิยาม:</strong> การรับประกันว่าการให้บริการคำนึงถึงผลกระทบระยะยาวตามหลัก 3 ด้าน (ESG):</li></ul>
+  1. <strong>Environmental stewardship:</strong> ใช้วัสดุรีไซเคิล ลดการปล่อยก๊าซเรือนกระจก (Carbon footprint), ประหยัดพลังงาน Data Center
+  2. <strong>Social progress:</strong> ความเท่าเทียม สิทธิมนุษยชน จริยธรรมการใช้งานข้อมูล
+  3. <strong>Economic growth:</strong> การเติบโตทางเศรษฐกิจที่โปร่งใสและเป็นธรรมตลอดห่วงโซ่อุปทาน
+<ul><li><strong>ตัวอย่างในข้อสอบ:</strong> ผู้ให้บริการไอทีเปลี่ยนมาใช้พลังงานหมุนเวียนในศูนย์ข้อมูล 100% และคัดเลือกคู่ค้าที่มีความโปร่งใสในห่วงโซ่อุปทาน</li></ul>
+
+<h4 class="guide-subheading">4) User Experience (UX)</h4>
+<ul><li><strong>นิยาม:</strong> ผลรวมของการรับรู้ ความรู้สึก และการมีปฏิสัมพันธ์ของผู้ใช้กับผลิตภัณฑ์และบริการ ทั้งในแง่:</li><li><strong>Functional Interactions:</strong> ความสะดวก ใช้งานง่าย เมนูไม่ซับซ้อน ไม่ค้าง</li><li><strong>Emotional Interactions:</strong> ความรู้สึกมั่นใจ ความสบายใจ ความพึงพอใจในการใช้งาน</li></ul>
+
+<div class="table-responsive"><table class="guide-table"><thead><tr><th>หัวข้อเปรียบเทียบ</th><th>Utility</th><th>Warranty</th></tr></thead><tbody><tr><td><strong>สโลแกนหลัก</strong></td><td><strong>Fit for Purpose</strong> (เหมาะกับวัตถุประสงค์)</td><td><strong>Fit for Use</strong> (เหมาะกับการใช้งานจริง)</td></tr><tr><td><strong>คำถามสำคัญ</strong></td><td>บริการนี้ <strong>ทำอะไรได้</strong> ? (<em>What it does</em>)</td><td>บริการนี้ <strong>ทำงานได้เสถียร/ดีเพียงใด</strong> ? (<em>How it performs</em>)</td></tr><tr><td><strong>เกณฑ์การตัดสิน</strong></td><td>สนับสนุนงาน <strong>หรือ</strong> ปลดล็อกข้อจำกัด (OR)</td><td>พร้อมใช้ + ขีดความสามารถพอ + ปลอดภัย + ต่อเนื่อง (AND)</td></tr><tr><td><strong>ตัวอย่างความล้มเหลว</strong></td><td>ซอฟต์แวร์บัญชีไม่มีฟังก์ชันคำนวณภาษีหัก ณ ที่จ่าย</td><td>ซอฟต์แวร์มีฟังก์ชันครบถ้วน แต่ระบบล่มทุกสิ้นเดือนหรือถูกแฮก</td></tr></tbody></table></div><div class="guide-alert guide-alert-note">
+      <div class="guide-alert-title">📌 หมายเหตุ / ข้อสังเกต (Note)</div>
+      <div class="guide-alert-body"><strong>Exam Tip:</strong> ข้อสอบชอบนำสถานการณ์มาถามว่าจัดเป็น Utility หรือ Warranty ให้จำง่ายๆ ว่า: ถ้าเกี่ยวกับ "ปุ่ม ฟังก์ชัน เมนู การทำงานว่าทำอะไรได้" = <strong>Utility</strong> แต่ถ้าเกี่ยวกับ "ความเร็ว ความเสถียร เวลาเปิดปิดระบบ ความจุ พื้นที่ ความปลอดภัย การสำรองข้อมูล" = <strong>Warranty</strong></div>
+    </div>
+
+---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-1-4">
+        <div class="guide-section-header">
+          <h3>1.4 ผู้มีส่วนได้ส่วนเสียและบทบาทผู้บริโภคบริการ (Stakeholder Roles)</h3>
+          <span class="guide-tag">sec-1-4</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -1898,37 +1888,42 @@
       </div>
     </div>
   
-
-          <p>ในบทบาทของผู้บริโภคบริการ (Service Consumer) แบ่งเป็น 3 บทบาทหลักที่ข้อสอบชอบถามความแตกต่าง:</p>
-          <div class="role-grid">
-            <div class="role-card">
-              <div class="role-icon">💰</div>
-              <h4 class="role-title">Sponsor (ผู้อนุมัติงบ)</h4>
-              <p>ผู้มีอำนาจในการอนุมัติงบประมาณและเงินทุนสำหรับการใช้บริการ (<em>Authorizes budget for service consumption</em>)</p>
-              <div class="role-example"><strong>ตัวอย่าง:</strong> CFO หรือบอร์ดบริหารที่เซ็นอนุมัติงบจัดซื้อ Microsoft 365</div>
-            </div>
-            <div class="role-card">
-              <div class="role-icon">📋</div>
-              <h4 class="role-title">Customer (ลูกค้า)</h4>
-              <p>ผู้กำหนดความต้องการ (<em>Defines requirements</em>) และเป็นผู้รับผิดชอบต่อผลลัพธ์ (<em>Takes responsibility for outcomes</em>)</p>
-              <div class="role-example"><strong>ตัวอย่าง:</strong> HR Director ที่กำหนดสเปกของระบบ Payroll และตรวจรับงาน</div>
-            </div>
-            <div class="role-card">
-              <div class="role-icon">👤</div>
-              <h4 class="role-title">User (ผู้ใช้งาน)</h4>
-              <p>ผู้ที่ใช้งานบริการนั้นจริงในชีวิตประจำวันหรือการทำงาน (<em>Uses services on a day-to-day basis</em>)</p>
-              <div class="role-example"><strong>ตัวอย่าง:</strong> พนักงานทั่วไปที่ล็อกอินเข้าแอปบันทึกเวลาทำงานและยื่นใบลา</div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Section 1.5 -->
-        <article class="guide-card" id="sec-1-5">
-          <div class="guide-section-header">
-            <h3>1.5 ข้อเสนอการให้บริการ (Service Offerings: 3 องค์ประกอบหลัก)</h3>
-            <span class="guide-tag">Criteria: 1.2.4</span>
-          </div>
+        
+        <div class="guide-card-content">
           
+
+<p>ในความสัมพันธ์ของบริการ ผู้บริโภคบริการ (Service Consumer) จะแบ่งบทบาทออกเป็น 3 บทบาทหลักอย่างชัดเจน (ซึ่งบุคคลคนเดียวอาจทำหลายบทบาทพร้อมกัน หรือแยกคนละคนก็ได้):</p>
+
+<pre class="guide-pre"><code>┌──────────────────────────────────────┐
+                   │    Service Consumer Roles            │
+                   └──────────────────┬───────────────────┘
+                                      │
+         ┌────────────────────────────┼────────────────────────────┐
+         ▼                            ▼                            ▼
+  ┌──────────────┐             ┌──────────────┐             ┌──────────────┐
+  │   Sponsor    │             │   Customer   │             │     User     │
+  │Authorizes    │             │Defines       │             │Uses service  │
+  │Budget        │             │Requirements &│             │on day-to-day │
+  │(ผู้อนุมัติงบ)  │             │Accountable   │             │basis (ผู้ใช้)│
+  └──────────────┘             └──────────────┘             └──────────────┘</code></pre>
+
+<p>1. <strong>Sponsor (ผู้สนับสนุนงบประมาณ):</strong><br>   <em> <strong>บทบาท:</strong> ผู้มีอำนาจในการอนุมัติงบประมาณและเงินทุนสำหรับการจัดซื้อหรือใช้บริการ (</em>Authorizes budget for service consumption*)<br><ul><li><strong>ตัวอย่าง:</strong> ประธานเจ้าหน้าที่ฝ่ายการเงิน (CFO) หรือบอร์ดบริหารที่เซ็นอนุมัติงบซื้อสิทธิ์ Microsoft 365</li></ul><br>2. <strong>Customer (ลูกค้า):</strong><br>   <em> <strong>บทบาท:</strong> ผู้กำหนดความต้องการของบริการ (</em>Defines requirements for services<em>) และเป็นผู้รับผิดชอบต่อผลลัพธ์ (</em>Takes responsibility for outcomes*) จากการใช้บริการ<br><ul><li><strong>ตัวอย่าง:</strong> ผู้อำนวยการฝ่ายทรัพยากรบุคคล (HR Director) ที่กำหนดความต้องการของระบบ Payroll และตรวจรับมอบงาน</li></ul><br>3. <strong>User (ผู้ใช้งาน):</strong><br>   <em> <strong>บทบาท:</strong> ผู้ที่ใช้งานบริการนั้นจริงในการทำงานหรือชีวิตประจำวัน (</em>Uses services on a day-to-day basis*)<br><ul><li><strong>ตัวอย่าง:</strong> พนักงานบริษัททั่วไปที่ล็อกอินเข้าไประบบบันทึกเวลาเข้า-ออกงานและยื่นใบลาผ่านมือถือ</li></ul></p>
+
+<div class="guide-alert guide-alert-tip">
+      <div class="guide-alert-title">💡 เคล็ดลับข้อสอบ (Exam Tip)</div>
+      <div class="guide-alert-body"><strong>Customer Experience (CX) vs. User Experience (UX):</strong><br><em> <strong>Customer Experience (CX):</strong> มุ่งเน้นประสบการณ์ของ <strong>Customer</strong> ตลอดเส้นทางการเป็นพันธมิตรสัญญา การเจรจาราคา SLA และการดูแลภาพรวมความสัมพันธ์<br></em> <strong>User Experience (UX):</strong> มุ่งเน้นประสบการณ์ตรงของ <strong>User</strong> ที่มีต่อหน้าจอ การใช้งานแอป ฟังก์ชัน และการตอบสนองเฉพาะหน้า</div>
+    </div>
+
+---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-1-5">
+        <div class="guide-section-header">
+          <h3>1.5 ข้อเสนอการให้บริการ (Service Offerings)</h3>
+          <span class="guide-tag">sec-1-5</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -1947,49 +1942,31 @@
       </div>
     </div>
   
-
-          <p><strong>Service Offering</strong> คือแพ็กเกจคำอธิบายอย่างเป็นทางการที่นำเสนอแก่ผู้บริโภค ประกอบด้วย 3 องค์ประกอบ:</p>
-          <div class="table-responsive">
-            <table class="guide-table">
-              <thead>
-                <tr>
-                  <th>องค์ประกอบ</th>
-                  <th>ลักษณะสำคัญ</th>
-                  <th>การโอนกรรมสิทธิ์</th>
-                  <th>ตัวอย่างจริงในข้อสอบ</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>1. Goods (สินค้า)</strong></td>
-                  <td>ส่งมอบสิ่งของหรืออุปกรณ์ที่จับต้องได้</td>
-                  <td><strong>โอนกรรมสิทธิ์ (Transfer of ownership)</strong> ผู้รับบริการรับผิดชอบดูแลต่อ</td>
-                  <td>การส่งมอบแล็ปท็อป, มือถือบริษัท, ปริ้นเตอร์ให้พนักงาน</td>
-                </tr>
-                <tr>
-                  <td><strong>2. Access to Resources (การให้สิทธิ์เข้าใช้ทรัพยากร)</strong></td>
-                  <td>อนุญาตให้เข้าใช้งานทรัพยากรตามเงื่อนไขที่ตกลงกัน</td>
-                  <td><strong>ไม่โอนกรรมสิทธิ์ (NO transfer of ownership)</strong> ผู้ให้บริการยังคงเป็นเจ้าของ</td>
-                  <td>ให้สิทธิ์ใช้งานระบบแชร์ไฟล์, ให้สิทธิ์ VPN, สิทธิ์ใช้ Cloud VM</td>
-                </tr>
-                <tr>
-                  <td><strong>3. Service Actions (การปฏิบัติการบริการ)</strong></td>
-                  <td>การลงมือกระทำกิจกรรมเพื่อช่วยเหลือผู้รับบริการ</td>
-                  <td>เป็นการกระทำ/บริการโดยบุคลากร</td>
-                  <td>วิศวกรไอทีช่วยเหลือผู้ใช้ในการคอนฟิกและติดตั้งโปรแกรมบนแล็ปท็อป</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
-
-        <!-- Section 1.6 -->
-        <article class="guide-card" id="sec-1-6">
-          <div class="guide-section-header">
-            <h3>1.6 โมเดลความสัมพันธ์ของบริการ (Service Relationship Model)</h3>
-            <span class="guide-tag">Criteria: 1.4.2, 1.4.3</span>
-          </div>
+        
+        <div class="guide-card-content">
           
+
+<p><strong>Service Offering</strong> คือแพ็กเกจคำอธิบายอย่างเป็นทางการที่ผู้ให้บริการจัดทำขึ้นเพื่อนำเสนอแก่ผู้บริโภค ซึ่งประกอบด้วยองค์ประกอบย่อย 3 ประเภท:</p>
+
+<pre class="guide-pre"><code>┌────────────────────────────────────────────────────────────────────────┐
+  │                      Service Offering Components                       │
+  ├───────────────────────┬────────────────────────┬───────────────────────┤
+  │    1. Goods           │ 2. Access to Resources │   3. Service Actions  │
+  │ (การโอนกรรมสิทธิ์สินค้า) │  (การให้สิทธิ์เข้าใช้)   │ (การลงมือปฏิบัติการบริการ) │
+  └───────────────────────┴────────────────────────┴───────────────────────┘</code></pre>
+
+<p>1. <strong>Goods (การโอนย้ายกรรมสิทธิ์สินค้า):</strong><br><ul><li>กรรมสิทธิ์ความเป็นเจ้าของถูกโอนไปยังผู้บริโภค ผู้บริโภคต้องรับผิดชอบการดูแลสินค้านั้นต่อในอนาคต</li></ul><br>   <em> </em>ตัวอย่าง:* การส่งมอบแล็ปท็อป โทรศัพท์มือถือบริษัท หรือเครื่องพิมพ์ให้พนักงานนำไปใช้เป็นของตน<br>2. <strong>Access to Resources (การอนุญาตให้เข้าถึงทรัพยากร):</strong><br><ul><li>ผู้ให้บริการยังคงเป็นเจ้าของทรัพยากร แต่ให้สิทธิ์ผู้บริโภคเข้าใช้งานตามข้อกำหนดและเงื่อนไข (Terms & Conditions) ที่ตกลงกัน</li></ul><br>   <em> </em>ตัวอย่าง:* การให้สิทธิ์ล็อกอินเข้าใช้ระบบแชร์ไฟล์ของบริษัท (OneDrive / Google Drive), สิทธิ์เข้าใช้เครือข่าย VPN, สิทธิ์เข้าใช้ AWS Virtual Machine<br>3. <strong>Service Actions (การปฏิบัติการบริการ):</strong><br><ul><li>กิจกรรมหรือการกระทำที่เจ้าหน้าที่ของผู้ให้บริการลงมือทำเพื่อตอบสนองความต้องการของผู้บริโภค</li></ul><br>   <em> </em>ตัวอย่าง:* วิศวกรไอทีช่วยเหลือผู้ใช้ในการลงโปรแกรมและตั้งค่าคอมพิวเตอร์ (Configuring laptop), การจัดฝึกอบรมพนักงาน, การบำรุงรักษาเครื่องจักรตามรอบ</p>
+
+---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-1-6">
+        <div class="guide-section-header">
+          <h3>1.6 โมเดลความสัมพันธ์ของบริการ (Service Relationship Model)</h3>
+          <span class="guide-tag">sec-1-6</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -2006,28 +1983,30 @@
       </div>
     </div>
   
-
-          <h4 class="guide-subheading">ระดับความสัมพันธ์ 3 รูปแบบ (Types of Service Relationships):</h4>
-          <ul>
-            <li><strong>Basic Relationship:</strong> บริการมาตรฐานสำหรับตลาดมวลชน ไม่ซับซ้อน มุ่งเน้นประสิทธิภาพและการสนับสนุนทั่วไป</li>
-            <li><strong>Cooperative Relationship:</strong> มีการปรับแต่งบริการให้เข้ากับความต้องการเฉพาะ มุ่งเน้นประสิทธิผลและการปรับปรุงร่วมกัน</li>
-            <li><strong>Collaborative Relationship:</strong> พันธมิตรเชิงกลยุทธ์ (Partnership) ร่วมกันสร้างนวัตกรรมและการเติบโตในระยะยาว</li>
-          </ul>
-
-          <h4 class="guide-subheading">แนวคิดเสริมที่ออกสอบบ่อย:</h4>
-          <ul>
-            <li><strong>Band of Visibility (ขอบเขตการมองเห็นร่วมกัน):</strong> แง่มุมและข้อมูลที่เปิดให้มองเห็นได้ระหว่างผู้ให้บริการและผู้รับบริการ เพื่อสร้างความโปร่งใสและความไว้ใจ</li>
-            <li><strong>Service Journey (เส้นทางการใช้บริการ):</strong> ปฏิสัมพันธ์แบบ End-to-End ระหว่างผู้ให้บริการและผู้บริโภค ตั้งแต่ก่อนเริ่มใช้บริการ ขณะใช้งาน ไปจนถึงการสิ้นสุดสัญญา</li>
-          </ul>
-        </article>
-
-        <!-- Section 1.7 -->
-        <article class="guide-card" id="sec-1-7">
-          <div class="guide-section-header">
-            <h3>1.7 มิติทั้ง 4 ของการจัดการผลิตภัณฑ์และบริการ (The ITIL Four Dimensions)</h3>
-            <span class="guide-tag">Criteria: 2.2.2</span>
-          </div>
+        
+        <div class="guide-card-content">
           
+
+<p>ความสัมพันธ์ของบริการประกอบด้วย 3 มิติหลัก:<br><ul><li><strong>Service Provision (การจัดเตรียมและส่งมอบบริการ):</strong> กิจกรรมที่ผู้ให้บริการดำเนินการเพื่อส่งมอบบริการ (จัดการทรัพยากร, ดูแลระบบ, ซัพพอร์ต)</li><li><strong>Service Consumption (การบริโภคบริการ):</strong> กิจกรรมที่ผู้รับบริการดำเนินการเพื่อรับและใช้ประโยชน์จากบริการ (ร้องขอทรัพยากร, ใช้งานระบบ)</li><li><strong>Service Relationship Management (การบริหารจัดการความสัมพันธ์ของบริการ):</strong> กิจกรรมที่ <strong>ทั้งสองฝ่ายทำร่วมกัน</strong> เพื่อให้เกิดการร่วมสร้างคุณค่าอย่างต่อเนื่อง</li></ul></p>
+
+<h4 class="guide-subheading">รูปแบบความสัมพันธ์ 3 ระดับ (Types of Service Relationships):</h4>
+1. <strong>Basic Relationship:</strong> ใช้บริการมาตรฐานตามตลาดมวลชน ไม่มีความซับซ้อน มุ่งเน้นประสิทธิภาพและการสนับสนุนทั่วไป (<em>Focus on support and efficiency through standardized services</em>)
+2. <strong>Cooperative Relationship:</strong> มีการปรับแต่งบริการให้เข้ากับความต้องการของผู้บริโภค มุ่งเน้นประสิทธิผลและการปรับปรุงร่วมกัน
+3. <strong>Collaborative Relationship (Partnership):</strong> ความสัมพันธ์ระดับพันธมิตรเชิงกลยุทธ์ ทำงานร่วมกันเพื่อสร้างนวัตกรรมและการเติบโตร่วมกันในระยะยาว
+
+<h4 class="guide-subheading">แนวคิดเสริมที่สำคัญ:</h4>
+<ul><li><strong>Band of Visibility (ขอบเขตการมองเห็นร่วมกัน):</strong> แง่มุม ข้อมูล ขอบเขตการทำงาน และการปฏิสัมพันธ์ทั้งหมดที่ <strong>เปิดให้มองเห็นได้ระหว่างองค์กรผู้ให้บริการและผู้รับบริการ</strong> (ช่วยสร้างความโปร่งใสและความไว้ใจ)</li><li><strong>Service Journey (เส้นทางการใช้บริการ):</strong> ปฏิสัมพันธ์แบบ End-to-End ระหว่างผู้ให้บริการและผู้บริโภค ตั้งแต่ก่อนเริ่มใช้บริการ ระหว่างใช้บริการ ไปจนถึงการสิ้นสุดสัญญา</li></ul>
+
+---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-1-7">
+        <div class="guide-section-header">
+          <h3>1.7 มิติทั้ง 4 ของการจัดการผลิตภัณฑ์และบริการ (The ITIL Four Dimensions)</h3>
+          <span class="guide-tag">sec-1-7</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -2054,56 +2033,47 @@
       </div>
     </div>
   
-
-          <p>เพื่อให้การสร้างคุณค่ามีประสิทธิผล องค์กรต้องมองภาพรวมแบบองค์รวม (Holistic Approach) ครอบคลุมทั้ง 4 มิติ:</p>
-          <div class="dimensions-grid">
-            <div class="dim-card">
-              <div class="dim-num">มิติที่ 1</div>
-              <h4 class="dim-title">Organizations & People</h4>
-              <p>โครงสร้างสายการบังคับบัญชา, วัฒนธรรมองค์กร, ทักษะและความสามารถ, การสื่อสาร และ<strong>ความปลอดภัยทางจิตวิทยา (Psychological safety)</strong></p>
-            </div>
-            <div class="dim-card">
-              <div class="dim-num">มิติที่ 2</div>
-              <h4 class="dim-title">Information & Technology</h4>
-              <p>ข้อมูล, คลังความรู้, สถาปัตยกรรมระบบ, โครงสร้างพื้นฐาน, ซอฟต์แวร์, ระบบอัตโนมัติ และการประยุกต์ใช้ <strong>ปัญญาประดิษฐ์ (AI)</strong></p>
-            </div>
-            <div class="dim-card">
-              <div class="dim-num">มิติที่ 3</div>
-              <h4 class="dim-title">Partners & Suppliers</h4>
-              <p>ความสัมพันธ์, สัญญา และการบริหารจัดการองค์กรภายนอกที่มีส่วนร่วมในการออกแบบ สร้าง และส่งมอบบริการ</p>
-            </div>
-            <div class="dim-card">
-              <div class="dim-num">มิติที่ 4</div>
-              <h4 class="dim-title">Value Streams & Processes</h4>
-              <p>เวิร์กโฟลว์, ลำดับขั้นตอนกิจกรรม และการประสานงานทั้งภายในและข้ามองค์กร เพื่อเปลี่ยน Input ให้กลายเป็นคุณค่า</p>
-            </div>
-          </div>
-          <div class="guide-alert guide-alert-tip">
-            <div class="guide-alert-title">💡 ปัจจัยภายนอก (PESTLE Framework):</div>
-            <div class="guide-alert-body">
-              ปัจจัยแวดล้อมภายนอกที่องค์กรควบคุมไม่ได้ แต่ส่งผลต่อทั้ง 4 มิติ ได้แก่ <strong>P</strong>olitical (การเมือง), <strong>E</strong>conomic (เศรษฐกิจ), <strong>S</strong>ocial (สังคม), <strong>T</strong>echnological (เทคโนโลยี), <strong>L</strong>egal (กฎหมาย), <strong>E</strong>nvironmental (สิ่งแวดล้อม)
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <!-- MODULE 2 -->
-      <section class="guide-module-section" id="mod-2" data-module="mod-2">
-        <div class="module-banner">
-          <span class="module-number-badge">Module 2</span>
-          <div>
-            <h2 class="module-title">The ITIL Service Value System (SVS) & Governance (Ch. 3 - 4)</h2>
-            <div class="module-sub">ระบบคุณค่าของบริการ, วัตถุประสงค์ vs แบบจำลองการดำเนินงาน, Governing Body, กิจกรรม EDM และ 4 Governance Patterns</div>
-          </div>
-        </div>
-
-        <!-- Section 2.1 -->
-        <article class="guide-card" id="sec-2-1">
-          <div class="guide-section-header">
-            <h3>2.1 ภาพรวมและองค์ประกอบของ ITIL Service Value System (SVS)</h3>
-            <span class="guide-tag">Criteria: 4.1.1</span>
-          </div>
+        
+        <div class="guide-card-content">
           
+
+<p>เพื่อให้การสร้างคุณค่ามีประสิทธิผล องค์กรต้องมองภาพรวมแบบองค์รวม (Holistic Approach) ครอบคลุมทั้ง 4 มิติ หากมองข้ามมิติใดมิติหนึ่ง บริการอาจล้มเหลวได้:</p>
+
+<pre class="guide-pre"><code>┌───────────────────────────────────────────────┐
+               │    The Four Dimensions of Service Management  │
+               └───────────────────────┬───────────────────────┘
+                                       │
+     ┌───────────────────┬─────────────┴─────────────┬───────────────────┐
+     ▼                   ▼                           ▼                   ▼
+┌──────────────┐  ┌──────────────┐            ┌──────────────┐    ┌──────────────┐
+│Organizations │  │ Information  │            │ Partners     │    │Value Streams │
+│  & People    │  │& Technology  │            │ & Suppliers  │    │ & Processes  │
+└──────────────┘  └──────────────┘            └──────────────┘    └──────────────┘</code></pre>
+
+<p>1. <strong>Organizations and People (องค์กรและบุคลากร):</strong><br><ul><li>ครอบคลุม: โครงสร้างสายการบังคับบัญชา, วัฒนธรรมองค์กร, ภาวะผู้นำ, ทักษะและความสามารถ, การสื่อสาร, และ <strong>ความปลอดภัยทางจิตวิทยา (Psychological safety)</strong> ที่เอื้อต่อการเรียนรู้อย่างต่อเนื่อง</li></ul><br>2. <strong>Information and Technology (สารสนเทศและเทคโนโลยี):</strong><br><ul><li>ครอบคลุม: ข้อมูล คลังความรู้ สถาปัตยกรรมระบบ โครงสร้างพื้นฐาน ซอฟต์แวร์ ระบบอัตโนมัติ และการประยุกต์ใช้ <strong>ปัญญาประดิษฐ์ (AI)</strong></li></ul><br>3. <strong>Partners and Suppliers (คู่ค้าและผู้จัดหา):</strong><br><ul><li>ครอบคลุม: ความสัมพันธ์ ข้อตกลง สัญญา และการบริหารจัดการองค์กรภายนอกที่มีส่วนร่วมในการสำรวจ ออกแบบ สร้าง และส่งมอบบริการ</li></ul><br>4. <strong>Value Streams and Processes (สายธารคุณค่าและกระบวนการ):</strong><br><ul><li>ครอบคลุม: เวิร์กโฟลว์ ลำดับกิจกรรม และการประสานงานทั้งภายในและข้ามองค์กร เพื่อเปลี่ยน Input ให้กลายเป็นคุณค่าส่งมอบแก่ลูกค้า</li></ul></p>
+
+<h4 class="guide-subheading">ปัจจัยภายนอก (PESTLE Framework) & ความซับซ้อน (Cynefin Framework)</h4>
+<ul><li><strong>PESTLE Analysis:</strong> ปัจจัยแวดล้อมภายนอกที่องค์กรควบคุมไม่ได้ แต่ส่งผลกระทบต่อทั้ง 4 มิติ ได้แก่ <strong>P</strong>olitical (การเมือง), <strong>E</strong>conomic (เศรษฐกิจ), <strong>S</strong>ocial (สังคม), <strong>T</strong>echnological (เทคโนโลยี), <strong>L</strong>egal (กฎหมาย), และ <strong>E</strong>nvironmental (สิ่งแวดล้อม)</li><li><strong>Cynefin Framework:</strong> กรอบการวิเคราะห์บริบทความซับซ้อนของสถานการณ์เพื่อเลือกวิธีการบริหารจัดการที่ถูกต้อง 4 โดเมน:</li><li><strong>Ordered (ชัดเจน):</strong> เหตุและผลชัดเจน ใช้กระบวนการมาตรฐานและแนวปฏิบัติที่ดีที่สุด (Best Practice)</li><li><strong>Complex (ซับซ้อน):</strong> คาดเดาผลลัพธ์ล่วงหน้าไม่ได้ ต้องทดลองทำ สำรวจ และปรับตัว (Probe-Sense-Respond)</li><li><strong>Chaotic (โกลาหล/วิกฤต):</strong> เกิดวิกฤตรุนแรง ต้องลงมือควบคุมสถานการณ์ฉุกเฉินทันทีเพื่อสยบความเสียหาย (Act-Sense-Respond)</li><li><strong>Confused (สับสน):</strong> สภาวะที่ยังไม่รู้ว่าสถานการณ์จัดอยู่ในหมวดใด ต้องรีบจำแนกบริบทให้ชัดเจน</li></ul>
+
+---
+        </div>
+      </article>
+    </section>
+    <section class="guide-module-section" id="mod-2" data-module="mod-2">
+      <div class="module-banner">
+        <span class="module-number-badge">Module 2</span>
+        <div>
+          <h2 class="module-title">The ITIL Service Value System (SVS) & Governance (Ch. 3 - 4)</h2>
+          <div class="module-sub">ระบบคุณค่า SVS, วัตถุประสงค์ vs แบบจำลองการดำเนินงาน, Governing Body, กิจกรรม EDM และ 4 Governance Patterns</div>
+        </div>
+      </div>
+  
+      <article class="guide-card" id="sec-2-1">
+        <div class="guide-section-header">
+          <h3>2.1 ภาพรวมของ ITIL Service Value System (SVS)</h3>
+          <span class="guide-tag">sec-2-1</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -2118,63 +2088,79 @@
       </div>
     </div>
   
-
-          <p><strong>วัตถุประสงค์ของ SVS:</strong> เพื่อให้มั่นใจว่าองค์กรร่วมสร้างคุณค่ากับผู้มีส่วนได้ส่วนเสียอย่างต่อเนื่อง ผ่านการใช้และการจัดการผลิตภัณฑ์และบริการ</p>
-          <ul>
-            <li><strong>ปัจจัยนำเข้า (Inputs):</strong> Opportunity (โอกาส) และ Demand (ความต้องการ)</li>
-            <li><strong>ผลลัพธ์ (Outputs):</strong> Value (คุณค่าที่ส่งมอบจริง)</li>
-          </ul>
-
-          <h4 class="guide-subheading">องค์ประกอบหลักทั้ง 5 ของ SVS:</h4>
-          <ol>
-            <li><strong>Guiding Principles (หลักการชี้นำ):</strong> คำแนะนำ 7 ประการชี้นำการตัดสินใจ</li>
-            <li><strong>Governance (การกำกับดูแล):</strong> ระบบและกลไกควบคุม กำหนดทิศทาง และติดตามผลงาน</li>
-            <li><strong>Service Value Chain (ห่วงโซ่คุณค่าบริการ):</strong> กิจกรรมหลักเปลี่ยน Demand เป็นคุณค่า</li>
-            <li><strong>Practices (แนวทางปฏิบัติการจัดการ):</strong> ทรัพยากรและความสามารถ 34 ด้าน</li>
-            <li><strong>Continual Improvement (การปรับปรุงอย่างต่อเนื่อง):</strong> การพัฒนาซ้ำในทุกระดับ</li>
-          </ol>
-        </article>
-
-        <!-- Section 2.3 -->
-        <article class="guide-card" id="sec-2-3">
-          <div class="guide-section-header">
-            <h3>2.3 วัตถุประสงค์องค์กร (Purpose) vs. แบบจำลองการดำเนินงาน (Operating Model)</h3>
-            <span class="guide-tag">Criteria: 4.4.12</span>
-          </div>
+        
+        <div class="guide-card-content">
           
 
-          <div class="table-responsive">
-            <table class="guide-table">
-              <thead>
-                <tr>
-                  <th>แนวคิด</th>
-                  <th>คำถามสำคัญ</th>
-                  <th>คำนิยามตามข้อสอบ PeopleCert</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Organization's Purpose</strong></td>
-                  <td><strong>What & Why</strong></td>
-                  <td>สิ่งที่บอกว่า <em>"What an organization does for its consumers and why"</em> (เหตุผลของการมีอยู่ขององค์กร)</td>
-                </tr>
-                <tr>
-                  <td><strong>Operating Model</strong></td>
-                  <td><strong>How</strong></td>
-                  <td>โครงสร้างและแนวทางปฏิบัติที่แสดงว่า <em>"How the organization fulfils its purpose"</em> โดยเชื่อมโยง Value Chain, ทรัพยากร และแนวปฏิบัติเข้าด้วยกัน</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
+<p><strong>วัตถุประสงค์ (Purpose) ของ SVS:</strong> แสดงให้เห็นว่าทุกองค์ประกอบและกิจกรรมทั้งหมดขององค์กรทำงานร่วมกันเป็นระบบอย่างไร เพื่อขับเคลื่อนและอำนวยความสะดวกในการสร้างคุณค่า (<em>To ensure that the organization continually co-creates value with all stakeholders through the use and management of products and services</em>).</p>
 
-        <!-- Section 2.4 -->
-        <article class="guide-card" id="sec-2-4">
-          <div class="guide-section-header">
-            <h3>2.4 การกำกับดูแล (Governance) และกิจกรรม EDM (Super High-Yield!)</h3>
-            <span class="guide-tag">Criteria: 4.3.2</span>
-          </div>
+<pre class="guide-pre"><code>┌─────────────────────────────────────────┐
+                      │        ITIL Service Value System        │
+                      │                                         │
+                      │       ┌─────────────────────────┐       │
+                      │       │    Guiding Principles   │       │
+                      │       └────────────┬────────────┘       │
+                      │                    ▼                    │
+                      │       ┌─────────────────────────┐       │
+                      │       │       Governance        │       │
+                      │       └────────────┬────────────┘       │
+┌──────────────┐      │                    ▼                    │      ┌──────────────┐
+│ Opportunity  ├─────►│       ┌─────────────────────────┐       ├─────►│    Value     │
+│      &       │      │       │   Service Value Chain   │       │      │  (คุณค่าที่ส่ง  │
+│    Demand    │      │       └────────────┬────────────┘       │      │   มอบจริง)   │
+└──────────────┘      │                    ▼                    │      └──────────────┘
+                      │       ┌─────────────────────────┐       │
+                      │       │        Practices        │       │
+                      │       └────────────┬────────────┘       │
+                      │                    ▼                    │
+                      │       ┌─────────────────────────┐       │
+                      │       │  Continual Improvement  │       │
+                      │       └─────────────────────────┘       │
+                      └─────────────────────────────────────────┘</code></pre>
+<ul><li><strong>ปัจจัยนำเข้า (Inputs):</strong></li><li><strong>Opportunity (โอกาส):</strong> ทางเลือกหรือช่องทางใหม่ๆ ในการสร้างคุณค่าหรือพัฒนาธุรกิจ</li><li><strong>Demand (ความต้องการ):</strong> ความต้องการจำเป็นของผู้บริโภคและผู้มีส่วนได้ส่วนเสียต่อบริการ</li><li><strong>ผลลัพธ์ (Outputs):</strong></li><li><strong>Value (คุณค่า):</strong> การรับรู้ถึงผลประโยชน์และความคุ้มค่าที่เกิดขึ้นร่วมกัน</li></ul>
+
+---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-2-2">
+        <div class="guide-section-header">
+          <h3>2.2 องค์ประกอบหลักทั้ง 5 ของ SVS (The 5 Core Components)</h3>
+          <span class="guide-tag">sec-2-2</span>
+        </div>
+        
+        
+        <div class="guide-card-content">
           
+
+<p>1. <strong>Guiding Principles (หลักการชี้นำ):</strong> ข้อความแนะนำแนวคิดและปรัชญาพื้นฐาน 7 ประการ ที่ใช้ชี้นำการตัดสินใจขององค์กรในทุกระดับ ทุกสถานการณ์<br>2. <strong>Governance (การกำกับดูแล):</strong> ระบบและกลไกที่องค์กรใช้ควบคุม กำหนดทิศทาง และติดตามผลงาน<br>3. <strong>Service Value Chain (ห่วงโซ่คุณค่าบริการ):</strong> ชุดกิจกรรมหลักที่ดำเนินร่วมกันเพื่อเปลี่ยนความต้องการเป็นผลิตภัณฑ์ บริการ และคุณค่า<br>4. <strong>Practices (แนวทางปฏิบัติการจัดการ):</strong> ทรัพยากรและความสามารถขององค์กร 34 ด้าน ที่ออกแบบมาเพื่อดำเนินงานให้สำเร็จ<br>5. <strong>Continual Improvement (การปรับปรุงอย่างต่อเนื่อง):</strong> กิจกรรมที่ทำซ้ำอย่างต่อเนื่องในทุกระดับ เพื่อให้การทำงานตอบสนองต่อสภาพแวดล้อมที่เปลี่ยนแปลง</p>
+
+---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-2-3">
+        <div class="guide-section-header">
+          <h3>2.3 วัตถุประสงค์องค์กร (Organization's Purpose) vs. แบบจำลองการดำเนินงาน (Operating Model)</h3>
+          <span class="guide-tag">sec-2-3</span>
+        </div>
+        
+        
+        <div class="guide-card-content">
+          
+
+<p>ข้อสอบข้อเขียนและปรนัยมักทดสอบความสัมพันธ์ระหว่างสองคำนี้อย่างลึกซึ้ง:<br><ul><li><strong>Organization's Purpose (วัตถุประสงค์ขององค์กร):</strong></li></ul><br>  <em> <strong>นิยาม:</strong> สิ่งที่บอกว่า <strong>"องค์กรทำอะไรให้แก่ผู้บริโภคและผู้มีส่วนได้ส่วนเสีย และทำไปทำไม"</strong> (</em>What an organization does for its consumers and other stakeholders and why* - เหตุผลของการมีอยู่ขององค์กร)<br><ul><li><strong>Operating Model (แบบจำลองการดำเนินงาน):</strong></li></ul><br>  <em> <strong>นิยาม:</strong> โครงสร้างและแนวทางปฏิบัติที่แสดงว่า <strong>"องค์กรทำให้วัตถุประสงค์นั้นเป็นจริงได้อย่างไร"</strong> (</em>How the organization fulfils its purpose* โดยเชื่อมโยง Value Chain, ทรัพยากร, โครงสร้าง และกระบวนการเข้าด้วยกัน)<br><ul><li><strong>Exam Trigger:</strong> วัตถุประสงค์บอก "Why & What" ส่วน Operating Model อธิบาย "How"!</li></ul></p>
+
+---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-2-4">
+        <div class="guide-section-header">
+          <h3>2.4 การกำกับดูแล (Governance) และกิจกรรม EDM</h3>
+          <span class="guide-tag">sec-2-4</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -2189,43 +2175,67 @@
       </div>
     </div>
   
-
-          <p><strong>Governing Body (คณะผู้กำกับดูแล):</strong> บุคคลหรือกลุ่มบุคคลที่มีความรับผิดชอบสูงสุดต่อผลการดำเนินงานและการปฏิบัติตามกฎเกณฑ์ (<em>Accountable for performance and compliance at the highest level</em>)</p>
+        
+        <div class="guide-card-content">
           
-          <h4 class="guide-subheading">กิจกรรมหลัก 3 ประการ (EDM):</h4>
-          <ul>
-            <li><strong>Evaluate (ประเมินผล):</strong> ประเมินองค์กร กลยุทธ์ แผนงาน และพอร์ตโฟลิโออย่างสม่ำเสมอ</li>
-            <li><strong>Direct (กำหนดทิศทาง):</strong> กำหนดกลยุทธ์ ทิศทาง นโยบาย และมอบหมายความรับผิดชอบ</li>
-            <li><strong>Monitor (ติดตามตรวจตรา):</strong> ติดตามวัดผลการดำเนินงาน และตรวจตราให้แน่ใจว่า<strong>การดำเนินงานเป็นไปตามนโยบายและทิศทางเชิงกลยุทธ์ (Ensuring adherence with policies and strategic direction)</strong></li>
-          </ul>
 
-          <div class="guide-alert guide-alert-caution">
-            <div class="guide-alert-title">🛑 High-Yield Trap: Monitor vs. Direct!</div>
-            <div class="guide-alert-body">
-              โจทย์มักถามว่า: <em>"Which governance activity is focused on ensuring adherence with policies and strategic direction?"</em><br>
-              คำตอบคือ <strong>C. Monitor!</strong> หลายคนตอบผิดเป็น Direct เพราะเห็นคำว่า Strategic Direction แต่หน้าที่ตรวจตราให้แน่ใจว่าปฏิบัติตาม (Adherence) เป็นของ <strong>Monitor</strong>!
-            </div>
-          </div>
-        </article>
-      </section>
+<p><strong>Governing Body (องค์กรหรือคณะผู้กำกับดูแล):</strong> บุคคลหรือกลุ่มบุคคล (เช่น คณะกรรมการบริหาร / Board of Directors) ที่มี <strong>ความรับผิดชอบสูงสุดต่อผลการดำเนินงานและการปฏิบัติตามกฎเกณฑ์ขององค์กร</strong> (<em>Accountable for performance and compliance at the highest level</em>)</p>
 
-      <!-- MODULE 3 -->
-      <section class="guide-module-section" id="mod-3" data-module="mod-3">
-        <div class="module-banner">
-          <span class="module-number-badge">Module 3</span>
-          <div>
-            <h2 class="module-title">ITIL Guiding Principles (Ch. 5)</h2>
-            <div class="module-sub">หลักการชี้นำ 7 ประการ, กฎของกูดฮาร์ท (Goodhart's Law) และการบูรณาการหลักการร่วมกันอย่างสมดุล</div>
-          </div>
+<p>Governing Body ขับเคลื่อนงานกำกับดูแลผ่าน 3 กิจกรรมหลัก (<strong>EDM</strong>):</p>
+
+<pre class="guide-pre"><code>┌──────────────────────────────────────┐
+                        │        Governance Activities         │
+                        └──────────────────┬───────────────────┘
+                                           │
+         ┌─────────────────────────────────┼─────────────────────────────────┐
+         ▼                                 ▼                                 ▼
+  ┌──────────────┐                  ┌──────────────┐                  ┌──────────────┐
+  │   Evaluate   │                  │    Direct    │                  │   Monitor    │
+  │  (ประเมินผล)  │                  │(กำหนดทิศทาง) │                  │(ติดตามตรวจตรา)│
+  └──────────────┘                  └──────────────┘                  └──────────────┘</code></pre>
+
+<p>1. <strong>Evaluate (ประเมินผล):</strong><br><ul><li>ประเมินองค์กร กลยุทธ์ แผนงาน พอร์ตโฟลิโอ และความสัมพันธ์กับผู้มีส่วนได้ส่วนเสียอย่างสม่ำเสมอ โดยอิงจากบริบทที่เปลี่ยนแปลงไป</li></ul><br>2. <strong>Direct (กำหนดทิศทาง):</strong><br><ul><li>กำหนดกลยุทธ์ ทิศทางเป้าหมาย นโยบาย และมอบหมายความรับผิดชอบให้แก่ฝ่ายจัดการนำไปปฏิบัติ</li></ul><br>3. <strong>Monitor (ติดตามตรวจสอบ):</strong><br>   <em> ติดตามวัดผลการดำเนินงาน (</em>Performance<em>) และตรวจตราว่ากิจกรรมและการดำเนินงานจริง <strong>เป็นไปตามนโยบายและทิศทางเชิงกลยุทธ์ที่กำหนดไว้หรือไม่ (</em>Ensuring adherence with policies and strategic direction*)</strong></p>
+
+<div class="guide-alert guide-alert-caution">
+      <div class="guide-alert-title">🛑 ระวังข้อสอบหลอก (High-Yield Caution)</div>
+      <div class="guide-alert-body"><strong>Super High-Yield Exam Trap: Monitor vs. Direct!</strong>  <br>โจทย์มักถามว่า: <em>"Which governance activity is focused on ensuring adherence with policies and strategic direction?"</em>  <br><em> ตัวเลือก: A. Evaluate | B. Direct | C. Monitor | D. Discover  <br></em> <strong>คำตอบที่ถูกต้องตามเฉลย PeopleCert คือ: C. Monitor!</strong>  <br>* <strong>คำอธิบาย:</strong> หลายคนเผลอตอบ Direct เพราะเห็นคำว่า Strategic Direction แต่คีย์เวิร์ดสำคัญคือคำว่า <strong>"Ensuring adherence" (การตรวจตราให้แน่ใจว่าปฏิบัติตาม)</strong> ซึ่งเป็นหน้าที่ของการ <strong>Monitor</strong> โดยแท้จริง!</div>
+    </div>
+
+---
         </div>
-
-        <!-- Principles 1-7 -->
-        <article class="guide-card" id="sec-3-1-p1">
-          <div class="guide-section-header">
-            <h3>3.1.1 Focus on Value (มุ่งเน้นที่คุณค่า)</h3>
-            <span class="guide-tag">Criteria: 4.2.2</span>
-          </div>
+      </article>
+    
+      <article class="guide-card" id="sec-2-5">
+        <div class="guide-section-header">
+          <h3>2.5 รูปแบบการกำกับดูแลทั้ง 4 (The Four Governance Patterns)</h3>
+          <span class="guide-tag">sec-2-5</span>
+        </div>
+        
+        
+        <div class="guide-card-content">
           
+
+<p>การกำกับดูแลไม่มีสูตรสำเร็จรูปแบบเดียว (Not one-size-fits-all) แต่ขึ้นอยู่กับค่านิยมและวัฒนธรรม โดยแบ่งตามแกนความยืดหยุ่นและการกระจายอำนาจออกเป็น 4 รูปแบบ:<br>1. <strong>Traditional / Centralized Pattern:</strong> รวมศูนย์อำนาจ กฎระเบียบเข้มงวด เหมาะกับอุตสาหกรรมที่มีความเสี่ยงสูงมาก เช่น ธนาคาร นิวเคลียร์<br>2. <strong>Autonomous / Decentralized Pattern:</strong> กระจายอำนาจให้ทีมตัดสินใจได้รวดเร็ว เหมาะกับสตาร์ตอัปและทีมพัฒนานวัตกรรม<br>3. <strong>Collaborative Pattern:</strong> เน้นการปรึกษาหารือและการมีส่วนร่วมของตัวแทนฝ่ายต่างๆ<br>4. <strong>Adaptive / Agile Governance Pattern:</strong> กำหนดกรอบนโยบายแบบหลวมๆ (Guardrails) และปรับเปลี่ยนกฎเกณฑ์ตามข้อมูลป้อนกลับอย่างต่อเนื่อง</p>
+
+---
+        </div>
+      </article>
+    </section>
+    <section class="guide-module-section" id="mod-3" data-module="mod-3">
+      <div class="module-banner">
+        <span class="module-number-badge">Module 3</span>
+        <div>
+          <h2 class="module-title">ITIL Guiding Principles (Ch. 5)</h2>
+          <div class="module-sub">หลักการชี้นำทั้ง 7 ประการ, กฎของกูดฮาร์ท (Goodhart's Law), และการบูรณาการหลักการร่วมกัน</div>
+        </div>
+      </div>
+  
+      <article class="guide-card" id="sec-3-1-p1">
+        <div class="guide-section-header">
+          <h3>3.1.1 หลักการที่ 1: Focus on Value (มุ่งเน้นที่คุณค่า)</h3>
+          <span class="guide-tag">sec-3-1-p1</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -2238,19 +2248,30 @@
       </div>
     </div>
   
-          <p>ทุกกิจกรรมต้องเชื่อมโยงกลับไปสู่การสร้างผลประโยชน์แก่ผู้รับบริการเสมอ ต้องระบุให้ชัดว่าใครคือผู้บริโภคบริการ และเข้าใจว่าเขามองสิ่งใดเป็นคุณค่า</p>
-          <div class="guide-alert guide-alert-warning">
-            <div class="guide-alert-title">🚨 Exam Trap:</div>
-            <div class="guide-alert-body">คุณค่าไม่ได้จำกัดแค่ "ผลกำไรหรือรายได้ทางการเงิน (Revenue/Profit) เท่านั้น" แต่รวมถึงความพึงพอใจ ความปลอดภัย และการลดความเสี่ยง</div>
-          </div>
-        </article>
+        
+        <div class="guide-card-content">
+          <h4 class="guide-subheading">หลักการที่ 1: Focus on Value (มุ่งเน้นที่คุณค่า)</h4>
+1. <strong>คำนิยามและแนวคิดหัวใจสำคัญ:</strong>  
+   ทุกกิจกรรมที่องค์กรดำเนินการ ต้องสามารถเชื่อมโยงกลับไปสู่การสร้างผลประโยชน์และคุณค่า (<em>Benefits</em>) ให้แก่ผู้รับบริการและผู้มีส่วนได้ส่วนเสียเสมอ ไม่ว่าจะเป็นทางตรงหรือทางอ้อม
+2. <strong>สิ่งที่ควรทำ (Key Recommendations):</strong>
+   <em> ระบุให้ชัดว่าใครคือผู้รับบริการที่แท้จริง (</em>Know who the service consumer is*)
+   <em> เข้าใจว่าผู้รับบริการมองสิ่งใดเป็นคุณค่า (</em>Understand what represents value to them*)
+<ul><li>เข้าใจ Customer Experience (CX) และ User Experience (UX)</li></ul>
+3. <strong>ตัวอย่างสถานการณ์จริง:</strong>  
+   ทีมพัฒนาระบบหลังบ้านต้องการเขียนโค้ด Refactor ใหม่ทั้งหมด 6 เดือน แต่ผู้จัดการทีมตรวจสอบแล้วพบว่าการเพิ่มฟีเจอร์ "แจ้งเตือนผ่าน SMS เมื่อพัสดุมาถึง" ตอบโจทย์ความต้องการเร่งด่วนของลูกค้ามากกว่า จึงตัดสินใจจัดลำดับความสำคัญให้ฟีเจอร์ SMS ก่อน เพื่อสร้างคุณค่าให้ผู้ใช้ทันที
+4. <strong>ข้อควรระวัง / กับดักในข้อสอบ:</strong>  
+   <em>คุณค่าไม่ได้หมายถึง "ผลกำไรหรือรายได้ทางการเงิน (Revenue/Profit) เท่านั้น"</em> ข้อสอบมักลวงว่า Focus on value มุ่งเพิ่มรายได้องค์กรเพียงอย่างเดียว ซึ่งผิด เพราะคุณค่าครอบคลุมทั้งความพึงพอใจ ความปลอดภัย การลดความเสี่ยง และความยั่งยืน
 
-        <article class="guide-card" id="sec-3-1-p2">
-          <div class="guide-section-header">
-            <h3>3.1.2 Start Where You Are (เริ่มจากจุดที่เป็นอยู่)</h3>
-            <span class="guide-tag">Criteria: 4.2.3</span>
-          </div>
-          
+---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-3-1-p2">
+        <div class="guide-section-header">
+          <h3>3.1.2 หลักการที่ 2: Start Where You Are (เริ่มจากจุดที่เป็นอยู่)</h3>
+          <span class="guide-tag">sec-3-1-p2</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -2263,15 +2284,29 @@
       </div>
     </div>
   
-          <p>อย่าเริ่มนับหนึ่งใหม่ด้วยการรื้อทิ้งทุกอย่างโดยไม่ไตร่ตรอง ให้ประเมินและต่อยอดจากสิ่งที่มีอยู่เดิม (Reuse and replicate) สังเกตจากสภาพการทำงานจริง (Observe directly) แทนการดูเฉพาะรายงาน</p>
-        </article>
+        
+        <div class="guide-card-content">
+          <h4 class="guide-subheading">หลักการที่ 2: Start Where You Are (เริ่มจากจุดที่เป็นอยู่)</h4>
+1. <strong>คำนิยามและแนวคิดหัวใจสำคัญ:</strong>  
+   อย่าเริ่มนับหนึ่งใหม่ด้วยการรื้อทิ้งทุกอย่างโดยไม่ไตร่ตรอง ให้ประเมินและต่อยอดจากทรัพยากร กระบวนการ ทักษะ และเครื่องมือที่มีอยู่เดิมก่อนเสมอ เพื่อหลีกเลี่ยงการสูญเสียเวลาและทรัพยากรที่มีค่า (<em>To avoid wasting time and losing valuable existing capabilities</em>)
+2. <strong>สิ่งที่ควรทำ (Key Recommendations):</strong>
+   <em> ตรวจวัดและสังเกตจากสภาพการทำงานจริง (</em>Observe what is happening directly*) แทนการเชื่อรายงานที่อาจบิดเบือน
+<ul><li>นำส่วนที่ดีอยู่แล้วกลับมาใช้ใหม่ (Reuse and replicate)</li></ul>
+3. <strong>ตัวอย่างสถานการณ์จริง:</strong>  
+   บริษัทต้องการเปลี่ยนระบบ Service Desk ใหม่ แทนที่จะทิ้งฐานข้อมูล FAQ และสคริปต์แก้ปัญหาที่สั่งสมมา 5 ปี ทีมงานเลือกนำคลังความรู้เดิมมาทำความสะอาดและนำเข้าไปใช้งานบนแพลตฟอร์มใหม่ ทำให้ประหยัดเวลาและงบประมาณไปกว่า 70%
+4. <strong>ข้อควรระวัง / กับดักในข้อสอบ:</strong>  
+   โจทย์มักระบุสถานการณ์ว่าระบบเก่าล้าสมัยมาก ผู้บริหารจึงสั่งลบทิ้งทั้งหมดแล้วสร้างใหม่จากศูนย์ ซึ่ง <strong>ขัดกับหลักการ Start where you are อย่างสิ้นเชิง</strong>
 
-        <article class="guide-card" id="sec-3-1-p3">
-          <div class="guide-section-header">
-            <h3>3.1.3 Progress Iteratively with Feedback (ก้าวหน้าเป็นจังหวะพร้อมข้อมูลย้อนกลับ)</h3>
-            <span class="guide-tag">Criteria: 4.2.4</span>
-          </div>
-          
+---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-3-1-p3">
+        <div class="guide-section-header">
+          <h3>3.1.3 หลักการที่ 3: Progress Iteratively with Feedback (ก้าวหน้าอย่างเป็นจังหวะพร้อมข้อมูลย้อนกลับ)</h3>
+          <span class="guide-tag">sec-3-1-p3</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -2286,15 +2321,28 @@
       </div>
     </div>
   
-          <p>แบ่งงานออกเป็นรอบย่อยๆ ที่บริหารจัดการง่าย และใช้ Feedback Loops ในทุกรอบ เพื่อตรวจสอบว่าการดำเนินงานยังคงสอดคล้องกับความเป็นจริงและสร้างผลลัพธ์ได้จริง</p>
-        </article>
+        
+        <div class="guide-card-content">
+          <h4 class="guide-subheading">หลักการที่ 3: Progress Iteratively with Feedback (ก้าวหน้าอย่างเป็นจังหวะพร้อมข้อมูลย้อนกลับ)</h4>
+1. <strong>คำนิยามและแนวคิดหัวใจสำคัญ:</strong>  
+   อย่าพยายามทำทุกอย่างให้เสร็จในคราวเดียวแบบบิ๊กแบง (Big-bang) แต่ให้แบ่งงานออกเป็นรอบย่อยๆ ที่บริหารจัดการได้ง่าย (<em>Small, manageable iterations</em>) และใช้รอบการรับฟังข้อมูลย้อนกลับ (<em>Feedback Loops</em>) ในทุกๆ รอบ เพื่อตรวจสอบว่าการดำเนินงานยังคงถูกต้องและมีประสิทธิผลท่ามกลางสถานการณ์ที่เปลี่ยนแปลง
+2. <strong>สิ่งที่ควรทำ (Key Recommendations):</strong>
+<ul><li>จัดทำ Minimum Viable Product (MVP) เพื่อทดสอบตลาดล่วงหน้า</li><li>ใช้ข้อมูลป้อนกลับจากผู้ใช้จริงมาปรับเปลี่ยนทิศทางในรอบถัดไป</li></ul>
+3. <strong>ตัวอย่างสถานการณ์จริง:</strong>  
+   ทีมพัฒนา Mobile App ปล่อยฟีเจอร์หลัก 2 ฟังก์ชันให้กลุ่มผู้ใช้ทดสอบใช้งานใน Sprint แรก เมื่อพบว่าผู้ใช้บ่นเรื่องปุ่มกดเล็กเกินไป ทีมจึงปรับขนาดปุ่มใน Sprint ที่ 2 ทันที ก่อนที่จะเขียนโค้ดฟังก์ชันอื่นๆ ต่อไป
+4. <strong>ข้อควรระวัง / กับดักในข้อสอบ:</strong>  
+   วัตถุประสงค์ของ Feedback ไม่ใช่เพื่อให้ทุกคนมีความเห็นตรงกัน 100% (<em>Not to confirm that all opinions agree</em>) แต่มีไว้เพื่อให้มั่นใจว่า <strong>แผนงานยังคงสอดคล้องกับความเป็นจริงและสร้างผลลัพธ์ได้จริง</strong>
 
-        <article class="guide-card" id="sec-3-1-p4">
-          <div class="guide-section-header">
-            <h3>3.1.4 Collaborate and Promote Visibility (ร่วมมือและสร้างความโปร่งใส)</h3>
-            <span class="guide-tag">Criteria: 4.2.5</span>
-          </div>
-          
+---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-3-1-p4">
+        <div class="guide-section-header">
+          <h3>3.1.4 หลักการที่ 4: Collaborate and Promote Visibility (ร่วมมือและสร้างความโปร่งใส)</h3>
+          <span class="guide-tag">sec-3-1-p4</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -2307,15 +2355,28 @@
       </div>
     </div>
   
-          <p>ดึงผู้มีส่วนได้ส่วนเสียทุกฝ่ายมาร่วมมือทำงานอย่างใกล้ชิด และเปิดเผยข้อมูลการทำงาน ความคืบหน้า และอุปสรรคให้เห็นอย่างโปร่งใส เพื่อลดการทำงานแบบตัวใครตัวมัน (Eliminate silos)</p>
-        </article>
+        
+        <div class="guide-card-content">
+          <h4 class="guide-subheading">หลักการที่ 4: Collaborate and Promote Visibility (ร่วมมือและสร้างความโปร่งใส)</h4>
+1. <strong>คำนิยามและแนวคิดหัวใจสำคัญ:</strong>  
+   ดึงผู้มีส่วนได้ส่วนเสียที่เกี่ยวข้องทุกฝ่ายมาร่วมมือทำงานอย่างใกล้ชิด และเปิดเผยข้อมูลการทำงาน ความคืบหน้า ตลอดจนปัญหาอุปสรรคให้เห็นอย่างโปร่งใส เพื่อสร้างความเข้าใจที่ถูกต้องร่วมกันและลดการทำงานแบบตัวใครตัวมัน (Eliminate silos)
+2. <strong>สิ่งที่ควรทำ (Key Recommendations):</strong>
+<ul><li>สื่อสารอย่างเปิดเผยและตรงไปตรงมา</li><li>ใช้กระดาน Kanban หรือแดชบอร์ดแสดงสถานะงานแบบเรียลไทม์</li><li>เชิญทีมที่เกี่ยวข้อง (Dev, Ops, Security, Business) มาร่วมวางแผน</li></ul>
+3. <strong>ตัวอย่างสถานการณ์จริง:</strong>  
+   การจัดทำ Release Management ประจำสัปดาห์ ทีมนำกระดาน Kanban มาเปิดกลางที่ประชุม เพื่อให้ทั้งฝ่ายพัฒนา ฝ่ายปฏิบัติการไอที และฝ่ายบริการลูกค้า เห็นร่วมกันว่ามีฟีเจอร์ใดกำลังทดสอบ และมีระบบใดจะหยุดให้บริการชั่วคราว
+4. <strong>ข้อควรระวัง / กับดักในข้อสอบ:</strong>  
+   การจำกัดการสื่อสารไว้เฉพาะกลุ่มผู้บริหารระดับสูง (<em>Limiting communication to management</em>) ถือเป็นการกระทำที่ละเมิดหลักการนี้โดยตรง
 
-        <article class="guide-card" id="sec-3-1-p5">
-          <div class="guide-section-header">
-            <h3>3.1.5 Think and Work Holistically (คิดและทำงานแบบองค์รวม)</h3>
-            <span class="guide-tag">Criteria: 4.2.6</span>
-          </div>
-          
+---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-3-1-p5">
+        <div class="guide-section-header">
+          <h3>3.1.5 หลักการที่ 5: Think and Work Holistically (คิดและทำงานแบบองค์รวม)</h3>
+          <span class="guide-tag">sec-3-1-p5</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -2328,15 +2389,28 @@
       </div>
     </div>
   
-          <p>ไม่มีบริการหรือส่วนงานใดทำงานอยู่อย่างโดดเดี่ยว การตัดสินใจต้องพิจารณาผลกระทบแบบบูรณาการรอบด้าน ครอบคลุมทั้งมิติทั้ง 4 และส่วนประกอบทั้งหมดของ SVS</p>
-        </article>
+        
+        <div class="guide-card-content">
+          <h4 class="guide-subheading">หลักการที่ 5: Think and Work Holistically (คิดและทำงานแบบองค์รวม)</h4>
+1. <strong>คำนิยามและแนวคิดหัวใจสำคัญ:</strong>  
+   ไม่มีบริการ กระบวนการ หรือทีมใดทำงานอยู่อย่างโดดเดี่ยว การตัดสินใจหรือการเปลี่ยนแปลงใดๆ ต้องพิจารณาผลกระทบแบบบูรณาการรอบด้าน ครอบคลุมทั้ง <strong>มิติทั้ง 4 (4 Dimensions)</strong> และส่วนประกอบทั้งหมดของ <strong>ระบบคุณค่า (SVS)</strong>
+2. <strong>สิ่งที่ควรทำ (Key Recommendations):</strong>
+<ul><li>มองภาพรวมของสายธารคุณค่าแบบ End-to-End</li><li>ระบุความสัมพันธ์และความเชื่อมโยงระหว่างระบบต่างๆ</li></ul>
+3. <strong>ตัวอย่างสถานการณ์จริง:</strong>  
+   โรงพยาบาลต้องการอัปเกรดระบบจัดเก็บประวัติคนไข้ทางดิจิทัล ทีมงานไม่ได้ดูแค่เซิร์ฟเวอร์หรือซอฟต์แวร์ (Tech) แต่พิจารณาความพร้อมของแพทย์และพยาบาลที่ต้องเปลี่ยนวิธีทำงาน (People & Culture), สัญญาเชื่อมต่อกับแล็บภายนอก (Suppliers), และขั้นตอนการส่งต่อคนไข้ระหว่างแผนก (Processes)
+4. <strong>ข้อควรระวัง / กับดักในข้อสอบ:</strong>  
+   การปรับปรุงส่วนงานหนึ่งโดยไม่สนใจผลกระทบที่อาจเกิดขึ้นกับส่วนงานอื่น หรือการมอบหมายให้ทีมใดทีมหนึ่งรับผิดชอบการปรับปรุงโดยลำพัง ไม่ถือเป็น Holistic approach
 
-        <article class="guide-card" id="sec-3-1-p6">
-          <div class="guide-section-header">
-            <h3>3.1.6 Keep It Simple and Practical (ทำให้ง่ายและใช้งานได้จริง)</h3>
-            <span class="guide-tag">Criteria: 4.2.7</span>
-          </div>
-          
+---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-3-1-p6">
+        <div class="guide-section-header">
+          <h3>3.1.6 หลักการที่ 6: Keep It Simple and Practical (ทำให้ง่ายและใช้งานได้จริง)</h3>
+          <span class="guide-tag">sec-3-1-p6</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -2349,15 +2423,29 @@
       </div>
     </div>
   
-          <p>ใช้จำนวนขั้นตอนและทรัพยากรที่น้อยที่สุดเท่าที่จำเป็น ตัดสิ่งที่ไม่สร้างคุณค่าทิ้งไป <strong>ระวังการพยายามออกแบบกระบวนการเพื่อรองรับทุกข้อยกเว้น (Do not try to account for every exception) เพราะจะทำให้เกิดความซับซ้อนโดยไม่จำเป็น</strong></p>
-        </article>
+        
+        <div class="guide-card-content">
+          <h4 class="guide-subheading">หลักการที่ 6: Keep It Simple and Practical (ทำให้ง่ายและใช้งานได้จริง)</h4>
+1. <strong>คำนิยามและแนวคิดหัวใจสำคัญ:</strong>  
+   ใช้จำนวนขั้นตอนและทรัพยากรที่น้อยที่สุดเท่าที่จำเป็นเพื่อบรรลุวัตถุประสงค์ ตัดขั้นตอน กระบวนการ หรือตัวชี้วัดที่ไม่สร้างคุณค่าทิ้งไป
+2. <strong>สิ่งที่ควรทำ (Key Recommendations):</strong>
+<ul><li>เริ่มต้นจากความเรียบง่ายเสมอ แล้วค่อยเพิ่มความซับซ้อนเมื่อจำเป็นจริงๆ</li><li>ถามคำถามเสมอว่า "ขั้นตอนนี้ช่วยสร้างคุณค่าหรือไม่?" หากไม่ ให้ตัดทิ้ง</li></ul>
+   <em> <strong>ระวังการพยายามออกแบบกระบวนการเพื่อรองรับทุกข้อยกเว้น (</em>Do not try to account for every possible exception*)</strong>
+3. <strong>ตัวอย่างสถานการณ์จริง:</strong>  
+   เดิมทีกระบวนการขอเบิกสิทธิ์ใช้งาน VPN ต้องผ่านการเซ็นอนุมัติจากผู้จัดการ 4 ระดับ ใช้เวลา 7 วัน ทีมงานปรับลดเหลือเพียงระบบอนุมัติอัตโนมัติ 1 ระดับสำหรับพนักงานประจำ ทำให้เวลาอนุมัติลดลงเหลือ 5 นาที
+4. <strong>ข้อควรระวัง / กับดักในข้อสอบ:</strong>  
+   <em>โจทย์ที่พยายามออกแบบระบบเพื่อรองรับข้อยกเว้นทุกกรณีที่อาจเกิดขึ้นในโลก ผลลัพธ์คือ: เกิดความซับซ้อนโดยไม่จำเป็น (</em>Creating unnecessary complexity<em>) ซึ่งผิดหลักการนี้อย่างชัดเจน</em>
 
-        <article class="guide-card" id="sec-3-1-p7">
-          <div class="guide-section-header">
-            <h3>3.1.7 Optimize and Automate (ปรับให้เหมาะที่สุดและใช้ระบบอัตโนมัติ)</h3>
-            <span class="guide-tag">Criteria: 4.2.8</span>
-          </div>
-          
+---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-3-1-p7">
+        <div class="guide-section-header">
+          <h3>3.1.7 หลักการที่ 7: Optimize and Automate (ปรับให้เหมาะที่สุดและใช้ระบบอัตโนมัติ)</h3>
+          <span class="guide-tag">sec-3-1-p7</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -2370,58 +2458,51 @@
       </div>
     </div>
   
-          <div class="guide-alert guide-alert-important">
-            <div class="guide-alert-title">⚠️ กฎลำดับขั้น:</div>
-            <div class="guide-alert-body">
-              <strong>"Optimize processes BEFORE automating them"</strong><br>
-              ต้องปรับปรุงกระบวนการให้กระชับและมีประสิทธิภาพก่อน แล้วจึงค่อยนำระบบอัตโนมัติหรือ AI เข้ามาจับ อย่าเอาระบบอัตโนมัติไปครอบกระบวนการที่มีข้อผิดพลาด
-            </div>
-          </div>
-        </article>
+        
+        <div class="guide-card-content">
+          <h4 class="guide-subheading">หลักการที่ 7: Optimize and Automate (ปรับให้เหมาะที่สุดและใช้ระบบอัตโนมัติ)</h4>
+1. <strong>คำนิยามและแนวคิดหัวใจสำคัญ:</strong>  
+   <strong>ต้องปรับปรุงกระบวนการให้กระชับและมีประสิทธิภาพสูงสุดก่อน (Optimize first) แล้วจึงค่อยนำเทคโนโลยี ระบบอัตโนมัติ หรือ AI เข้ามาช่วยทำงาน (Automate later)</strong>
+2. <strong>สิ่งที่ควรทำ (Key Recommendations):</strong>
+<ul><li>ห้ามนำระบบอัตโนมัติมาจับกระบวนการที่เทอะทะและมีข้อผิดพลาด เพราะจะยิ่งทำให้ข้อผิดพลาดแพร่กระจายเร็วขึ้น</li><li>ใช้ระบบอัตโนมัติกับงานที่ทำซ้ำๆ เป็นมาตรฐาน และมีโอกาสเกิด Human Error สูง</li></ul>
+3. <strong>ตัวอย่างสถานการณ์จริง:</strong>  
+   ฝ่ายไอทีกำลังถูกร้องเรียนเรื่องรีเซ็ตรหัสผ่านช้า แทนที่จะเอาระบบ AI Bot ไปครอบกระบวนการเดิมที่มีขั้นตอนยุ่งยาก ทีมตัดขั้นตอนตรวจสอบที่ไม่จำเป็นออก จากนั้นจึงติดตั้ง Self-Service Portal ให้พนักงานรีเซ็ตรหัสผ่านได้เองโดยอัตโนมัติผ่าน OTP
+4. <strong>ข้อควรระวัง / กับดักในข้อสอบ:</strong>  
+   <em>ลำดับขั้นตอนสำคัญมาก:</em> <strong>Optimize processes BEFORE automating them</strong> ข้อสอบมักลวงว่า "ให้นำระบบอัตโนมัติมาใช้ทันทีเพื่อทดแทนคนทั้งหมด" ซึ่งผิด!
 
-        <!-- Section 3.2 & 3.3 -->
-        <article class="guide-card" id="sec-3-2">
-          <div class="guide-section-header">
-            <h3>3.2 กฎของกูดฮาร์ท (Goodhart's Law) & 3.3 การปฏิสัมพันธ์ของหลักการ</h3>
-            <span class="guide-tag">Criteria: 4.2.9</span>
-          </div>
-          
-    <div class="related-q-container">
-      <div class="related-q-header">
-        <span class="related-q-icon">🎯</span>
-        <span><strong>ข้อสอบในคลังที่วัดความรู้หัวข้อนี้ (2 ข้อ)</strong> — คลิกเพื่อทดลองทำข้อสอบทันที:</span>
-      </div>
-      <div class="related-q-pills-wrapper">
-        <button class="related-q-pill" onclick="jumpToExamQuestion(14)" title="Why should organizations consider the interaction of ITIL Guiding Principles?">
-      🎯 Paper 1 ข้อ 14 <span class="pill-crit">[4.2.9]</span>
-    </button> <button class="related-q-pill" onclick="jumpToExamQuestion(62)" title="How does ITIL describe the way the Guiding Principles should be applied together?">
-      🎯 Paper 2 ข้อ 22 <span class="pill-crit">[4.2.9]</span>
-    </button>
-      </div>
-    </div>
-  
-          <p><strong>Goodhart's Law:</strong> <em>"When a measure becomes a target, it ceases to be a good measure."</em> (เมื่อใดก็ตามที่ตัวชี้วัดถูกแปลงไปเป็นเป้าหมาย ตัวชี้วัดนั้นจะหมดความหมายในการเป็นตัวชี้วัดที่ดีทันที เช่น การวัดเวลาปิดสาย Service Desk ทำให้เจ้าหน้าที่รีบตัดสายทิ้งโดยปัญหาไม่ได้รับการแก้ไข)</p>
-          <p><strong>Principle Interaction:</strong> หลักการทั้ง 7 ต้องนำมาใช้ร่วมกันและรักษาสมดุลซึ่งกันและกัน (Interdependent & Complementary) ไม่มีหลักการใดใช้โดยลำพัง</p>
-        </article>
-      </section>
-
-      <!-- MODULE 4 -->
-      <section class="guide-module-section" id="mod-4" data-module="mod-4">
-        <div class="module-banner">
-          <span class="module-number-badge">Module 4</span>
-          <div>
-            <h2 class="module-title">Service Value Chain & Management Practices (Ch. 6)</h2>
-            <div class="module-sub">Value Chain 6 กิจกรรม, 8 Lifecycle Activities, Incident vs Problem, Change Enablement, Service Desk, SLM, CI/CD, Continual Improvement</div>
-          </div>
+---
         </div>
+      </article>
+    
+      <article class="guide-card" id="sec-3-2">
+        <div class="guide-section-header">
+          <h3>3.2 กฎของกูดฮาร์ท (Goodhart's Law) & 3.3 การปฏิสัมพันธ์ของหลักการ</h3>
+          <span class="guide-tag">sec-3-2</span>
+        </div>
+        
+        
+        <div class="guide-card-content">
+          <p><em> <strong>นิยามทางการ:</strong> </em>"When a measure becomes a target, it ceases to be a good measure."*  <br>  (เมื่อใดก็ตามที่ตัวชี้วัดถูกแปลงไปเป็นเป้าหมาย ตัวชี้วัดนั้นจะหมดความหมายในการเป็นตัวชี้วัดที่ดีทันที)<br><ul><li><strong>ตัวอย่างสถานการณ์จริง:</strong>  </li></ul><br>  ผู้บริหารตั้งเป้าหมายโบนัสของเจ้าหน้าที่ Service Desk โดยวัดจาก "จำนวนสายที่รับและปิดสายได้เร็วที่สุด (Call Handling Time)" ผลที่เกิดขึ้นคือ เจ้าหน้าที่พยายามรีบตัดสายทิ้งหรือปิดเคสทั้งที่ปัญหาของผู้ใช้ยังไม่ได้รับการแก้ไข เพื่อให้ตัวเลขตนเองสวยหรู ตัวชี้วัดจึงพังทลายและสร้างผลเสียต่อคุณค่าของบริการ</p>
 
-        <!-- Section 4.1 -->
-        <article class="guide-card" id="sec-4-1">
-          <div class="guide-section-header">
-            <h3>4.1 Service Value Chain & ITIL 5 Product and Service Lifecycle (8 กิจกรรม)</h3>
-            <span class="guide-tag">Criteria: 3.2.1, 3.2.3, 3.2.5, 3.2.6, 3.2.7, 3.2.8, 4.4.2, 4.4.11</span>
-          </div>
-          
+---
+        </div>
+      </article>
+    </section>
+    <section class="guide-module-section" id="mod-4" data-module="mod-4">
+      <div class="module-banner">
+        <span class="module-number-badge">Module 4</span>
+        <div>
+          <h2 class="module-title">Service Value Chain & Management Practices (Ch. 6)</h2>
+          <div class="module-sub">Value Chain 6 กิจกรรม, 8 Lifecycle Activities, Incident vs Problem, Change Enablement, Service Desk, SLM, SRM, CI/CD, Continual Improvement</div>
+        </div>
+      </div>
+  
+      <article class="guide-card" id="sec-4-1">
+        <div class="guide-section-header">
+          <h3>4.1 ห่วงโซ่คุณค่าบริการ (Service Value Chain) & วงจรชีวิต ITIL 5 (8 Lifecycle Activities)</h3>
+          <span class="guide-tag">sec-4-1</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -2458,69 +2539,52 @@
       </div>
     </div>
   
-
-          <div class="table-responsive">
-            <table class="guide-table">
-              <thead>
-                <tr>
-                  <th>กิจกรรมในวงจรชีวิต</th>
-                  <th>วัตถุประสงค์หลัก (Primary Purpose)</th>
-                  <th>ตัวชี้วัดความสำเร็จสำคัญ (Success Metric)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>1. Discover (สำรวจ)</strong></td>
-                  <td>สำรวจความต้องการและโอกาสทางธุรกิจ ปรับความสามารถให้ตรงกลยุทธ์</td>
-                  <td>Strategic fit, Market relevance, Stakeholder satisfaction</td>
-                </tr>
-                <tr>
-                  <td><strong>2. Design (ออกแบบ)</strong></td>
-                  <td>จัดทำข้อกำหนดผลิตภัณฑ์ (<strong>Product Specification</strong>) และต้นแบบ (Prototypes)</td>
-                  <td>Design quality, Usability, Compliance with specs</td>
-                </tr>
-                <tr>
-                  <td><strong>3. Acquire (จัดหา)</strong></td>
-                  <td>จัดซื้อ จัดหาทรัพยากรหรือบริการจากภายนอกอย่างมีประสิทธิภาพ</td>
-                  <td><strong>Quality of resources and services outsourced from suppliers</strong></td>
-                </tr>
-                <tr>
-                  <td><strong>4. Build (สร้าง)</strong></td>
-                  <td>พัฒนา เขียนโค้ด และกำหนดค่าระบบ (Configure)</td>
-                  <td><strong>Quality of the product solutions</strong>, Defect rate</td>
-                </tr>
-                <tr>
-                  <td><strong>5. Transition (เปลี่ยนผ่าน)</strong></td>
-                  <td>นำผลิตภัณฑ์/บริการเข้าสู่สภาพแวดล้อมใช้งานจริงอย่างราบรื่น</td>
-                  <td><strong>Success rate of releases deployed into live environment</strong></td>
-                </tr>
-                <tr>
-                  <td><strong>6. Operate (ปฏิบัติการ)</strong></td>
-                  <td>ดูแล ควบคุม และเฝ้าระวังผลิตภัณฑ์ดิจิทัลและระบบโครงสร้างพื้นฐาน</td>
-                  <td>System uptime, Performance stability, Observability coverage</td>
-                </tr>
-                <tr>
-                  <td><strong>7. Deliver (ส่งมอบ)</strong></td>
-                  <td>ส่งมอบบริการตามข้อตกลง จัดการการเริ่มต้นใช้งาน (User Onboarding)</td>
-                  <td><strong>Service performance against agreed SLA targets</strong></td>
-                </tr>
-                <tr>
-                  <td><strong>8. Support (สนับสนุน)</strong></td>
-                  <td>ช่วยเหลือผู้ใช้ ฟื้นคืนระบบ และ<strong>ลดผลกระทบจากอุบัติการณ์และภัยพิบัติ (Minimizing impact of incidents)</strong></td>
-                  <td>Incident resolution time (MTTR), User satisfaction</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
-
-        <!-- Section 4.2 -->
-        <article class="guide-card" id="sec-4-2">
-          <div class="guide-section-header">
-            <h3>4.2 โครงสร้างแนวปฏิบัติการจัดการ (34 Management Practices)</h3>
-            <span class="guide-tag">Criteria: 4.5.3, 4.5.4</span>
-          </div>
+        
+        <div class="guide-card-content">
           
+
+<h4 class="guide-subheading">1) กิจกรรมหลัก 6 ประการของ Service Value Chain ดั้งเดิม:</h4>
+Service Value Chain คือโมเดลการดำเนินงาน (Operating Model) ที่ประกอบด้วยกิจกรรม 6 ประการ ซึ่งทำงานเชื่อมโยงกันอย่างยืดหยุ่น (ไม่ใช่ลำดับเส้นตรงแบบ Waterfall):
+
+<pre class="guide-pre"><code>┌──────────────┐
+                                │     Plan     │
+                                └──────┬───────┘
+                                       │
+                ┌──────────────────────┼──────────────────────┐
+                ▼                      ▼                      ▼
+         ┌──────────────┐       ┌──────────────┐       ┌──────────────┐
+         │    Engage    │◄─────►│Design & Trans│◄─────►│ Obtain/Build │
+         └──────┬───────┘       └──────────────┘       └──────┬───────┘
+                │                                             │
+                └──────────────────────┬──────────────────────┘
+                                       ▼
+                                ┌──────────────┐
+                                │Deliver & Supp│
+                                └──────┬───────┘
+                                       ▼
+                                ┌──────────────┐
+                                │   Improve    │
+                                └──────────────┘</code></pre>
+
+<p>1. <strong>Plan (วางแผน):</strong><br><ul><li><strong>หน้าที่:</strong> สร้างความเข้าใจร่วมกันเกี่ยวกับวิสัยทัศน์ สถานะปัจจุบัน ทิศทางการปรับปรุง และการจัดสรรทรัพยากรทั้ง 4 มิติ</li><li><strong>Input/Output:</strong> Input จาก Governance/กลยุทธ์, Output คือ Portfolio แผนงาน และนโยบาย</li></ul><br>2. <strong>Improve (ปรับปรุง):</strong><br><ul><li><strong>หน้าที่:</strong> รับประกันการปรับปรุงผลิตภัณฑ์ บริการ และแนวปฏิบัติอย่างต่อเนื่องในทุกจุดของ Value System</li><li><strong>Input/Output:</strong> Input คือข้อมูลวัดผลและฟีดแบ็ก, Output คือ Continual Improvement Initiatives</li></ul><br>3. <strong>Engage (มีปฏิสัมพันธ์/ผูกพัน):</strong><br><ul><li><strong>หน้าที่:</strong> สร้างความเข้าใจในความต้องการของผู้มีส่วนได้ส่วนเสีย ส่งเสริมความโปร่งใส และสร้างความสัมพันธ์อันดี</li><li><strong>Input/Output:</strong> เป็นด่านหน้าในการรับความต้องการ (Demand) และสะท้อนข้อมูลกลับสู่ผู้มีส่วนได้ส่วนเสีย</li></ul><br>4. <strong>Design and Transition (ออกแบบและเปลี่ยนผ่าน):</strong><br><ul><li><strong>หน้าที่:</strong> รับประกันว่าผลิตภัณฑ์และบริการตอบสนองความคาดหวังของลูกค้าทั้งด้านคุณภาพ ต้นทุน และเวลาส่งมอบ</li><li><strong>Input/Output:</strong> เปลี่ยนข้อกำหนดให้กลายเป็นพิมพ์เขียว สถาปัตยกรรม และส่งมอบระบบเข้าสู่สภาพแวดล้อมพร้อมใช้</li></ul><br>5. <strong>Obtain/Build (จัดหา/สร้าง):</strong><br><ul><li><strong>หน้าที่:</strong> จัดหาทรัพยากร ชิ้นส่วน หรือสร้างองค์ประกอบของบริการให้พร้อมใช้งานตามข้อกำหนด</li><li><strong>Input/Output:</strong> Output คือ Service Components ที่สร้างหรือซื้อมาพร้อมประกอบร่าง</li></ul><br>6. <strong>Deliver and Support (ส่งมอบและสนับสนุน):</strong><br><ul><li><strong>หน้าที่:</strong> รับประกันว่าการส่งมอบและสนับสนุนบริการในชีวิตประจำวันเป็นไปตามข้อตกลงและระดับคุณภาพที่คาดหวัง</li><li><strong>Input/Output:</strong> Output คือบริการที่ส่งมอบถึงมือผู้ใช้จริง และการแก้ไขเมื่อเกิดเหตุขัดข้อง</li></ul></p>
+
+---
+
+<h4 class="guide-subheading">2) การพัฒนาสู่ ITIL 5 Product and Service Lifecycle (8 Lifecycle Activities):</h4>
+ใน ITIL 5 กิจกรรมใน Value Chain ได้รับการขยายให้สอดคล้องกับวงจรชีวิตผลิตภัณฑ์ดิจิทัลสมัยใหม่ (<strong>Discover, Design, Acquire, Build, Transition, Operate, Deliver, Support</strong>):
+
+<pre class="guide-pre"><code>Discover ──► Design ──► Acquire ──► Build ──► Transition ──► Operate ──► Deliver ──► Support</code></pre>
+
+<div class="table-responsive"><table class="guide-table"><thead><tr><th>กิจกรรมใน ITIL 5</th><th>วัตถุประสงค์หลัก (Primary Purpose)</th><th>ตัวชี้วัดความสำเร็จที่สำคัญ (Success Metric)</th></tr></thead><tbody><tr><td><strong>1. Discover (สำรวจ)</strong></td><td>สำรวจความต้องการ โอกาสทางธุรกิจ และปรับความสามารถของผลิตภัณฑ์ให้สอดคล้องกับกลยุทธ์</td><td>Strategic fit, Market relevance, Stakeholder satisfaction (<em>ไม่ใช่ SLA!</em>)</td></tr><tr><td><strong>2. Design (ออกแบบ)</strong></td><td>ออกแบบข้อกำหนดผลิตภัณฑ์ (<strong>Product Specification</strong>) และสร้างต้นแบบ (<strong>Prototypes</strong>)</td><td>Design quality, Usability, Compliance with specifications</td></tr><tr><td><strong>3. Acquire (จัดหา)</strong></td><td>จัดซื้อ จัดหา หรือจัดสรรทรัพยากรและชิ้นส่วนจากภายนอกอย่างมีประสิทธิภาพ</td><td><strong>Quality of resources and services outsourced from suppliers</strong></td></tr><tr><td><strong>4. Build (สร้าง)</strong></td><td>พัฒนา เขียนโค้ด กำหนดค่าระบบ (Configure) และทดสอบชิ้นส่วนผลิตภัณฑ์</td><td><strong>Quality of the product solutions</strong>, Defect rate</td></tr><tr><td><strong>5. Transition (เปลี่ยนผ่าน)</strong></td><td>นำผลิตภัณฑ์และบริการใหม่/ที่ปรับปรุงเข้าสู่สภาพแวดล้อมใช้งานจริงอย่างราบรื่น</td><td><strong>Success rate of releases deployed into the live environment</strong></td></tr><tr><td><strong>6. Operate (ปฏิบัติการ)</strong></td><td>ดูแล ควบคุม และติดตามเฝ้าระวังผลิตภัณฑ์ดิจิทัลและระบบโครงสร้างพื้นฐาน</td><td>System uptime, Performance stability, Observability coverage</td></tr><tr><td><strong>7. Deliver (ส่งมอบ)</strong></td><td>ส่งมอบบริการตามข้อตกลง จัดการการเริ่มต้นใช้งาน (<strong>User Onboarding</strong>)</td><td><strong>Service performance against agreed SLA targets</strong></td></tr><tr><td><strong>8. Support (สนับสนุน)</strong></td><td>ฟื้นคืนระบบ ช่วยเหลือผู้ใช้ และ <strong>ลดผลกระทบจากอุบัติการณ์และภัยพิบัติ (Minimizing impact of incidents/disasters)</strong></td><td>Incident resolution time (MTTR), User satisfaction</td></tr></tbody></table></div>---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-4-2">
+        <div class="guide-section-header">
+          <h3>4.2 การจำแนกแนวทางปฏิบัติการจัดการ (34 Management Practices)</h3>
+          <span class="guide-tag">sec-4-2</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -2547,22 +2611,29 @@
       </div>
     </div>
   
-          <p>ITIL 5 แบ่ง Practices ออกเป็น 2 กลุ่ม: <strong>General Management Practices (12)</strong> และ <strong>Product & Service Management Practices (22)</strong></p>
-          <div class="guide-alert guide-alert-note">
-            <div class="guide-alert-title">📌 โครงสร้าง ITIL Official Practice Guides:</div>
-            <div class="guide-alert-body">
-              คู่มือแนวปฏิบัติอย่างเป็นทางการมี<strong>โครงสร้างมาตรฐานเดียวกัน (Standardized structure)</strong> เพื่อช่วยให้องค์กรนำไปเปรียบเทียบ ประยุกต์ใช้ได้ง่าย และช่วยยกระดับขีดความสามารถขององค์กร (Developing capabilities)
-            </div>
-          </div>
-        </article>
-
-        <!-- Section 4.3 Incident vs Problem -->
-        <article class="guide-card" id="sec-4-3-inc-prob">
-          <div class="guide-section-header">
-            <h3>4.3.1 Incident Management vs. Problem Management (ออกสอบทุกปี!)</h3>
-            <span class="guide-tag">Criteria: 4.4.3, 4.4.8</span>
-          </div>
+        
+        <div class="guide-card-content">
           
+
+<p>ITIL 5 แบ่ง Practices ออกเป็น 2 กลุ่มหลัก:<br>1. <strong>General Management Practices (12 Practices):</strong> แนวปฏิบัติทั่วไปที่ประยุกต์มาจากศาสตร์การจัดการระดับองค์กร เช่น Strategy Management, Portfolio Management, Risk Management, Architecture Management, Continual Improvement, Relationship Management, Supplier Management<br>2. <strong>Product and Service Management Practices (22 Practices):</strong> แนวปฏิบัติเฉพาะทางสำหรับการจัดการผลิตภัณฑ์และบริการดิจิทัล เช่น Incident Management, Problem Management, Change Enablement, Service Desk, Service Level Management, Deployment Management, Release Management, Software Development and Management</p>
+
+<div class="guide-alert guide-alert-note">
+      <div class="guide-alert-title">📌 หมายเหตุ / ข้อสังเกต (Note)</div>
+      <div class="guide-alert-body"><strong>โครงสร้างของ ITIL Official Practice Guides:</strong>  <br>คู่มือ Practice Guides มีโครงสร้างที่เป็นมาตรฐานเดียวกัน (<em>Standardized structure</em>) เพื่อให้องค์กรสามารถทำความเข้าใจ เปรียบเทียบ และนำแนวปฏิบัติต่างๆ ไปประยุกต์ใช้ได้ง่ายขึ้น และช่วยยกระดับขีดความสามารถขององค์กร (<em>Developing product and service management capabilities</em>)</div>
+    </div>
+
+---
+
+
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-4-3-inc-prob">
+        <div class="guide-section-header">
+          <h3>4.3.1 Incident Management vs. Problem Management</h3>
+          <span class="guide-tag">sec-4-3-inc-prob</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -2577,63 +2648,75 @@
       </div>
     </div>
   
+        
+        <div class="guide-card-content">
+          <h4 class="guide-subheading">1) Incident Management vs. Problem Management</h4>
+นี่คือหัวข้อที่มีสถิติการออกสอบมากที่สุดใน ITIL ทุกเวอร์ชัน!
 
-          <div class="table-responsive">
-            <table class="guide-table">
-              <thead>
-                <tr>
-                  <th>มิติเปรียบเทียบ</th>
-                  <th>Incident Management</th>
-                  <th>Problem Management</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>นิยาม</strong></td>
-                  <td>การหยุดชะงักของบริการที่ไม่ได้วางแผนไว้ หรือการลดลงของคุณภาพบริการ (<em>Unplanned interruption or reduction in quality</em>)</td>
-                  <td>สาเหตุ หรือสาเหตุที่อาจเกิดขึ้น ของอุบัติการณ์ตั้งแต่หนึ่งรายการขึ้นไป (<em>Cause, or potential cause, of one or more incidents</em>)</td>
-                </tr>
-                <tr>
-                  <td><strong>เป้าหมายหลัก</strong></td>
-                  <td><strong>กู้คืนบริการให้กลับมาเป็นปกติโดยเร็วที่สุด</strong> (<em>Restore normal service ASAP</em>)</td>
-                  <td><strong>ลดโอกาสและผลกระทบของ Incident โดยหาสาเหตุรากเหง้า</strong> (<em>Reduce likelihood & impact</em>)</td>
-                </tr>
-                <tr>
-                  <td><strong>เครื่องมือสำคัญ</strong></td>
-                  <td><strong>Workaround (วิธีแก้ชั่วคราว)</strong> เพื่อให้ระบบกลับมาใช้ได้ก่อน</td>
-                  <td><strong>Known Error Record</strong> (ปัญหาที่วิเคราะห์รู้สาเหตุแล้ว แต่ยังไม่ได้แก้ถาวร)</td>
-                </tr>
-                <tr>
-                  <td><strong>ลักษณะการทำงาน</strong></td>
-                  <td>Reactive (ตอบสนองทันทีเมื่อเกิดเหตุ)</td>
-                  <td>ทั้ง Reactive (วิเคราะห์หลังเกิดเหตุ) และ Proactive (วิเคราะห์แนวโน้มล่วงหน้า)</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
+<pre class="guide-pre"><code>[ Event / Anomaly ]
+              │
+              ▼
+    ┌───────────────────┐               ┌───────────────────┐
+    │ Incident Occurs!  │               │      Problem      │
+    │ (บริการหยุดชะงัก) │               │(สาเหตุของ Incident)│
+    └─────────┬─────────┘               └─────────┬─────────┘
+              │                                   │
+              ▼                                   ▼
+    Restore Service ASAP!               Identify Root Cause!
+    (ใช้ Workaround ชั่วคราว)           (สร้าง Known Error Record)
+              │                                   │
+              └─────────────────┬─────────────────┘
+                                ▼
+                        [ Permanent Fix ]
+                      (ส่งต่อ Change Enablement)</code></pre>
+<ul><li><strong>นิยามศัพท์สำคัญ:</strong></li></ul>
+  <em> <strong>Incident (อุบัติการณ์/เหตุขัดข้อง):</strong> การหยุดชะงักของบริการที่ไม่ได้วางแผนไว้ หรือการลดลงของคุณภาพบริการ (</em>An unplanned interruption to a service or reduction in service quality*)
+  <em> <strong>Problem (ปัญหา):</strong> สาเหตุ หรือสาเหตุที่อาจเกิดขึ้น ของอุบัติการณ์ตั้งแต่หนึ่งรายการขึ้นไป (</em>A cause, or potential cause, of one or more incidents*)
+<ul><li><strong>Error (ข้อบกพร่อง):</strong> ช่องโหว่หรือความผิดพลาดในโค้ด/การตั้งค่าที่อาจก่อให้เกิด Incident</li></ul>
+  <em> <strong>Known Error (ข้อบกพร่องที่ทราบสาเหตุ):</strong> ปัญหาที่ได้รับการวิเคราะห์จนทราบสาเหตุรากเหง้าแล้ว แต่ยังไม่ได้ทำการแก้ไขถาวร (</em>A problem that has been analysed but not resolved*)
+<ul><li><strong>Workaround (วิธีแก้ไขชั่วคราว):</strong> ทางออกที่ช่วยลดทอนหรือขจัดผลกระทบของ Incident หรือ Problem ชั่วคราว ในขณะที่ยังไม่มีวิธีแก้ไขถาวร</li><li><strong>ตารางเปรียบเทียบ Incident Management vs. Problem Management:</strong></li></ul>
 
-        <!-- Section 4.3 Change Enablement -->
-        <article class="guide-card" id="sec-4-3-change">
-          <div class="guide-section-header">
-            <h3>4.3.2 Change Enablement (การเปิดทางให้เกิดการเปลี่ยนแปลง)</h3>
-            <span class="guide-tag">Management Practices</span>
-          </div>
-          <p><strong>ประเภทของการเปลี่ยนแปลง 3 ระดับ:</strong></p>
-          <ul>
-            <li><strong>Standard Change:</strong> เสี่ยงต่ำ ขั้นตอนชัดเจน ทำซ้ำบ่อย <strong>ได้รับอนุมัติล่วงหน้าแล้ว (Pre-authorized)</strong> เช่น เปลี่ยนหมึกพิมพ์, แพตช์ระบบตามรอบ</li>
-            <li><strong>Normal Change:</strong> เสี่ยงปานกลางถึงสูง ต้องผ่านการประเมินความเสี่ยงและอนุมัติโดย Change Authority ตามขั้นตอน เช่น อัปเกรดฐานข้อมูล</li>
-            <li><strong>Emergency Change:</strong> การเปลี่ยนแปลงเร่งด่วนเพื่อกู้ระบบวิกฤตหรืออุดช่องโหว่ความปลอดภัยฉุกเฉิน มีกระบวนการอนุมัติเร่งรัดและบันทึกเอกสารย้อนหลังได้</li>
-          </ul>
-        </article>
+<div class="table-responsive"><table class="guide-table"><thead><tr><th>มิติเปรียบเทียบ</th><th>Incident Management</th><th>Problem Management</th></tr></thead><tbody><tr><td><strong>เป้าหมายหลัก</strong></td><td><strong>กู้คืนบริการให้กลับมาเป็นปกติโดยเร็วที่สุด</strong> (<em>Restore normal service operation ASAP</em>)</td><td><strong>ลดโอกาสและผลกระทบของ Incident โดยหาสาเหตุรากเหง้า</strong> (<em>Reduce likelihood & impact</em>)</td></tr><tr><td><strong>ลักษณะการทำงาน</strong></td><td><strong>Reactive</strong> (ตอบสนองทันทีเมื่อเกิดเหตุ)</td><td>ทั้ง <strong>Reactive</strong> (วิเคราะห์หลังเกิดเหตุ) และ <strong>Proactive</strong> (วิเคราะห์แนวโน้มล่วงหน้า)</td></tr><tr><td><strong>ผลลัพธ์หลัก</strong></td><td>Service Restored, <strong>Workaround</strong></td><td><strong>Known Error Record</strong>, Root Cause Identification, Permanent Fix</td></tr><tr><td><strong>ตัวอย่างสถานการณ์</strong></td><td>ระบบเครือข่ายล่ม เจ้าหน้าที่สลับสายสัญญาณไปใช้เส้นทางสำรองเพื่อให้ระบบกลับมาใช้ได้ภายใน 10 นาที</td><td>วิศวกรนำ Log มาวิเคราะห์จนพบว่า Switch ตัวหลักมีเฟิร์มแวร์บั๊ก จึงเปิด Known Error และวางแผนอัปเดต</td></tr></tbody></table></div>---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-4-3-change">
+        <div class="guide-section-header">
+          <h3>4.3.2 Change Enablement (การเปิดทางให้เกิดการเปลี่ยนแปลง)</h3>
+          <span class="guide-tag">sec-4-3-change</span>
+        </div>
+        
+        
+        <div class="guide-card-content">
+          <h4 class="guide-subheading">2) Change Enablement (การเปิดทางให้เกิดการเปลี่ยนแปลง)</h4>
+<em> <strong>วัตถุประสงค์:</strong> เพิ่มโอกาสความสำเร็จของการเปลี่ยนแปลงผลิตภัณฑ์และบริการให้สูงสุด โดยการประเมินความเสี่ยงอย่างเหมาะสม การให้อำนาจอนุมัติ และการจัดการตารางเวลาเปลี่ยนแปลง (</em>Change Schedule*) เพื่อไม่ให้กระทบต่อธุรกิจ
+<ul><li><strong>Change (การเปลี่ยนแปลง):</strong> การเพิ่ม ปรับเปลี่ยน หรือถอดถอนสิ่งใดก็ตามที่อาจส่งผลกระทบต่อบริการ</li><li><strong>Change Authority:</strong> บุคคลหรือกลุ่มบุคคลที่ได้รับมอบหมายอำนาจในการอนุมัติการเปลี่ยนแปลงแต่ละประเภท</li><li><strong>ประเภทของการเปลี่ยนแปลง 3 ระดับ (3 Types of Change):</strong></li></ul>
 
-        <!-- Section 4.3 Service Desk & SLM -->
-        <article class="guide-card" id="sec-4-3-slm">
-          <div class="guide-section-header">
-            <h3>4.3.3 Service Desk & 4.3.4 Service Level Management (SLA)</h3>
-            <span class="guide-tag">Criteria: 1.4.6</span>
-          </div>
-          
+<div class="table-responsive"><table class="guide-table"><thead><tr><th>ประเภทของ Change</th><th>ระดับความเสี่ยงและลักษณะ</th><th>กระบวนการอนุมัติ</th><th>ตัวอย่างจริง</th></tr></thead><tbody><tr><td><strong>1. Standard Change</strong></td><td>ความเสี่ยงต่ำ เข้าใจขั้นตอนดี มีขั้นตอนปฏิบัติชัดเจน ทำซ้ำบ่อย</td><td><strong>Pre-authorized</strong> (ได้รับอนุมัติล่วงหน้าแล้ว ไม่ต้องขออนุมัติใหม่ทุกครั้ง)</td><td>การขยายพื้นที่ Disk พื้นฐาน, การเปลี่ยนตลับหมึกเครื่องพิมพ์, การแพตช์ระบบตามรอบปกติ</td></tr><tr><td><strong>2. Normal Change</strong></td><td>ความเสี่ยงปานกลาง-สูง ต้องมีการประเมินและวางแผนล่วงหน้า</td><td>ต้องเสนอผ่านการประเมินความเสี่ยงและอนุมัติโดย Change Authority ตามลำดับขั้น</td><td>การอัปเกรดเวอร์ชันฐานข้อมูล, การย้ายศูนย์ข้อมูล, การเปิดตัวระบบงานใหม่</td></tr><tr><td><strong>3. Emergency Change</strong></td><td>การเปลี่ยนแปลงเร่งด่วนเพื่อแก้ไข Incident รุนแรง หรืออุดช่องโหว่ความปลอดภัยฉุกเฉิน</td><td>มีกระบวนการอนุมัติเร่งรัด (<strong>Emergency Change Authority</strong>) โดยบันทึกเอกสารย้อนหลังได้</td><td>การลงแพตช์อุดช่องโหว่ Zero-day ที่กำลังถูกโจมตี, การแก้คอนฟิกฉุกเฉินเพื่อกู้ระบบแกนหลัก</td></tr></tbody></table></div>---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-4-3-desk">
+        <div class="guide-section-header">
+          <h3>4.3.3 Service Desk (จุดติดต่อสื่อสารจุดเดียว)</h3>
+          <span class="guide-tag">sec-4-3-desk</span>
+        </div>
+        
+        
+        <div class="guide-card-content">
+          <h4 class="guide-subheading">3) Service Desk</h4>
+<ul><li><strong>วัตถุประสงค์:</strong> ทำหน้าที่เป็น <strong>จุดติดต่อสื่อสารจุดเดียว (Single Point of Contact - SPOC)</strong> ระหว่างผู้ให้บริการกับผู้ใช้งานทุกคน เพื่อรับคำร้องเรียน รายงานปัญหา และคำขอบริการ</li><li><strong>ช่องทางการติดต่อ:</strong> Multi-channel / Omnichannel (โทรศัพท์, อีเมล, แชตบอต, พอร์ทัลบริการตนเอง)</li><li><strong>ทักษะสำคัญ:</strong> ไม่ได้เน้นแค่เทคนิคขั้นสูง แต่เน้น <strong>Customer Service, การสื่อสาร, ความเห็นอกเห็นใจ (Empathy), และความเข้าใจบริบทธุรกิจ</strong></li></ul>
+
+---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-4-3-slm">
+        <div class="guide-section-header">
+          <h3>4.3.4 Service Level Management (SLM & SLA)</h3>
+          <span class="guide-tag">sec-4-3-slm</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -2648,27 +2731,51 @@
       </div>
     </div>
   
+        
+        <div class="guide-card-content">
+          <h4 class="guide-subheading">4) Service Level Management (SLM)</h4>
+<ul><li><strong>วัตถุประสงค์:</strong> กำหนดเป้าหมายระดับบริการที่ชัดเจน และตรวจสอบ ประเมินผล และบริหารจัดการการให้บริการให้เป็นไปตามเป้าหมาย เพื่อสร้างความเข้าใจที่ตรงกันระหว่างผู้ให้บริการและลูกค้า</li><li><strong>Service Level Agreement (SLA):</strong> ข้อตกลงลายลักษณ์อักษรระหว่างผู้ให้บริการและลูกค้าที่ระบุบริการและระดับบริการที่ตกลงร่วมกัน</li><li><strong>ข้อควรระวังเรื่อง Watermelon SLA Effect:</strong>  </li></ul>
+  <em>สภาวะที่แดชบอร์ดไอทีเป็นสีเขียวทั้งหมด (ระบบไม่ล่ม SLA ผ่านเกณฑ์) แต่เมื่อผ่าเข้าไปข้างในลูกค้ากลับโกรธเป็นสีแดงก่ำ (บริการใช้งานจริงไม่ได้ ตอบโจทย์ไม่ได้)</em> ดังนั้น SLM ยุคใหม่จึงต้องวัด <strong>Customer Experience (CX)</strong> และผลลัพธ์ทางธุรกิจร่วมด้วยเสมอ
 
-          <h4 class="guide-subheading">Service Desk:</h4>
-          <p>ทำหน้าที่เป็น<strong>จุดติดต่อสื่อสารจุดเดียว (Single Point of Contact - SPOC)</strong> ระหว่างผู้ให้บริการกับผู้ใช้ทุกคน ผ่าน Omnichannel เน้นทักษะการสื่อสาร ความเห็นอกเห็นใจ (Empathy) และความเข้าใจธุรกิจ</p>
+---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-4-3-srm">
+        <div class="guide-section-header">
+          <h3>4.3.5 Service Request Management (การจัดการคำขอบริการ)</h3>
+          <span class="guide-tag">sec-4-3-srm</span>
+        </div>
+        
+        
+        <div class="guide-card-content">
+          <h4 class="guide-subheading">5) Service Request Management</h4>
+<ul><li><strong>วัตถุประสงค์:</strong> สนับสนุนการให้บริการตามคำขอของผู้ใช้ที่เป็นขั้นตอนมาตรฐาน ทำซ้ำได้ และมีการตกลงไว้ล่วงหน้า</li><li><strong>ตัวอย่าง Service Request:</strong> การขอรีเซ็ตรหัสผ่าน, การขอติดตั้งโปรแกรมมาตรฐาน, การขอสิทธิ์เข้าถึงโฟลเดอร์, การขอเปลี่ยนเมาส์/คีย์บอร์ด (ไม่ใช่ Incident เพราะไม่มีอะไรเสียหรือล่ม)</li></ul>
 
-          <h4 class="guide-subheading">Service Level Management (SLM):</h4>
-          <p><strong>SLA:</strong> ข้อตกลงลายลักษณ์อักษรระหว่างผู้ให้บริการและลูกค้าที่ระบุบริการและระดับบริการที่ตกลงร่วมกัน</p>
-          <div class="guide-alert guide-alert-warning">
-            <div class="guide-alert-title">🚨 Watermelon SLA Effect:</div>
-            <div class="guide-alert-body">
-              สภาวะที่แดชบอร์ดไอทีเป็นสีเขียว (SLA ผ่านเกณฑ์) แต่ลูกค้าโกรธเป็นสีแดงก่ำเพราะบริการใช้งานจริงไม่ได้ตอบโจทย์ SLM ยุคใหม่จึงต้องวัด Customer Experience (CX) ร่วมด้วย
-            </div>
-          </div>
-        </article>
+---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-4-3-deploy">
+        <div class="guide-section-header">
+          <h3>4.3.6 Deployment Management vs. Release Management</h3>
+          <span class="guide-tag">sec-4-3-deploy</span>
+        </div>
+        
+        
+        <div class="guide-card-content">
+          <h4 class="guide-subheading">6) Deployment Management vs. Release Management</h4>
 
-        <!-- Section 4.3 Deploy vs Release & DevOps -->
-        <article class="guide-card" id="sec-4-3-devops">
-          <div class="guide-section-header">
-            <h3>4.3.6 Deployment vs Release & 4.3.7 DevOps, Observability, AI</h3>
-            <span class="guide-tag">Criteria: 4.4.5, 4.4.6, 6.2.2, 7.1.1</span>
-          </div>
-          
+<div class="table-responsive"><table class="guide-table"><thead><tr><th>มิติเปรียบเทียบ</th><th>Deployment Management</th><th>Release Management</th></tr></thead><tbody><tr><td><strong>ความหมาย</strong></td><td>การเคลื่อนย้ายฮาร์ดแวร์ ซอฟต์แวร์ หรือชิ้นส่วน เข้าสู่ <strong>สภาพแวดล้อมจริงหรือสภาพแวดล้อมที่ควบคุม</strong> (<em>Move component to live/controlled environment</em>)</td><td>การจัดเตรียมและ <strong>เปิดให้ผู้ใช้งานสามารถเข้าถึงและใช้งานบริการหรือฟีเจอร์นั้นได้จริง</strong> (<em>Make available for use</em>)</td></tr><tr><td><strong>ตัวอย่าง</strong></td><td>วิศวกร Deploy โค้ดเวอร์ชัน 2.0 ขึ้นไปไว้บนเซิร์ฟเวอร์จริงตอน 23:00 น. วันศุกร์ แต่ยังปิดสวิตช์ (Feature Flag) ไว้</td><td>ฝ่ายการตลาดและผลิตภัณฑ์เปิดสวิตช์ Feature Flag ให้ลูกค้าทุกคนมองเห็นและเริ่มกดใช้ปุ่มใหม่ในเช้าวันจันทร์</td></tr></tbody></table></div>---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-4-3-devops">
+        <div class="guide-section-header">
+          <h3>4.3.7 DevOps, CI/CD, Observability & AI ใน ITIL 5</h3>
+          <span class="guide-tag">sec-4-3-devops</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -2687,49 +2794,22 @@
       </div>
     </div>
   
+        
+        <div class="guide-card-content">
+          <h4 class="guide-subheading">7) DevOps, CI/CD, Observability & AI ใน ITIL 5</h4>
+<ul><li><strong>ITIL and DevOps:</strong> ITIL ทำหน้าที่ให้ <strong>กรอบการจัดการภาพรวม (Framework)</strong> ส่วน DevOps จัดหา <strong>แนวปฏิบัติและเทคนิคการทำงาน (Practices & Techniques)</strong> เช่น CI/CD ซึ่งทั้งสองทำงานเสริมกัน ไม่ได้มาแทนที่กัน</li><li><strong>Continuous Delivery vs. Continuous Deployment:</strong></li><li><strong>Continuous Delivery:</strong> โค้ดผ่านการทดสอบอัตโนมัติและพร้อมขึ้นใช้งานจริงเสมอ แต่ขั้นตอนการนำขึ้น Production สุดท้าย <strong>อาจยังต้องมีการกดอนุมัติโดยมนุษย์</strong></li><li><strong>Continuous Deployment:</strong> การเปลี่ยนแปลงที่ผ่านการทดสอบอัตโนมัติจะ <strong>ถูกส่งขึ้น Production จริงโดยอัตโนมัติ 100% โดยไม่ต้องมีมนุษย์มากดอนุมัติ</strong></li><li><strong>Observability (ความสามารถในการสังเกตระบบ):</strong> ความสามารถในการเข้าใจสภาวะและพฤติกรรมภายในของระบบดิจิทัล โดยอนุมานจากข้อมูลส่งออกภายนอก 3 อย่าง ได้แก่ <strong>Logs, Metrics, และ Traces</strong></li></ul>
+<em> <strong>AI Capability Model:</strong> แบบจำลองที่องค์กรนำมาใช้เพื่อ <strong>ประเมินความพร้อมและระบุจุดที่ต้องปรับปรุงในการนำ AI มาประยุกต์ใช้ (</em>Assess readiness and identify areas for improvement in using AI*)</strong>
 
-          <div class="table-responsive">
-            <table class="guide-table">
-              <thead>
-                <tr>
-                  <th>แนวคิด</th>
-                  <th>ความแตกต่างสำคัญ</th>
-                  <th>คำสำคัญในข้อสอบ</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Deployment vs Release</strong></td>
-                  <td><strong>Deployment:</strong> นำโค้ดหรือชิ้นส่วนขึ้นไปวางบน Live Environment<br><strong>Release:</strong> เปิดให้ผู้ใช้งานทั่วไปสามารถเข้าถึงและใช้งานบริการหรือฟีเจอร์นั้นได้จริง</td>
-                  <td>Deployment = Move component to live<br>Release = Make available for use</td>
-                </tr>
-                <tr>
-                  <td><strong>Continuous Delivery vs Deployment</strong></td>
-                  <td><strong>Delivery:</strong> พร้อมขึ้น Prod เสมอ แต่อาจมีมนุษย์กดอนุมัติขั้นสุดท้าย<br><strong>Deployment:</strong> โค้ดที่ผ่านเทสต์จะขึ้น Prod อัตโนมัติ 100% โดยไม่ต้องมีมนุษย์กดอนุมัติ</td>
-                  <td>Delivery = Human approval<br>Deployment = 100% Automated</td>
-                </tr>
-                <tr>
-                  <td><strong>Observability</strong></td>
-                  <td>ความสามารถในการเข้าใจสภาวะภายในระบบดิจิทัล โดยดูจากข้อมูลส่งออกภายนอก 3 อย่าง</td>
-                  <td><strong>Logs, Metrics, Traces</strong></td>
-                </tr>
-                <tr>
-                  <td><strong>AI Capability Model</strong></td>
-                  <td>แบบจำลองที่ใช้เพื่อประเมินความพร้อมและระบุจุดที่ต้องปรับปรุงในการนำ AI มาประยุกต์ใช้</td>
-                  <td>Assess readiness & identify improvement in using AI</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
-
-        <!-- Section 4.5 Continual Improvement Model -->
-        <article class="guide-card" id="sec-4-5">
-          <div class="guide-section-header">
-            <h3>4.5 Continual Improvement Model (7 ขั้นตอน)</h3>
-            <span class="guide-tag">Criteria: 4.6.2</span>
-          </div>
-          
+---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-4-5">
+        <div class="guide-section-header">
+          <h3>4.5 โมเดลการปรับปรุงอย่างต่อเนื่อง 7 ขั้นตอน (Continual Improvement Model)</h3>
+          <span class="guide-tag">sec-4-5</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -2744,35 +2824,64 @@
       </div>
     </div>
   
-          <ol class="step-list">
-            <li><strong>1. What is the vision?</strong> (กำหนดวิสัยทัศน์) — <em>จุดออกสอบ: เพื่อให้มั่นใจว่าการปรับปรุงสอดคล้องกับเป้าหมายเชิงกลยุทธ์ขององค์กร (Strategic alignment)</em></li>
-            <li><strong>2. Where are we now?</strong> (ประเมินสถานะปัจจุบัน / Baseline)</li>
-            <li><strong>3. Where do we want to be?</strong> (กำหนดเป้าหมายที่วัดผลได้ / Target OKRs)</li>
-            <li><strong>4. How do we get there?</strong> (วางแผนการเดินทาง)</li>
-            <li><strong>5. Take action!</strong> (ลงมือปฏิบัติ)</li>
-            <li><strong>6. Are we getting there?</strong> (วัดผลว่าบรรลุเป้าหมายหรือไม่)</li>
-            <li><strong>7. How do we keep the momentum going?</strong> (รักษาความยั่งยืน)</li>
-          </ol>
-        </article>
-      </section>
-
-      <!-- MODULE 5 -->
-      <section class="guide-module-section" id="mod-5" data-module="mod-5">
-        <div class="module-banner">
-          <span class="module-number-badge">Module 5</span>
-          <div>
-            <h2 class="module-title">Value Streams Mapping & Management (Ch. 7)</h2>
-            <div class="module-sub">สายธารคุณค่า, Core vs Enabling Value Stream, 5 ขั้นตอนของ Mapping และความแตกต่างจาก Management</div>
-          </div>
-        </div>
-
-        <!-- Section 5.1 & 5.2 & 5.3 -->
-        <article class="guide-card" id="sec-5-1">
-          <div class="guide-section-header">
-            <h3>5.1 Mapping vs Management & 5.2 Core vs Enabling Value Stream</h3>
-            <span class="guide-tag">Criteria: 5.1.1, 5.1.2, 5.3.2</span>
-          </div>
+        
+        <div class="guide-card-content">
           
+
+<p>โมเดล 7 ขั้นตอนเป็นแนวทางวงกลม (Iterative Loop) ที่ใช้ขับเคลื่อนการปรับปรุงในทุกระดับ:</p>
+
+<pre class="guide-pre"><code>┌────────────────────────────────────────────────────────┐
+        │ 1. What is the vision? (เชื่อมโยงกับวิสัยทัศน์องค์กร)    │
+        └───────────────────────────┬────────────────────────────┘
+                                    ▼
+        ┌────────────────────────────────────────────────────────┐
+        │ 2. Where are we now? (ประเมินสถานะปัจจุบัน / Baseline)   │
+        └───────────────────────────┬────────────────────────────┘
+                                    ▼
+        ┌────────────────────────────────────────────────────────┐
+        │ 3. Where do we want to be? (กำหนดเป้าหมาย / Target OKRs) │
+        └───────────────────────────┬────────────────────────────┘
+                                    ▼
+        ┌────────────────────────────────────────────────────────┐
+        │ 4. How do we get there? (วางแผนการเดินทางและกิจกรรม)     │
+        └───────────────────────────┬────────────────────────────┘
+                                    ▼
+        ┌────────────────────────────────────────────────────────┐
+        │ 5. Take action! (ลงมือปฏิบัติการปรับปรุง)                 │
+        └───────────────────────────┬────────────────────────────┘
+                                    ▼
+        ┌────────────────────────────────────────────────────────┐
+        │ 6. Are we getting there? (วัดผลว่าบรรลุเป้าหมายหรือไม่)   │
+        └───────────────────────────┬────────────────────────────┘
+                                    ▼
+        ┌────────────────────────────────────────────────────────┐
+        │ 7. How do we keep the momentum going? (รักษาความยั่งยืน) │
+        └────────────────────────────────────────────────────────┘</code></pre>
+
+<div class="guide-alert guide-alert-important">
+      <div class="guide-alert-title">⚠️ สาระสำคัญ (Important)</div>
+      <div class="guide-alert-body"><strong>Exam Tip ข้อสอบถามเหตุผลของ Step 1:</strong>  <br>เหตุใด Continual Improvement Model จึงต้องเริ่มต้นด้วย <em>"What is the vision?"</em>  <br><strong>คำตอบ:</strong> เพื่อให้มั่นใจว่าความพยายามในการปรับปรุงทั้งหมด <strong>สอดคล้องและเชื่อมโยงกับเป้าหมายและทิศทางเชิงกลยุทธ์ขององค์กร (<em>To ensure improvement efforts are aligned with organizational objectives</em>)</strong></div>
+    </div>
+
+---
+        </div>
+      </article>
+    </section>
+    <section class="guide-module-section" id="mod-5" data-module="mod-5">
+      <div class="module-banner">
+        <span class="module-number-badge">Module 5</span>
+        <div>
+          <h2 class="module-title">Value Streams Mapping & Management (Ch. 7)</h2>
+          <div class="module-sub">สายธารคุณค่า, Core vs Enabling Value Stream, 5 ขั้นตอนของ Mapping และตัวอย่าง End-to-End Value Stream Journey ในชีวิตจริง</div>
+        </div>
+      </div>
+  
+      <article class="guide-card" id="sec-5-1">
+        <div class="guide-section-header">
+          <h3>5.1 นิยามและความแตกต่าง: Mapping vs. Management</h3>
+          <span class="guide-tag">sec-5-1</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -2785,7 +2894,27 @@
       </div>
     </div>
   
+        
+        <div class="guide-card-content">
           
+
+<p><em> <strong>Value Stream (สายธารคุณค่า):</strong> ลำดับขั้นตอนการทำงานที่เกิดขึ้นจริง (</em>Actual sequence of steps*) ที่องค์กรใช้ในการสร้างและส่งมอบผลิตภัณฑ์และบริการให้แก่ผู้บริโภค<br><ul><li><strong>Value Stream Mapping (การทำแผนผังสายธารคุณค่า):</strong></li><li>กิจกรรมการวิเคราะห์และจัดทำภาพจำลอง เพื่อระบุ แสดง และวิเคราะห์การไหลของคุณค่า ข้อมูล และขั้นตอนงาน</li></ul><br>  <em> <strong>วัตถุประสงค์หลักตามข้อสอบ:</strong> <strong>เพื่อระบุและจัดลำดับความสำคัญของโอกาสในการปรับปรุง (</em>To identify and prioritize improvement opportunities*)</strong> โดยการค้นหาจุดคอขวด (Bottlenecks) และความสูญเปล่า (Waste)<br><ul><li><strong>Value Stream Management (การบริหารจัดการสายธารคุณค่า):</strong></li></ul><br>  <em> การกำกับดูแลและบริหารจัดการอย่างต่อเนื่องในระยะยาว เพื่อให้มั่นใจว่าสายธารคุณค่านั้นทำงานได้อย่างมีประสิทธิผล มีประสิทธิภาพ และได้รับการปรับปรุงอย่างต่อเนื่องตามกาลเวลา (</em>Ensures the value stream performs effectively over time*)</p>
+
+<div class="guide-alert guide-alert-warning">
+      <div class="guide-alert-title">🚨 กับดักข้อสอบที่พบบ่อย (Exam Trap)</div>
+      <div class="guide-alert-body"><strong>Exam Trap:</strong>  <br><em>Value stream management</em> <strong>ไม่ใช่ (NOT)</strong> หนึ่งในขั้นตอนของ <em>Value stream mapping</em>! (การทำแผนผังเป็นเพียงเครื่องมือหนึ่ง แต่การบริหารจัดการเป็นภาพใหญ่ที่ดำเนินต่อเนื่อง)</div>
+    </div>
+
+---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-5-2">
+        <div class="guide-section-header">
+          <h3>5.2 ประเภทของ Value Stream: Core vs. Enabling</h3>
+          <span class="guide-tag">sec-5-2</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -2798,7 +2927,29 @@
       </div>
     </div>
   
+        
+        <div class="guide-card-content">
           
+
+<pre class="guide-pre"><code>┌────────────────────────────────────────────────────────────────────────┐
+│                        Types of Value Streams                          │
+├───────────────────────────────────┬────────────────────────────────────┤
+│     Core Value Stream             │     Enabling Value Stream          │
+│ (ส่งมอบคุณค่าสู่ลูกค้าภายนอกโดยตรง)   │   (สนับสนุนลูกค้าภายในและ Core Stream)│
+└───────────────────────────────────┴────────────────────────────────────┘</code></pre>
+
+<p>1. <strong>Core Value Stream (สายธารคุณค่าหลัก):</strong><br><ul><li>สายธารคุณค่าที่ส่งมอบคุณค่าและผลลัพธ์ให้แก่ <strong>ผู้บริโภคภายนอก (External consumers)</strong> โดยตรง ตามโมเดลธุรกิจหลักขององค์กร</li></ul><br>   <em> </em>ตัวอย่าง:* สายธารคุณค่าการเปิดบัญชีเงินฝากออนไลน์ของธนาคาร, สายธารคุณค่าการสั่งซื้อและจัดส่งอาหารผ่านแอปพลิเคชัน<br>2. <strong>Enabling Value Stream (สายธารคุณค่าสนับสนุน):</strong><br>   <em> สายธารคุณค่าที่ส่งมอบคุณค่าให้แก่ <strong>ลูกค้าภายในองค์กร (Internal consumers)</strong> เพื่อสนับสนุนให้ Core Value Stream สามารถดำเนินงานได้อย่างมีประสิทธิภาพและราบรื่น (</em>By supporting the effective operation of core value streams*)<br>   <em> </em>ตัวอย่าง:* สายธารคุณค่าการจัดซื้ออุปกรณ์คอมพิวเตอร์ให้พนักงานใหม่ (IT Procurement), สายธารคุณค่าการรับสมัครและปฐมนิเทศพนักงาน (HR Onboarding)</p>
+
+---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-5-3">
+        <div class="guide-section-header">
+          <h3>5.3 5 ขั้นตอนการจัดทำ Value Stream Mapping</h3>
+          <span class="guide-tag">sec-5-3</span>
+        </div>
+        
     <div class="related-q-container">
       <div class="related-q-header">
         <span class="related-q-icon">🎯</span>
@@ -2813,168 +2964,188 @@
       </div>
     </div>
   
+        
+        <div class="guide-card-content">
+          
 
-          <h4 class="guide-subheading">Mapping vs. Management:</h4>
-          <ul>
-            <li><strong>Value Stream Mapping:</strong> กิจกรรมการทำแผนผังเพื่อ <strong>ระบุและจัดลำดับความสำคัญของโอกาสในการปรับปรุง (Identify and prioritize improvement opportunities)</strong> โดยค้นหาจุดคอขวดและความสูญเปล่า</li>
-            <li><strong>Value Stream Management:</strong> การบริหารจัดการสายธารคุณค่าอย่างต่อเนื่องในระยะยาวเพื่อให้ทำงานได้อย่างมีประสิทธิผลตลอดเวลา</li>
-            <li><em>ข้อควรระวัง:</em> Value Stream Management <strong>ไม่ใช่ขั้นตอน</strong> ของ Value Stream Mapping!</li>
-          </ul>
+<p>กระบวนการทำแผนผังสายธารคุณค่าประกอบด้วย 5 ขั้นตอนมาตรฐาน:</p>
 
-          <h4 class="guide-subheading">Core vs. Enabling Value Stream:</h4>
-          <div class="table-responsive">
-            <table class="guide-table">
-              <thead>
-                <tr>
-                  <th>ประเภท</th>
-                  <th>ผู้รับบริการ</th>
-                  <th>บทบาทและวัตถุประสงค์</th>
-                  <th>ตัวอย่างจริง</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Core Value Stream</strong></td>
-                  <td>ลูกค้าภายนอก (External consumers)</td>
-                  <td>ส่งมอบคุณค่าและผลลัพธ์ให้ลูกค้าตามธุรกิจหลักขององค์กรโดยตรง</td>
-                  <td>การเปิดบัญชีธนาคารออนไลน์, การสั่งซื้อและจัดส่งอาหารผ่านแอป</td>
-                </tr>
-                <tr>
-                  <td><strong>Enabling Value Stream</strong></td>
-                  <td>ลูกค้าภายใน (Internal consumers)</td>
-                  <td><strong>สนับสนุนให้ Core Value Stream สามารถดำเนินงานได้อย่างราบรื่นและมีประสิทธิภาพ</strong></td>
-                  <td>การจัดซื้อคอมพิวเตอร์ให้พนักงานใหม่, การปฐมนิเทศพนักงาน (HR Onboarding)</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+<pre class="guide-pre"><code>Step 1: Value Stream Identification (ระบุสายธารคุณค่าที่จะศึกษา)
+  ▼
+Step 2: Mapping of the 'as-is' Value Stream (วาดแผนผังขั้นตอนปัจจุบัน)
+  ▼
+Step 3: Analysing the Value Stream (วิเคราะห์จุดติดขัด คอขวด และสิ่งสูญเปล่า)
+  ▼
+Step 4: Mapping a 'to-be' Value Stream (ออกแบบแผนผังอนาคตที่ปรับปรุงแล้ว)
+  ▼
+Step 5: Planning and Implementing Improvements (วางแผนและลงมือปรับปรุง)</code></pre>
 
-          <h4 class="guide-subheading">5 ขั้นตอนการจัดทำ Value Stream Mapping:</h4>
-          <ol>
-            <li><strong>Step 1:</strong> Value Stream Identification (ระบุสายธารคุณค่าที่จะศึกษา)</li>
-            <li><strong>Step 2:</strong> Mapping of the 'as-is' Value Stream (วาดแผนผังขั้นตอนปัจจุบัน)</li>
-            <li><strong>Step 3:</strong> Analysing the Value Stream (วิเคราะห์จุดติดขัด คอขวด และสิ่งสูญเปล่า)</li>
-            <li><strong>Step 4:</strong> Mapping a 'to-be' Value Stream (ออกแบบแผนผังอนาคตที่ปรับปรุงแล้ว)</li>
-            <li><strong>Step 5:</strong> Planning and Implementing Improvements (วางแผนและลงมือปรับปรุง)</li>
-          </ol>
-        </article>
-      </section>
-
-      <!-- MODULE 6 -->
-      <section class="guide-module-section" id="mod-6" data-module="mod-6">
-        <div class="module-banner">
-          <span class="module-number-badge">Module 6</span>
-          <div>
-            <h2 class="module-title">Exam Readiness: Cheat Sheet, Trigger Keywords & Trap Questions</h2>
-            <div class="module-sub">ตารางเปรียบเทียบคำศัพท์คู่เหมือน, คลังคีย์เวิร์ดตัดชอยส์ภาษาอังกฤษ และเช็กลิสต์ความจำ 15 นาทีก่อนเข้าห้องสอบ</div>
-          </div>
+---
         </div>
+      </article>
+    
+      <article class="guide-card" id="sec-5-4">
+        <div class="guide-section-header">
+          <h3>5.4 ตัวอย่าง End-to-End Value Stream Journey ในชีวิตจริง</h3>
+          <span class="guide-tag">sec-5-4</span>
+        </div>
+        
+        
+        <div class="guide-card-content">
+          
 
-        <!-- Section 6.1 Comparison Cheat Sheet -->
-        <article class="guide-card" id="sec-6-1">
-          <div class="guide-section-header">
-            <h3>6.1 ตารางสรุปเปรียบเทียบคำศัพท์คู่เหมือนที่ข้อสอบชอบนำมาหลอก</h3>
-            <span class="guide-tag">Cheat Sheet</span>
-          </div>
-          <div class="table-responsive">
-            <table class="guide-table">
-              <thead>
-                <tr>
-                  <th>คำศัพท์ A</th>
-                  <th>คำศัพท์ B</th>
-                  <th>จุดตัดความแตกต่างที่ต้องจำให้แม่น</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Output</strong></td>
-                  <td><strong>Outcome</strong></td>
-                  <td>Output คือสิ่งของ/ระบบที่ส่งมอบเสร็จ (Deliverable) | Outcome คือผลลัพธ์/ประโยชน์ที่เกิดขึ้นจากการนำไปใช้</td>
-                </tr>
-                <tr>
-                  <td><strong>Utility</strong></td>
-                  <td><strong>Warranty</strong></td>
-                  <td>Utility คือ Fit for Purpose (ทำอะไรได้ / What) | Warranty คือ Fit for Use (ทำงานได้เสถียรเพียงใด / How)</td>
-                </tr>
-                <tr>
-                  <td><strong>Customer</strong></td>
-                  <td><strong>User</strong></td>
-                  <td>Customer คือคนกำหนดความต้องการและรับผิดชอบผลลัพธ์ | User คือคนกดใช้งานในชีวิตประจำวัน</td>
-                </tr>
-                <tr>
-                  <td><strong>Customer</strong></td>
-                  <td><strong>Sponsor</strong></td>
-                  <td>Customer คือคนตรวจรับงาน | Sponsor คือคนอนุมัติงบประมาณ (Authorizes budget)</td>
-                </tr>
-                <tr>
-                  <td><strong>Incident</strong></td>
-                  <td><strong>Problem</strong></td>
-                  <td>Incident คือเหตุการณ์ขัดข้องเฉพาะหน้า (เน้นแก้ไว) | Problem คือสาเหตุรากเหง้า (เน้นวิเคราะห์หาสาเหตุ)</td>
-                </tr>
-                <tr>
-                  <td><strong>Problem</strong></td>
-                  <td><strong>Known Error</strong></td>
-                  <td>Problem คือยังไม่รู้สาเหตุแน่ชัด | Known Error คือวิเคราะห์รู้สาเหตุแล้วแต่ยังไม่ได้แก้ถาวร</td>
-                </tr>
-                <tr>
-                  <td><strong>Deployment</strong></td>
-                  <td><strong>Release</strong></td>
-                  <td>Deployment คือย้ายของลง Production Environment | Release คือเปิดปุ่มให้ผู้ใช้ทั่วไปกดใช้งานได้จริง</td>
-                </tr>
-                <tr>
-                  <td><strong>Direct</strong></td>
-                  <td><strong>Monitor</strong></td>
-                  <td>Direct คือกำหนดนโยบายและทิศทาง | Monitor คือตรวจตราให้แน่ใจว่าปฏิบัติตามนโยบาย (Adherence)</td>
-                </tr>
-                <tr>
-                  <td><strong>Continuous Delivery</strong></td>
-                  <td><strong>Continuous Deployment</strong></td>
-                  <td>Delivery ต้องรอมนุษย์กดอนุมัติขึ้น Production | Deployment นำโค้ดขึ้น Production อัตโนมัติ 100%</td>
-                </tr>
-                <tr>
-                  <td><strong>VS Mapping</strong></td>
-                  <td><strong>VS Management</strong></td>
-                  <td>Mapping คือการวาดผังเพื่อหาโอกาสปรับปรุง | Management คือการบริหารดูแลต่อเนื่องระยะยาว</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
+<h4 class="guide-subheading">ตัวอย่างเคสที่ 1: Value Stream สำหรับการกู้คืนบริการเมื่อเกิดอุบัติการณ์ร้ายแรง (Restoring a Live Digital Service)</h4>
+แสดงการร้อยเรียงกิจกรรมใน Value Chain เข้าด้วยกันเมื่อเกิดเหตุระบบล่ม:
 
-        <!-- Section 6.2 Trigger Keywords Live Search -->
-        <article class="guide-card" id="sec-6-2">
-          <div class="guide-section-header">
-            <h3>6.2 Trigger Keywords: เห็นคีย์เวิร์ดภาษาอังกฤษนี้ ตอบข้อนี้ทันที!</h3>
-            <span class="guide-tag">Exam Shortcuts</span>
-          </div>
-          <div class="trigger-search-box">
-            <input type="text" id="triggerSearchInput" class="guide-search-input" placeholder="พิมพ์คีย์เวิร์ดภาษาอังกฤษ เช่น 'budget', 'interruption', 'adherence', 'fit for purpose'..." oninput="filterTriggerKeywords(this.value)">
-          </div>
+<pre class="guide-pre"><code>[ผู้ใช้แจ้งระบบล่ม]
+      │
+      ▼
+ 1. ENGAGE ─────────────► เจ้าหน้าที่ Service Desk รับเรื่องผ่านพอร์ทัล และบันทึก Ticket
+      │
+      ▼
+ 2. DELIVER & SUPPORT ──► ทีมปฏิบัติการเข้าตรวจสอบอาการ และยืนยันว่าเป็น Major Incident
+      │
+      ▼
+ 3. OBTAIN/BUILD ───────► ทีมเทคนิคพบว่าฮาร์ดแวร์ Disk เสีย จึงเบิกชิ้นส่วนสำรองมาเปลี่ยน
+      │
+      ▼
+ 4. DELIVER & SUPPORT ──► สลับระบบกลับมาทำงาน และทดสอบกู้คืนระบบจนกลับสู่สภาวะปกติ
+      │
+      ▼
+ 5. ENGAGE ─────────────► แจ้งเตือนผู้ใช้งานว่าระบบพร้อมใช้งาน และสอบถามความพึงพอใจ
+      │
+      ▼
+ 6. IMPROVE ────────────► ทีม Problem Management ประชุม Post-Mortem เพื่อหาทางป้องกันซ้ำ</code></pre>
 
-          <div class="trigger-grid" id="triggerKeywordsGrid">
-            <!-- Injected via helper or static HTML -->
-          </div>
-        </article>
+<h4 class="guide-subheading">ตัวอย่างเคสที่ 2: Value Stream สำหรับการพัฒนาและปล่อยฟีเจอร์ใหม่ (Delivering a New Digital Feature)</h4>
+<pre class="guide-pre"><code>[ลูกค้าต้องการระบบจ่ายเงินผ่าน QR]
+      │
+      ▼
+ 1. ENGAGE / DISCOVER ──► ทีม Product รับข้อเสนอแนะและสำรวจความต้องการทางธุรกิจ
+      │
+      ▼
+ 2. PLAN ───────────────► ผู้บริหารและทีมวางแผน Roadmap และจัดสรรงบประมาณ
+      │
+      ▼
+ 3. DESIGN ─────────────► ทีม UX/UI ออกแบบ Prototype และทำ Product Specification
+      │
+      ▼
+ 4. OBTAIN/BUILD ───────► ฝ่ายพัฒนาเขียนโค้ด เชื่อมต่อ API ธนาคาร และรัน Automated Test
+      │
+      ▼
+ 5. TRANSITION ─────────► Deploy โค้ดขึ้น Live Environment อย่างปลอดภัยผ่าน CI/CD Pipeline
+      │
+      ▼
+ 6. DELIVER & SUPPORT ──► เปิดให้ผู้ใช้กดใช้งานจริง และมอนิเตอร์ประสิทธิภาพผ่าน Dashboard</code></pre>
 
-        <!-- Section 6.3 Final Exam Checklist -->
-        <article class="guide-card" id="sec-6-3">
-          <div class="guide-section-header">
-            <h3>6.3 Final Exam Checklist: เช็กลิสต์ความจำ 15 นาทีก่อนเข้าห้องสอบ</h3>
-            <span class="guide-tag">Checklist</span>
-          </div>
-          <p>ติ๊กถูกเพื่อตรวจสอบความพร้อมของตนเองก่อนเข้าห้องสอบ:</p>
-          <div class="checklist-progress-bar">
-            <div class="checklist-bar-fill" id="checklistBarFill" style="width: 0%;"></div>
-          </div>
-          <div style="font-size: 0.85rem; font-weight: 700; color: #475569; margin-bottom: 12px;" id="checklistProgressText">ความพร้อม: 0 / 10 หัวข้อ (0%)</div>
-
-          <div class="checklist-items-wrapper" id="checklistItemsWrapper">
-            <!-- Interactive checklist injected -->
-          </div>
-        </article>
-      </section>
-    </div>
+---
+        </div>
+      </article>
+    </section>
+    <section class="guide-module-section" id="mod-6" data-module="mod-6">
+      <div class="module-banner">
+        <span class="module-number-badge">Module 6</span>
+        <div>
+          <h2 class="module-title">Exam Readiness: Cheat Sheet, Trigger Keywords & Trap Questions</h2>
+          <div class="module-sub">ตารางเปรียบเทียบคำศัพท์คู่เหมือน, คลังคีย์เวิร์ดตัดชอยส์ภาษาอังกฤษ และเช็กลิสต์ความจำ 15 นาทีก่อนเข้าห้องสอบ</div>
+        </div>
+      </div>
   
+      <article class="guide-card" id="sec-6-1">
+        <div class="guide-section-header">
+          <h3>6.1 ตารางสรุปเปรียบเทียบคำศัพท์คู่เหมือนที่ข้อสอบชอบนำมาหลอก</h3>
+          <span class="guide-tag">sec-6-1</span>
+        </div>
+        
+        
+        <div class="guide-card-content">
+          
+
+<div class="table-responsive"><table class="guide-table"><thead><tr><th>คำศัพท์คู่ที่ 1</th><th>คำศัพท์คู่ที่ 2</th><th>จุดตัดความแตกต่างที่ต้องจำ</th></tr></thead><tbody><tr><td><strong>Output</strong></td><td><strong>Outcome</strong></td><td>Output คือสิ่งของ/ระบบที่ส่งมอบเสร็จ (Deliverable)</td><td>Outcome คือผลลัพธ์/ประโยชน์ที่เกิดขึ้นจากการนำไปใช้</td></tr><tr><td><strong>Utility</strong></td><td><strong>Warranty</strong></td><td>Utility คือ Fit for Purpose (ทำอะไรได้ / What)</td><td>Warranty คือ Fit for Use (ทำงานได้เสถียรเพียงใด / How)</td></tr><tr><td><strong>Customer</strong></td><td><strong>User</strong></td><td>Customer คือคนกำหนดความต้องการและรับผิดชอบผลลัพธ์</td><td>User คือคนกดใช้งานในชีวิตประจำวัน</td></tr><tr><td><strong>Customer</strong></td><td><strong>Sponsor</strong></td><td>Customer คือคนตรวจรับงาน</td><td>Sponsor คือคนอนุมัติงบประมาณ (Authorizes budget)</td></tr><tr><td><strong>Incident</strong></td><td><strong>Problem</strong></td><td>Incident คือเหตุการณ์ขัดข้องเฉพาะหน้า (เน้นแก้ไว)</td><td>Problem คือสาเหตุรากเหง้า (เน้นวิเคราะห์หาสาเหตุ)</td></tr><tr><td><strong>Problem</strong></td><td><strong>Known Error</strong></td><td>Problem คือยังไม่รู้สาเหตุแน่ชัด</td><td>Known Error คือวิเคราะห์รู้สาเหตุแล้ว แต่ยังไม่ได้แก้ถาวร</td></tr><tr><td><strong>Deployment</strong></td><td><strong>Release</strong></td><td>Deployment คือย้ายของลง Production Environment</td><td>Release คือเปิดปุ่มให้ผู้ใช้ทั่วไปกดใช้งานได้จริง</td></tr><tr><td><strong>Direct</strong></td><td><strong>Monitor</strong></td><td>Direct คือกำหนดนโยบายและทิศทาง</td><td>Monitor คือตรวจตราให้แน่ใจว่าปฏิบัติตามนโยบาย (Adherence)</td></tr><tr><td><strong>Continuous Delivery</strong></td><td><strong>Continuous Deployment</strong></td><td>Continuous Delivery ต้องรอมนุษย์กดอนุมัติขึ้น Production</td><td>Continuous Deployment นำโค้ดขึ้น Production อัตโนมัติ 100%</td></tr><tr><td><strong>VS Mapping</strong></td><td><strong>VS Management</strong></td><td>Mapping คือการวาดแผนผังเพื่อหาโอกาสปรับปรุง</td><td>Management คือการบริหารดูแลสายธารคุณค่าต่อเนื่องระยะยาว</td></tr></tbody></table></div>---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-6-2">
+        <div class="guide-section-header">
+          <h3>6.2 Trigger Keywords: เห็นคีย์เวิร์ดภาษาอังกฤษนี้ ตอบข้อนี้ทันที!</h3>
+          <span class="guide-tag">sec-6-2</span>
+        </div>
+        
+        
+        <div class="trigger-search-box">
+          <input type="text" id="triggerSearchInput" class="guide-search-input" placeholder="พิมพ์คีย์เวิร์ดภาษาอังกฤษ เช่น 'budget', 'interruption', 'adherence', 'fit for purpose'..." oninput="filterTriggerKeywords(this.value)">
+        </div>
+        <div class="trigger-grid" id="triggerKeywordsGrid"></div>
+      
+        <div class="guide-card-content">
+          <ul><li>หากโจทย์มีคำว่า <strong>"Perceived benefits, usefulness, and importance"</strong>  </li></ul>
+  👉 ตอบ: <strong>Value / Service Value</strong>
+<ul><li>หากโจทย์มีคำว่า <strong>"Enabling value co-creation without managing specific costs and risks"</strong>  </li></ul>
+  👉 ตอบ: <strong>Service</strong>
+<ul><li>หากโจทย์มีคำว่า <strong>"Authorizes budget for service consumption"</strong>  </li></ul>
+  👉 ตอบ: <strong>Sponsor</strong>
+<ul><li>หากโจทย์มีคำว่า <strong>"Defines requirements for services and takes responsibility for outcomes"</strong>  </li></ul>
+  👉 ตอบ: <strong>Customer</strong>
+<ul><li>หากโจทย์มีคำว่า <strong>"Uses services on a day-to-day basis"</strong>  </li></ul>
+  👉 ตอบ: <strong>User</strong>
+<ul><li>หากโจทย์มีคำว่า <strong>"Fit for purpose"</strong> หรือ <strong>"What the service does"</strong> หรือ <strong>"Supports performance or removes constraints"</strong>  </li></ul>
+  👉 ตอบ: <strong>Utility</strong>
+<ul><li>หากโจทย์มีคำว่า <strong>"Fit for use"</strong> หรือ <strong>"How the service performs"</strong> หรือ <strong>"Availability, Capacity, Security, Continuity"</strong>  </li></ul>
+  👉 ตอบ: <strong>Warranty</strong>
+<ul><li>หากโจทย์มีคำว่า <strong>"Unplanned interruption or reduction in quality"</strong>  </li></ul>
+  👉 ตอบ: <strong>Incident</strong>
+<ul><li>หากโจทย์มีคำว่า <strong>"Cause, or potential cause, of one or more incidents"</strong>  </li></ul>
+  👉 ตอบ: <strong>Problem</strong>
+<ul><li>หากโจทย์มีคำว่า <strong>"Problem that has been analysed but not resolved"</strong>  </li></ul>
+  👉 ตอบ: <strong>Known Error</strong>
+<ul><li>หากโจทย์มีคำว่า <strong>"Solution that reduces or eliminates the impact of an incident"</strong>  </li></ul>
+  👉 ตอบ: <strong>Workaround</strong>
+<ul><li>หากโจทย์มีคำว่า <strong>"Moving a component into a live environment"</strong>  </li></ul>
+  👉 ตอบ: <strong>Deployment / Deployment Management</strong>
+<ul><li>หากโจทย์มีคำว่า <strong>"Making a service feature available for use"</strong>  </li></ul>
+  👉 ตอบ: <strong>Release / Release Management</strong>
+<ul><li>หากโจทย์มีคำว่า <strong>"Accountable for performance and compliance at the highest level"</strong>  </li></ul>
+  👉 ตอบ: <strong>Governing Body</strong>
+<ul><li>หากโจทย์มีคำว่า <strong>"Ensuring adherence with policies and strategic direction"</strong>  </li></ul>
+  👉 ตอบ: <strong>Monitor (กิจกรรมใน Governance)</strong>
+<ul><li>หากโจทย์มีคำว่า <strong>"Optimize processes before automating them"</strong>  </li></ul>
+  👉 ตอบ: <strong>Optimize and Automate</strong>
+<ul><li>หากโจทย์มีคำว่า <strong>"When a measure becomes a target, it ceases to be a good measure"</strong>  </li></ul>
+  👉 ตอบ: <strong>Goodhart's Law</strong>
+<ul><li>หากโจทย์มีคำว่า <strong>"Identify and prioritize improvement opportunities in workflows"</strong>  </li></ul>
+  👉 ตอบ: <strong>Value Stream Mapping</strong>
+<ul><li>หากโจทย์มีคำว่า <strong>"Supporting the effective operation of core value streams"</strong>  </li></ul>
+  👉 ตอบ: <strong>Enabling Value Stream</strong>
+<ul><li>หากโจทย์มีคำว่า <strong>"Understanding system behaviour through outputs such as logs, metrics, and traces"</strong>  </li></ul>
+  👉 ตอบ: <strong>Observability</strong>
+<ul><li>หากโจทย์มีคำว่า <strong>"Assess readiness and identify areas for improvement in using AI"</strong>  </li></ul>
+  👉 ตอบ: <strong>AI Capability Model</strong>
+
+---
+        </div>
+      </article>
+    
+      <article class="guide-card" id="sec-6-3">
+        <div class="guide-section-header">
+          <h3>6.3 Final Exam Checklist: เช็กลิสต์ทบทวน 15 นาทีก่อนเข้าห้องสอบ</h3>
+          <span class="guide-tag">sec-6-3</span>
+        </div>
+        
+        
+        <div class="checklist-progress-bar">
+          <div class="checklist-bar-fill" id="checklistBarFill" style="width: 0%;"></div>
+        </div>
+        <div style="font-size: 0.85rem; font-weight: 700; color: #475569; margin-bottom: 12px;" id="checklistProgressText">ความพร้อม: 0 / 10 หัวข้อ (0%)</div>
+        <div class="checklist-items-wrapper" id="checklistItemsWrapper"></div>
+      
+        <div class="guide-card-content">
+          
+
+<p>ก่อนเดินเข้าห้องสอบ ตรวจสอบว่าท่านจำประเด็นสำคัญเหล่านี้ได้ครบถ้วนแล้วหรือยัง:<br><ul><li>[ ] <strong>Value Co-creation:</strong> คุณค่าไม่ได้สร้างโดยผู้ให้บริการฝ่ายเดียว แต่ต้องเกิดจากความร่วมมือระหว่าง Provider, Consumer และ Stakeholders อื่นๆ</li><li>[ ] <strong>4 มิติ:</strong> Organizations & People, Information & Technology, Partners & Suppliers, Value Streams & Processes (ได้รับอิทธิพลจาก PESTLE)</li><li>[ ] <strong>SVS Components:</strong> Guiding Principles, Governance, Service Value Chain, Practices, Continual Improvement</li><li>[ ] <strong>EDM ใน Governance:</strong> Evaluate (ประเมิน), Direct (กำหนดทิศทาง), Monitor (ตรวจตราการปฏิบัติตามนโยบาย - จุดนี้ชอบออกสอบมาก!)</li><li>[ ] <strong>7 Guiding Principles:</strong> เข้าใจสถานการณ์ตัวอย่างของแต่ละหลักการ และจำกฎของกูดฮาร์ทได้</li><li>[ ] <strong>Incident vs. Problem:</strong> Incident เน้นกู้ระบบคืนให้เร็วที่สุด (Restore ASAP), Problem เน้นหาสาเหตุรากเหง้า (Root Cause)</li><li>[ ] <strong>Change Enablement:</strong> เข้าใจความแตกต่างของ Standard (อนุมัติล่วงหน้า), Normal (ประเมินตามขั้นตอน), และ Emergency (เร่งด่วนเพื่อแก้เหตุวิกฤต)</li><li>[ ] <strong>Continual Improvement Step 1:</strong> เริ่มต้นด้วย "What is the vision?" เพื่อเชื่อมโยงการปรับปรุงให้ตรงกับเป้าหมายองค์กร</li><li>[ ] <strong>Core vs. Enabling Value Stream:</strong> Core มอบคุณค่าให้ลูกค้าภายนอก ส่วน Enabling ช่วยเหลือการทำงานภายในเพื่อให้ Core ทำงานได้ราบรื่น</li><li>[ ] <strong>Value Stream Mapping Step:</strong> วัตถุประสงค์คือเพื่อค้นหาและจัดลำดับความสำคัญของโอกาสในการปรับปรุง โดยการบริหารจัดการ (Management) ไม่ใช่ขั้นตอนของ Mapping</li></ul></p>
+        </div>
+      </article>
+    </section>
+    </div>
   </div>
 
   <!-- Submit Confirmation / Result Modal -->
@@ -4861,7 +5032,6 @@
       switchMainView('simulator');
 
       if (currentMode === 'mock' && !isExamSubmitted) {
-        // If in mock mode, check if the question exists in current set
         const inCurrent = currentQuestions.findIndex(q => (q.originalId || q.id) === questionId);
         if (inCurrent !== -1) {
           loadQuestion(inCurrent);
@@ -4869,12 +5039,10 @@
         }
       }
 
-      // In practice mode or question not in current mock pool: switch to practice mode for full access
       if (currentMode !== 'practice') {
         setMode('practice', true);
       }
 
-      // Check if current paper filter includes this question
       const targetQ = masterQuestions.find(q => q.id === questionId);
       if (targetQ && selectedPaper !== 'all' && targetQ.paper !== selectedPaper) {
         setPaperFilter('all');
@@ -4904,11 +5072,9 @@
       const backdrop = document.getElementById('drawerBackdrop');
       const drawerContent = document.getElementById('drawerContent');
 
-      // Find original article from full guide
       const sourceArticle = document.getElementById(sectionId);
       if (sourceArticle) {
         const clone = sourceArticle.cloneNode(true);
-        // Highlight in drawer
         drawerContent.innerHTML = `
           <div style="margin-bottom: 14px; padding: 10px 14px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; font-size: 0.85rem; color: #1e40af; display: flex; justify-content: space-between; align-items: center;">
             <span>💡 <strong>กำลังทบทวนเนื้อหา:</strong> ข้อนี้เชื่อมโยงกับหัวข้อด้านล่าง</span>
